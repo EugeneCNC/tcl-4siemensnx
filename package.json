@@ -1,0 +1,29 @@
+{
+  "name": "tcl-4siemensnx",
+  "displayName": "TCL 4SiemensNX",
+  "description": "Provides Tcl syntax support for embedded Siemens NX development",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.79.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+      "id": "tcl4snx",
+      "aliases": ["tcl4snx"],
+      "extensions": [".tcl"],
+      "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+      "language": "tcl4snx",
+      "scopeName": "source.tcl4snx",
+      "path": "./syntaxes/tcl4snx.tmLanguage.json"
+      }
+    ]
+  }
+}

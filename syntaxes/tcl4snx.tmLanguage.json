@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "tcl4snx",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment.line.number-sign"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+				"name": "keyword.control.tcl4snx",
+				"match": "\\b(if|elseif|else|while|for|foreach|append|lappend|proc|return|set)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.tcl4snx",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tcl4snx",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment.line.number-sign": {
+			"name": "comment.line.number-sign.tcl4snx",
+			"begin": ";\\s*#|^\\t*\\s*#",
+			"end": "\\n",
+			"patterns": [
+				{
+					"match": "\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.tcl4snx"
+}
