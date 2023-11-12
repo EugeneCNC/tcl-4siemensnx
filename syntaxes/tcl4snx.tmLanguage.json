@@ -1,23 +1,50 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "tcl4snx",
+	"fileTypes": "tcl",
+	"foldingStartMarker": "\\{\\s*$",
+	"foldingStopMarker": "^\\s*\\}",
+	"scopeName": "source.tcl4snx",
+
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#keyword.control"
+		},
+		{
+			"include": "#keyword.other"
+		},
+		{
+			"include": "#entity.name.function"
 		},
 		{
 			"include": "#strings"
 		},
 		{
-			"include": "#comment.line.number-sign"
+			"include": "#comment"
 		}
 	],
 	"repository": {
-		"keywords": {
+		"keyword.control": {
 			"patterns": [
 				{
 				"name": "keyword.control.tcl4snx",
-				"match": "\\b(if|elseif|else|while|for|foreach|append|lappend|proc|return|set)\\b"
+				"match": "\\b(break|continue|default|exit|return|if|elseif|else|while|for|foreach|switch|while)\\b"
+				}
+			]
+		},
+		"keyword.other": {
+			"patterns": [
+				{
+				"name": "keyword.other.tcl4snx",
+				"match": "\\b(append|array|binary|catch|cd|clock|close|concat|eof|error|eval|exec|expr|fcopy|file|fileevent|filename|flush|format|gets|glob|global|history|incr|info|interp|join|lappend|library|lindex|linsert|list|llength|load|lrange|lreplace|lsearch|lsort|namespace|open|package|pid|puts|pwd|read|regexp|registry|regsub|rename|resource|scan|seek|set|source|split|string|subst|tclvars|tell|time|trace|unknown|unset|update|uplevel|upvar|variable)\\b"
+				}
+			]
+		},
+		"entity.name.function": {
+			"patterns": [
+				{
+				"name": "entity.name.function.tcl4snx",
+				"match": "\\b(proc)\\b"
 				}
 			]
 		},
@@ -32,16 +59,15 @@
 				}
 			]
 		},
-		"comment.line.number-sign": {
-			"name": "comment.line.number-sign.tcl4snx",
-			"begin": ";\\s*#|^\\t*\\s*#",
-			"end": "\\n",
+		"comment": {
+			"name": "comment.tcl4snx",
+			"begin": "(?<!;\\s*)#|^\\t*\\s*#|#",
+			"end": "\\n|\\}|;\\n",
 			"patterns": [
 				{
 					"match": "\\."
 				}
 			]
 		}
-	},
-	"scopeName": "source.tcl4snx"
+	}
 }

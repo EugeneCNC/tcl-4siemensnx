@@ -24,6 +24,12 @@
       "scopeName": "source.tcl4snx",
       "path": "./syntaxes/tcl4snx.tmLanguage.json"
       }
-    ]
+    ],
+    "snippets": [
+			{
+				"language": "tcl4snx",
+				"path": "./snippets/tcl4snx.snippets.json"
+			}
+		]
   }
 }

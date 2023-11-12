@@ -1,0 +1,624 @@
+{
+	// Place your snippets for tcl here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	
+	"newProc": {
+		"prefix": "proc",
+		"body": [
+			"#=============================================================",
+			"proc $1 {args} {",
+			"#=============================================================",
+			"# This proc aimed/creates/outputs/returns/declares/checks",
+			"#",
+			"# Default call point:",
+			"#",
+			"# place your code below",
+			"\t",
+			"\tbody$2",
+			"};# end of proc"
+		],
+		"description": "Create new procedure"
+	},
+	
+	"axis_mode": {
+		"prefix": "axis_mode",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,axis_mode) == \"CONSTANT POSITIONING SIMULTANEOUS\""
+		],
+		"description": "Call custom variable"
+	},
+	
+	"tag_id": {
+		"prefix": "tag_id",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,tag_id) =="
+		],
+		"description": "Call custom variable"
+	},
+	
+	"template_type": {
+		"prefix": "template_type",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,template_type) =="
+		],
+		"description": "Call custom variable"
+	},
+	
+	"template_subtype": {
+		"prefix": "template_subtype",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,template_subtype) =="
+		],
+		"description": "Call custom variable"
+	},
+	
+	"operation_type": {
+		"prefix": "operation_type",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,operation_type) =="
+		],
+		"description": "Call custom variable"
+	},
+	
+	"machine_mode": {
+		"prefix": "machine_mode",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,machine_mode) == \"TURN MILL\""
+		],
+		"description": "Call custom variable"
+	},
+	
+	"tool_name": {
+		"prefix": "tool_name",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,tool_name)"
+		],
+		"description": "Call custom variable"
+	},
+	
+	"tool_number": {
+		"prefix": "tool_number",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,tool_number)"
+		],
+		"description": "Call custom variable"
+	},
+	
+	"tool_change_type": {
+		"prefix": "tool_change_type",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,tool_change_type)"
+		],
+		"description": "Call custom variable"
+	},
+	
+	"mcs_name": {
+		"prefix": "mcs_name",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,mcs_name)"
+		],
+		"description": "Call custom variable"
+	},
+	
+	"mcs_offset_value": {
+		"prefix": "mcs_offset_value",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,mcs_offset_value)"
+		],
+		"description": "Call custom variable"
+	},
+	
+	"mcs_output_type": {
+		"prefix": "mcs_output_type",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,mcs_output_type)"
+		],
+		"description": "Call custom variable"
+	},
+	
+	"mcs_parent": {
+		"prefix": "mcs_parent",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,mcs_parent)"
+		],
+		"description": "Call custom variable"
+	},
+	
+	"mcs_purpose": {
+		"prefix": "mcs_purpose",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,mcs_purpose)"
+		],
+		"description": "Call custom variable"
+	},
+	
+	"mcs_kin_type": {
+		"prefix": "mcs_kin_type",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,mcs_kin_type)"
+		],
+		"description": "Call custom variable"
+	},
+	
+	"has_tool_change": {
+		"prefix": "has_tool_change",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,has_tool_change) == \"$1\""
+		],
+		"description": "Call custom variable"
+	},
+	
+	"has_cutcom": {
+		"prefix": "has_cutcom",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,has_cutcom) == \"0 1\""
+		],
+		"description": "Call custom variable"
+	},
+	
+	"op_with_no_move": {
+		"prefix": "op_with_no_move",
+		"body": [
+			"$::edm_oper_info($::mom_operation_name,op_with_no_move)"
+		],
+		"description": "Call custom variable"
+	},
+	
+	"lnsp": {
+		"prefix": "lnsp",
+		"body": [
+			"#==================================================================================================="
+		],
+		"description": "Insert line separator"
+	},
+	
+	"end of proc": {
+		"prefix": "end_of_proc",
+		"body": [
+			";# end of proc"
+		],
+		"description": "Output debug message"
+	},
+	
+	"debug_print": {
+		"prefix": "debug_print",
+		"body": [
+			"debug_print \"$1\""
+		],
+		"description": "Output debug message"
+	},
+	
+
+	"MOM_abort": {
+		"prefix": "MOM_abort",
+		"body": ["MOM_abort"],
+		"description": "This function causes MOM to terminate with an error  message."
+	},
+	"15": { "prefix": "MOM_abort_event", "body": ["MOM_abort_event"], "description": "This command immediately aborts the current event and returns processing control back to NX.  Use this command if you do not want to return to a calling procedure." },
+	"20": { "prefix": "MOM_add_to_address_buffer", "body": ["MOM_add_to_address_buffer"], "description": "Depending on the start/end attribute specified, this extension will add value(s) to either the address start buffer or the address end buffer. Each time that this extension is called, it adds to the specified buffer.  When the contents of the address are sent to the output buffer, the contents of the address start buffer will precede it and the contents of the end buffer will go after it.  The address start buffer and the address end buffer are cleared once the they have been sent to the output buffer." },
+	"25": { "prefix": "MOM_add_to_block_buffer", "body": ["MOM_add_to_block_buffer"], "description": "Depending on the start/end attribute specified, this extension will add value(s) to either the block start buffer or the block end buffer. Each time that this extension is called, it adds to the specified buffer.  When the block is sent to the output buffer, the contents of the block start buffer will precede it on the line and the contents of the block end buffer will go after it.  The block start buffer and the block end buffer are cleared once the they have been written to the output buffer." },
+	"30": { "prefix": "MOM_add_to_line_buffer", "body": ["MOM_add_to_line_buffer"], "description": "Depending on the start/end attribute specified, this extension will add value(s) to either the line's start buffer or the line end buffer. Each time that this extension is called, it adds to the specified buffer.  When the contents of the output buffer are sent to the output file, the contents of the line's start buffer will precede it on the line and the contents of the end buffer will go on the same line after it. The line start buffer, line end buffer, and output buffer are all cleared once the they have been written to the output file." },
+	"35": { "prefix": "MOM_ask_address_value", "body": ["MOM_ask_address_value"], "description": "Always returns the absolute address value NOT the incremental value." },
+	"40": { "prefix": "MOM_ask_env_var", "body": ["MOM_ask_env_var"], "description": "This extension allows you return value of variable \"variable name\"." },
+	"50": { "prefix": "MOM_ask_event_type", "body": ["MOM_ask_event_type"], "description": "Returns the name of the current event. This is the last event that the event generator executed." },
+	"55": { "prefix": "MOM_ask_ess_exp_value", "body": ["MOM_ask_ess_exp_value"], "description": "'Provides access to the variables of the NX Expression module, i.e., it returns the value of the NX Expression variable." },
+	"60": { "prefix": "MOM_ask_init_junction_xform", "body": ["MOM_ask_init_junction_xform"], "description": "This command returns the transformation matrix of the given Junction (name) at its initial state w.r.t the absolute coordinate system (ACS)." },
+	"65": { "prefix": "MOM_ask_machine_zero_junction_name", "body": ["MOM_ask_machine_zero_junction_name"], "description": "This command returns the name of the MACHINE_ZERO Junction." },
+	"70": { "prefix": "MOM_ask_oper_csys", "body": ["MOM_ask_oper_csys"], "description": "Fetches the CSYS information of the named operation. Passes the results in three mom variables. mom_result represents the mom_special_output of the CSYS. 0 = None, 1 = Use Main MCS, 2 = Fixture Offset, 3 = CSYS Rotation. mom_result1 is a list of 12 doubles containing the mom_csys_matix of the operation CSYS. mom_result2 is a list of 12 doubles containing the mom_machine_csys_matrix of the operation." },
+	"75": { "prefix": "MOM_ask_syslog_name", "body": ["MOM_ask_syslog_name"], "description": "This command returns the name of syslog file of current session." },
+	"80": { "prefix": "MOM_close_output_file", "body": ["MOM_close_output_file"], "description": "This extension allows you to suspend writing output to a particular file until it is opened again." },
+	"85": { "prefix": "MOM_check_out_license", "body": ["MOM_check_out_license"], "description": "Obtains Flexlm license until the end of the posting job. &lt;license&gt; is the string name of a valid license. Returns 1 (true) for success or 0 (false) for failure." },
+	"90": { "prefix": "MOM_convert_point", "body": ["MOM_convert_point"], "description": "Converts a point from a tool path position to an MCS position in machine tool coordinates. Point and vector are Tcl arrays of 3. Returns pimary and alternate solutions as Tcl lists of X, Y, Z, 4th, 5th in the variables mom_post_result for the primary and mom_post_result1 for the alternate." },
+	"95": { "prefix": "MOM_disable_address", "body": ["MOM_disable_address"], "description": "Suppresses all output for an address.  MOM_force ONCE or MOM_force ALWAYS are ignored while MOM_disable_address is active. MOM_enable_address cancels MOM_disable_address." },
+	"100": { "prefix": "MOM_display_message", "body": ["MOM_display_message"], "description": "Displays a message dialog box in NX. &lt;type&gt; is the style of the message box, I|E|W|Q, where I is info, E is error, W is warning, and Q is question. Button labels are optional. Returns the number of the button (1, 2, or 3) that the user clicks." },
+	"105": { "prefix": "MOM_do_template", "body": ["MOM_do_template"], "description": "Generate output based upon the Block Template \"template_name\".  BUFFER has the usual meaning. BUFFER will generate the output value for Block Template \"template_name\" but does not add it to the output buffer, and hence, does not output it to the output file.  CREATE will generate the value for Block Template \"template_name\" but does not output to the output buffer.  This function returns the string created as the result of the template name." },
+	"110": { "prefix": "MOM_enable_address", "body": ["MOM_enable_address"], "description": "Restores output status for an address that MOM_disable_address suppressed.  Returns output status to the initial state." },
+	"115": { "prefix": "MOM_force", "body": ["MOM_force"], "description": "The next time that a block template that contains a reference to any of the input address names is evaluated, the word that contains that address will be output regardless of its modality attribute." },
+	"120": { "prefix": "MOM_force_block", "body": ["MOM_force_block"], "description": "Example: MOM_force_block Once linear." },
+	"125": { "prefix": "MOM_incremental", "body": ["MOM_incremental"], "description": "The next time that a block template that contains a reference to any of the input address names is evaluated, the deference (increment) from the previous value is output.  If ON, then for each Address_i, always output increment.  If OFF, then for each Address_i, always output absolute." },
+	"130": { "prefix": "MOM_load_definition_file", "body": ["MOM_load_definition_file"], "description": "This will load the definition file given by filename. If data in filename (or any of its included files) matches data already loaded by previous definition files, the duplicate data is overridden by the new version. Like any TCL extension, this command may be called from any place in the TCL script." },
+	"135": { "prefix": "MOM_load_lathe_thread_cycle_params", "body": ["MOM_load_lathe_thread_cycle_params"], "description": "This command will load the parameters of a lathe threading cycle of the current operation.  It returns 1 when loading is successful otherwise 0. This command should be called after the desired CSYS is set." },
+	"140": { "prefix": "MOM_log_message", "body": ["MOM_log_message"], "description": "This function causes MOM to write a message to the syslog." },
+	"145": { "prefix": "MOM_on_event_error", "body": ["MOM_on_event_error"], "description": "If the TCL interpreter reports an error this procedure is invoked prior to raising a system error. The {_debug} procedure is invoked only if DEBUG mode is true.  Example: This procedure is invoked by NX." },
+	"150": { "prefix": "MOM_on_parse_error", "body": ["MOM_on_parse_error"], "description": "If a syntax error is found in the Definition File these procedures are invoked prior to raising a system error. The {_debug} procedure is invoked only if DEBUG mode is true." },
+	"155": { "prefix": "MOM_open_output_file", "body": ["MOM_open_output_file"], "description": "This extension allows you to redirect output to other output files.  If a file \"filename\" does not exist, a new one will be created with that file name." },
+	"160": { "prefix": "MOM_output_literal", "body": ["MOM_output_literal"], "description": "Output a list of literals and variables as a single line. If BUFFER is present then only place the string in the output buffer. Do not send it to the output yet." },
+	"165": { "prefix": "MOM_output_text", "body": ["MOM_output_text"], "description": "This extension will output a list of literals and variables as a single line, just like MOM_output_literal except that no sequence number will be output. If BUFFER is present then only place the string in the output buffer. Do not send it to the output yet." },
+	"170": { "prefix": "MOM_output_to_listing_device", "body": ["MOM_output_to_listing_device"], "description": "If running in an interactive NX session then output string to the NX listing window, otherwise do nothing." },
+	"175": { "prefix": "MOM_post_oper_path", "body": ["MOM_post_oper_path"], "description": "Postprocesses the named operation. The output file argument can be specified without a post; the default post is used. When the file name is given without a preceding path, the primary output directory will be used. When a post is specified, the output file argument SAME outputs to the active output file. Returns 1 (True) when the execution is successful, 0 (False) if it is not successful, and -1 if the post is calling itself. During execution mom_post_oper_path exists and has value 1. The called process uses the same units specifed in the Postprocess dialog box. If a post is named, the review file option and warning output setting are governed by the post that is named." },
+	"180": { "prefix": "MOM_reload_kinematics", "body": ["MOM_reload_kinematics"], "description": "Refresh the event generator with the current values of all the kinematics variables." },
+	"185": { "prefix": "MOM_reload_variable", "body": ["MOM_reload_variable"], "description": "Update the event generator with the current value of variable_name in the event handler." },
+	"190": { "prefix": "MOM_reset_sequence", "body": ["MOM_reset_sequence"], "description": "A sequence is a block template that is output at the beginning of each line. It will typically be used to output sequence numbers but it may also be used to output any block template." },
+	"195": { "prefix": "MOM_run_postprocess", "body": ["MOM_run_postprocess"], "description": "Runs a separate post process from within a postprocessor on the same operations or programs that are being postprocessed. Returns 1 (true) when the process execution is successful, 2 (false) if there is an execution error, -1 if the post is calling itself. You can call the same post that is executing, but typically you would use a separate post, such as a turbo post." },
+	"200": { "prefix": "MOM_run_user_function", "body": ["MOM_run_user_function"], "description": "This function causes MOM to call the function named entry_point_name in the shared library named shared_library_name. That function can then extend the translator from which MOM_run_user_function was called. It will do this by calling a User Function function named UF_MOM_extend_translator( param, \"extension_name\", extension_entry_point ). The param will be passed into entry_point_name as the first argument. The signature of entry_point_name is the same as ufusr. The extension_name is the name of the function as it will appear in a TCL script. The extension_entry_point is the actual address of the function to be called by the interpreter when interpreting the extension_name call." },
+	"205": { "prefix": "MOM_set_address_format", "body": ["MOM_set_address_format"], "description": "This function redefines the format to be used for the <Address Name> as <Format Name>; for outputting in a block. The &lt;Format Name&gt; must be defined in the Definition File." },
+	"210": { "prefix": "MOM_set_debug_mode", "body": ["MOM_set_debug_mode"], "description": "This will activate, deactivate, and resume the debugger. Like any TCL extension, this command may be called from any place in the TCL script.  If ON, the debugger will activate by initializing with data entered in the debugger dialog or stdout.  If OFF, the debugger will be deactivated." },
+	"215": { "prefix": "MOM_set_env_var", "body": ["MOM_set_env_var"], "description": "Defines NX environment variables. Both arguments are case sensitive. Only new variables can be set. If you attempt to override pre-existing variables, the command will fail. Variables are unset when post process ends. Returns 1 for success, new variable is created and set. Returns 0 for failure, variable cannot be created - it probably already existed." },
+	"220": { "prefix": "MOM_set_line_leader", "body": ["MOM_set_line_leader"], "description": "This function causes MOM to set the line leader to a string with the indicated status. A line leader is output as the leading character(s) of the output line (i.e., before the SEQUENCE)." },
+	"225": { "prefix": "MOM_set_seq_off", "body": ["MOM_set_seq_off"], "description": "Does not output a sequence number. Returns the sequence setting at the time the command is executed." },
+	"230": { "prefix": "MOM_set_seq_on", "body": ["MOM_set_seq_on"], "description": "Allows output of the sequence number if a SEQUENCE specifier was given in the definition file.  Return the sequence setting at the time the command is executed." },
+	"235": { "prefix": "MOM_skip_handler_to_event", "body": ["MOM_skip_handler_to_event"], "description": "This command will skip the execution of the event handler until the given event is encountered. The condition is reset at the start-of-path and when the event is met. Motion types include Engage, Approach, Firstcut, Retract, Return, Rapid, Cut, Stepover, Departure, Traversal, Sidecut, From, Gohome, and Cycle." },
+	"240": { "prefix": "MOM_suppress", "body": ["MOM_suppress"], "description": "The next time that a block template that contains a reference to any of the input address names is evaluated, the word that contains the address will not be output regardless of its modality attribute." },
+		
+		
+	"245": { "prefix": "LIB_GE_ui", "body": ["LIB_GE_ui"], "description": "Utility to create UI Nodes/Groups. UI structure elements are defined in a CONFIG object like any other property. To Create the individual UI structure elemets within that CONFIG object you can use this utility (like this you are able to define a UI element in a single, readable line. the needed Property structure will be generated for you)." },
+	"250": { "prefix": "LIB_GE_cleanup_list", "body": ["LIB_GE_cleanup_list"], "description": "This function filters all duplicates from a list and returns the adjusted list." },
+	"255": { "prefix": "LIB_GE_format_path_names", "body": ["LIB_GE_format_path_names"], "description": "This procedure may be used to format pathnames from unix format in windows<br>format and delete double backslash." },
+	"260": { "prefix": "LIB_GE_sort_value", "body": ["LIB_GE_sort_value"], "description": "This function return the smallest or biggest value out of a list." },
+	"265": { "prefix": "LIB_GE_is_path", "body": ["LIB_GE_is_path"], "description": "This function checks if a given pathname is a valid directoryname or not." },
+	"270": { "prefix": "LIB_GE_is_unc_path", "body": ["LIB_GE_is_unc_path"], "description": "This function checks if a given pathname is a valid UNC directoryname or not." },
+	"275": { "prefix": "LIB_GE_set", "body": ["LIB_GE_set"], "description": "This function sets a new global\n variable \"para1\" with the value \"para2\". Grace to this function it\\'s not necessary to define the variable with \"global\"." },
+	"280": { "prefix": "LIB_GE_lappend", "body": ["LIB_GE_lappend"], "description": "123" },
+	"285": { "prefix": "LIB_GE_ask_type_subtype", "body": ["LIB_GE_ask_type_subtype"], "description": "123" },
+	"290": { "prefix": "LIB_GE_read_expression_value", "body": ["LIB_GE_read_expression_value"], "description": "123" },
+	"295": { "prefix": "LIB_GE_message", "body": ["LIB_GE_message"], "description": "123" },
+	"300": { "prefix": "LIB_GE_truncate_line", "body": ["LIB_GE_truncate_line"], "description": "123" },
+	"305": { "prefix": "LIB_GE_MSG", "body": ["LIB_GE_MSG"], "description": "123" },
+	"310": { "prefix": "LIB_GE_string_toupper", "body": ["LIB_GE_string_toupper"], "description": "123" },
+	"315": { "prefix": "LIB_GE_string_range_toupper", "body": ["LIB_GE_string_range_toupper"], "description": "123" },
+	"320": { "prefix": "LIB_GE_replace_special_characters", "body": ["LIB_GE_replace_special_characters"], "description": "123" },
+	"325": { "prefix": "LIB_GE_comment_convert", "body": ["LIB_GE_comment_convert"], "description": "123" },
+	"330": { "prefix": "LIB_GE_error_message", "body": ["LIB_GE_error_message"], "description": "123" },
+	"335": { "prefix": "LIB_GE_abort_message", "body": ["LIB_GE_abort_message"], "description": "123" },
+	"340": { "prefix": "LIB_GE_message_dialog", "body": ["LIB_GE_message_dialog"], "description": "123" },
+	"345": { "prefix": "LIB_GE_wish", "body": ["LIB_GE_wish"], "description": "123" },
+	"350": { "prefix": "LIB_GE_read_database", "body": ["LIB_GE_read_database"], "description": "123" },
+	"355": { "prefix": "LIB_GE_copy_var_range", "body": ["LIB_GE_copy_var_range"], "description": "123" },
+	"360": { "prefix": "LIB_GE_time", "body": ["LIB_GE_time"], "description": "123" },
+	"365": { "prefix": "LIB_GE_date", "body": ["LIB_GE_date"], "description": "123" },
+	"370": { "prefix": "LIB_GE_command_buffer", "body": ["LIB_GE_command_buffer"], "description": "123" },
+	"375": { "prefix": "LIB_GE_command_buffer_output", "body": ["LIB_GE_command_buffer_output"], "description": "123" },
+	"380": { "prefix": "LIB_GE_string_append", "body": ["LIB_GE_string_append"], "description": "123" },
+	"385": { "prefix": "LIB_GE_create_json_array", "body": ["LIB_GE_create_json_array"], "description": "123" },
+	"390": { "prefix": "LIB_GE_command_buffer_edit_insert", "body": ["LIB_GE_command_buffer_edit_insert"], "description": "123" },
+	"395": { "prefix": "LIB_GE_command_buffer_edit_remove", "body": ["LIB_GE_command_buffer_edit_remove"], "description": "123" },
+	"400": { "prefix": "LIB_GE_command_buffer_edit_move", "body": ["LIB_GE_command_buffer_edit_move"], "description": "123" },
+	"405": { "prefix": "LIB_GE_command_buffer_edit_replace", "body": ["LIB_GE_command_buffer_edit_replace"], "description": "123" },
+	"410": { "prefix": "LIB_GE_command_buffer_edit_append", "body": ["LIB_GE_command_buffer_edit_append"], "description": "123" },
+	"415": { "prefix": "LIB_GE_command_buffer_edit_prepend", "body": ["LIB_GE_command_buffer_edit_prepend"], "description": "123" },
+	"420": { "prefix": "LIB_GE_snapshot", "body": ["LIB_GE_snapshot"], "description": "123" },
+	"425": { "prefix": "LIB_GE_CONF_set_property_access", "body": ["LIB_GE_CONF_set_property_access"], "description": "123" },
+	"430": { "prefix": "LIB_GE_CONF_set_property_datatype", "body": ["LIB_GE_CONF_set_property_datatype"], "description": "123" },
+	"435": { "prefix": "LIB_GE_CONF_set_property_ui", "body": ["LIB_GE_CONF_set_property_ui"], "description": "123" },
+	"440": { "prefix": "LIB_GE_CONF_add_chain", "body": ["LIB_GE_CONF_add_chain"], "description": "123" },
+	"445": { "prefix": "LIB_GE_CONF_set_property_options", "body": ["LIB_GE_CONF_set_property_options"], "description": "123" },
+	"450": { "prefix": "LIB_CONF_prop_custom_proc_body", "body": ["LIB_CONF_prop_custom_proc_body"], "description": "123" },
+	"455": { "prefix": "LIB_CONF_do_prop_custom_proc", "body": ["LIB_CONF_do_prop_custom_proc"], "description": "123" },
+	"460": { "prefix": "LIB_GE_generate_chain_selection_condition_vars", "body": ["LIB_GE_generate_chain_selection_condition_vars"], "description": "123" },
+	"465": { "prefix": "LIB_FH_format_database", "body": ["LIB_FH_format_database"], "description": "123" },
+	"470": { "prefix": "LIB_FH_create_directory", "body": ["LIB_FH_create_directory"], "description": "123" },
+	"475": { "prefix": "LIB_FH_search_path_recursively", "body": ["LIB_FH_search_path_recursively"], "description": "123" },
+	"480": { "prefix": "LIB_FH_search_file_glob", "body": ["LIB_FH_search_file_glob"], "description": "123" },
+	"485": { "prefix": "LIB_FH_file_to_list", "body": ["LIB_FH_file_to_list"], "description": "123" },
+	"490": { "prefix": "LIB_FH_file_writable", "body": ["LIB_FH_file_writable"], "description": "123" },
+	"495": { "prefix": "LIB_FH_list_to_file", "body": ["LIB_FH_list_to_file"], "description": "123" },
+	"500": { "prefix": "LIB_FH_file_to_list_line_numbers", "body": ["LIB_FH_file_to_list_line_numbers"], "description": "123" },
+	"505": { "prefix": "LIB_FH_create_file", "body": ["LIB_FH_create_file"], "description": "123" },
+	"510": { "prefix": "LIB_FH_cleanup_directory", "body": ["LIB_FH_cleanup_directory"], "description": "123" },
+	"515": { "prefix": "LIB_FH_open_file", "body": ["LIB_FH_open_file"], "description": "123" },
+	"520": { "prefix": "LIB_FH_output_literal", "body": ["LIB_FH_output_literal"], "description": "123" },
+	"525": { "prefix": "LIB_FH_escape_special_characters", "body": ["LIB_FH_escape_special_characters"], "description": "123" },
+	"530": { "prefix": "LIB_FH_reverse_escape_special_characters", "body": ["LIB_FH_reverse_escape_special_characters"], "description": "123" },
+	"535": { "prefix": "LIB_SPF_abort_postrun", "body": ["LIB_SPF_abort_postrun"], "description": "123" },
+	"540": { "prefix": "LIB_SPF_pretreatment_add_var", "body": ["LIB_SPF_pretreatment_add_var"], "description": "123" },
+	"545": { "prefix": "LIB_SPF_pt_exists", "body": ["LIB_SPF_pt_exists"], "description": "123" },
+	"550": { "prefix": "LIB_SPF_pt_exists_not_empty", "body": ["LIB_SPF_pt_exists_not_empty"], "description": "123" },
+	"555": { "prefix": "LIB_SPF_get_pretreatment_eventbased", "body": ["LIB_SPF_get_pretreatment_eventbased"], "description": "123" },
+	"560": { "prefix": "LIB_SPF_get_pretreatment", "body": ["LIB_SPF_get_pretreatment"], "description": "123" },
+	"565": { "prefix": "LIB_SPF_store_mom_vars", "body": ["LIB_SPF_store_mom_vars"], "description": "123" },
+	"570": { "prefix": "LIB_SPF_restore_mom_vars", "body": ["LIB_SPF_restore_mom_vars"], "description": "123" },
+	"580": { "prefix": "LIB_SPF_is_vector", "body": ["LIB_SPF_is_vector"], "description": "123" },
+	"585": { "prefix": "LIB_SPF_is_matrix_equal", "body": ["LIB_SPF_is_matrix_equal"], "description": "123" },
+	"590": { "prefix": "LIB_SPF_is_floating", "body": ["LIB_SPF_is_floating"], "description": "123" },
+	"595": { "prefix": "LIB_SPF_is_integer", "body": ["LIB_SPF_is_integer"], "description": "123" },
+	"600": { "prefix": "LIB_SPF_is_number", "body": ["LIB_SPF_is_number"], "description": "123" },
+	"605": { "prefix": "LIB_SPF_is_no_decimal", "body": ["LIB_SPF_is_no_decimal"], "description": "123" },
+	"610": { "prefix": "LIB_SPF_is_empty", "body": ["LIB_SPF_is_empty"], "description": "123" },
+	"615": { "prefix": "LIB_SPF_is_part_of_string", "body": ["LIB_SPF_is_part_of_string"], "description": "123" },
+	"620": { "prefix": "LIB_SPF_is_divisible", "body": ["LIB_SPF_is_divisible"], "description": "123" },
+	"625": { "prefix": "LIB_SPF_array_to_vector", "body": ["LIB_SPF_array_to_vector"], "description": "123" },
+	"630": { "prefix": "LIB_SPF_vector_to_array", "body": ["LIB_SPF_vector_to_array"], "description": "123" },
+	"635": { "prefix": "LIB_SPF_matrix_to_list", "body": ["LIB_SPF_matrix_to_list"], "description": "123" },
+	"640": { "prefix": "LIB_SPF_list_reverse", "body": ["LIB_SPF_list_reverse"], "description": "123" },
+	"645": { "prefix": "LIB_SPF_list_trim_left", "body": ["LIB_SPF_list_trim_left"], "description": "123" },
+	"650": { "prefix": "LIB_SPF_list_trim_right", "body": ["LIB_SPF_list_trim_right"], "description": "123" },
+	"655": { "prefix": "LIB_SPF_list_trim", "body": ["LIB_SPF_list_trim"], "description": "123" },
+	"660": { "prefix": "LIB_SPF_list_trim_elements", "body": ["LIB_SPF_list_trim_elements"], "description": "123" },
+	"665": { "prefix": "LIB_SPF_list_non_common_elements", "body": ["LIB_SPF_list_non_common_elements"], "description": "123" },
+	"670": { "prefix": "LIB_SPF_list_to_table", "body": ["LIB_SPF_list_to_table"], "description": "123" },
+	"675": { "prefix": "LIB_SPF_eliminate_zero", "body": ["LIB_SPF_eliminate_zero"], "description": "123" },
+	"680": { "prefix": "LIB_SPF_eliminate_zero_inline", "body": ["LIB_SPF_eliminate_zero_inline"], "description": "123" },
+	"685": { "prefix": "LIB_SPF_add_warning", "body": ["LIB_SPF_add_warning"], "description": "123" },
+	"690": { "prefix": "LIB_SPF_read_tool_attribute", "body": ["LIB_SPF_read_tool_attribute"], "description": "123" },
+	"695": { "prefix": "LIB_SPF_read_part_attribute", "body": ["LIB_SPF_read_part_attribute"], "description": "123" },
+	"700": { "prefix": "LIB_SPF_read_oper_attribute", "body": ["LIB_SPF_read_oper_attribute"], "description": "123" },
+	"705": { "prefix": "LIB_SPF_read_programview_attribute", "body": ["LIB_SPF_read_programview_attribute"], "description": "123" },
+	"710": { "prefix": "LIB_SPF_extract_udecode", "body": ["LIB_SPF_extract_udecode"], "description": "123" },
+	"715": { "prefix": "LIB_SPF_round", "body": ["LIB_SPF_round"], "description": "123" },
+	"720": { "prefix": "EQ_is_equal", "body": ["EQ_is_equal"], "description": "123" },
+	"725": { "prefix": "EQ_is_ge", "body": ["EQ_is_ge"], "description": "123" },
+	"730": { "prefix": "EQ_is_gt", "body": ["EQ_is_gt"], "description": "123" },
+	"735": { "prefix": "EQ_is_le", "body": ["EQ_is_le"], "description": "123" },
+	"740": { "prefix": "EQ_is_lt", "body": ["EQ_is_lt"], "description": "123" },
+	"745": { "prefix": "EQ_is_zero", "body": ["EQ_is_zero"], "description": "123" },
+	"750": { "prefix": "VEC3_add", "body": ["VEC3_add"], "description": "123" },
+	"755": { "prefix": "VEC3_cross", "body": ["VEC3_cross"], "description": "123" },
+	"760": { "prefix": "VEC3_dot", "body": ["VEC3_dot"], "description": "123" },
+	"765": { "prefix": "VEC3_dot_A", "body": ["VEC3_dot_A"], "description": "123" },
+	"770": { "prefix": "VEC3_init", "body": ["VEC3_init"], "description": "123" },
+	"775": { "prefix": "VEC3_init_s", "body": ["VEC3_init_s"], "description": "123" },
+	"780": { "prefix": "VEC3_is_equal", "body": ["VEC3_is_equal"], "description": "123" },
+	"785": { "prefix": "VEC3_is_zero", "body": ["VEC3_is_zero"], "description": "123" },
+	"790": { "prefix": "VEC3_mag", "body": ["VEC3_mag"], "description": "123" },
+	"795": { "prefix": "VEC3_negate", "body": ["VEC3_negate"], "description": "123" },
+	"800": { "prefix": "VEC3_scale", "body": ["VEC3_scale"], "description": "123" },
+	"805": { "prefix": "VEC3_sub", "body": ["VEC3_sub"], "description": "123" },
+	"810": { "prefix": "VEC3_unitize", "body": ["VEC3_unitize"], "description": "123" },
+	"815": { "prefix": "VEC3_rotate_arbitary_axis", "body": ["VEC3_rotate_arbitary_axis"], "description": "123" },
+	"820": { "prefix": "VEC3_dist_point_line", "body": ["VEC3_dist_point_line"], "description": "123" },
+	"825": { "prefix": "VEC3_angle_3points", "body": ["VEC3_angle_3points"], "description": "123" },
+	"830": { "prefix": "VEC3_angle_between", "body": ["VEC3_angle_between"], "description": "123" },
+	"835": { "prefix": "VEC3_is_parallel", "body": ["VEC3_is_parallel"], "description": "123" },
+	"840": { "prefix": "LIB_SPF_mcs_vector", "body": ["LIB_SPF_mcs_vector"], "description": "123" },
+	"845": { "prefix": "MTX3_init_x_y_z", "body": ["MTX3_init_x_y_z"], "description": "123" },
+	"850": { "prefix": "MTX3_is_equal", "body": ["MTX3_is_equal"], "description": "123" },
+	"855": { "prefix": "MTX3_multiply", "body": ["MTX3_multiply"], "description": "123" },
+	"860": { "prefix": "MTX3_transpose", "body": ["MTX3_transpose"], "description": "123" },
+	"865": { "prefix": "MTX3_scale", "body": ["MTX3_scale"], "description": "123" },
+	"870": { "prefix": "MTX3_sub", "body": ["MTX3_sub"], "description": "123" },
+	"875": { "prefix": "MTX3_add", "body": ["MTX3_add"], "description": "123" },
+	"880": { "prefix": "MTX3_vec_multiply", "body": ["MTX3_vec_multiply"], "description": "123" },
+	"885": { "prefix": "MTX3_x", "body": ["MTX3_x"], "description": "123" },
+	"890": { "prefix": "MTX3_y", "body": ["MTX3_y"], "description": "123" },
+	"895": { "prefix": "MTX3_z", "body": ["MTX3_z"], "description": "123" },
+	"900": { "prefix": "VMOV", "body": ["VMOV"], "description": "123" },
+	"905": { "prefix": "hiset", "body": ["hiset"], "description": "123" },
+	"910": { "prefix": "isset", "body": ["isset"], "description": "123" },
+	"915": { "prefix": "OUTPUT_adr", "body": ["OUTPUT_adr"], "description": "123" },
+	"920": { "prefix": "LIB_SPF_rad_to_deg", "body": ["LIB_SPF_rad_to_deg"], "description": "123" },
+	"925": { "prefix": "LIB_SPF_deg_to_rad", "body": ["LIB_SPF_deg_to_rad"], "description": "123" },
+	"930": { "prefix": "LIB_SPF_convert_decimal_to_binary", "body": ["LIB_SPF_convert_decimal_to_binary"], "description": "123" },
+	"935": { "prefix": "LIB_SPF_convert_hex_to_string", "body": ["LIB_SPF_convert_hex_to_string"], "description": "123" },
+	"940": { "prefix": "LIB_SPF_convert_to_md5", "body": ["LIB_SPF_convert_to_md5"], "description": "123" },
+	"945": { "prefix": "LIB_SPF_convert_point", "body": ["LIB_SPF_convert_point"], "description": "123" },
+	"950": { "prefix": "LIB_SPF_convert_binary_to_decimal", "body": ["LIB_SPF_convert_binary_to_decimal"], "description": "123" },
+	"955": { "prefix": "LIB_SPF_exists_address", "body": ["LIB_SPF_exists_address"], "description": "123" },
+	"960": { "prefix": "LIB_SPF_ask_address", "body": ["LIB_SPF_ask_address"], "description": "123" },
+	"965": { "prefix": "LIB_SPF_exists_format", "body": ["LIB_SPF_exists_format"], "description": "123" },
+	"970": { "prefix": "LIB_SPF_ask_format", "body": ["LIB_SPF_ask_format"], "description": "123" },
+	"975": { "prefix": "LIB_SPF_exists_block_template", "body": ["LIB_SPF_exists_block_template"], "description": "123" },
+	"980": { "prefix": "LIB_SPF_ask_block_template", "body": ["LIB_SPF_ask_block_template"], "description": "123" },
+	"985": { "prefix": "LIB_SPF_call_cycle", "body": ["LIB_SPF_call_cycle"], "description": "123" },
+	"990": { "prefix": "LIB_SPF_modulo_sign", "body": ["LIB_SPF_modulo_sign"], "description": "123" },
+	"995": { "prefix": "LIB_SPF_atan_polar", "body": ["LIB_SPF_atan_polar"], "description": "123" },
+	"1000": { "prefix": "LIB_SPF_ask_delta_4th_or_5th", "body": ["LIB_SPF_ask_delta_4th_or_5th"], "description": "123" },
+	"1005": { "prefix": "LIB_SPF_ask_smaller_of_4th_5th", "body": ["LIB_SPF_ask_smaller_of_4th_5th"], "description": "123" },
+	"1010": { "prefix": "LIB_SPF_set_op_tool_param_condition", "body": ["LIB_SPF_set_op_tool_param_condition"], "description": "123" },
+	"1015": { "prefix": "LIB_SPF_execute_op_tool_param_condition", "body": ["LIB_SPF_execute_op_tool_param_condition"], "description": "123" },
+	"1020": { "prefix": "LIB_SPF_get_partnname", "body": ["LIB_SPF_get_partnname"], "description": "123" },
+	"1025": { "prefix": "LIB_SPF_reset_motions_to_zero", "body": ["LIB_SPF_reset_motions_to_zero"], "description": "123" },
+	"1030": { "prefix": "LIB_DC_complete_formatline", "body": ["LIB_DC_complete_formatline"], "description": "123" },
+	"1035": { "prefix": "LIB_DC_format_string", "body": ["LIB_DC_format_string"], "description": "123" },
+	"1040": { "prefix": "LIB_DC_check_variable", "body": ["LIB_DC_check_variable"], "description": "123" },
+	"1045": { "prefix": "LIB_DC_time_format", "body": ["LIB_DC_time_format"], "description": "123" },
+	"1050": { "prefix": "LIB_DC_escape_string", "body": ["LIB_DC_escape_string"], "description": "123" },
+	"1055": { "prefix": "LIB_DC_ellipsis_character", "body": ["LIB_DC_ellipsis_character"], "description": "123" },
+	"1060": { "prefix": "LIB_RETURN_move", "body": ["LIB_RETURN_move"], "description": "123" },
+	"1065": { "prefix": "LIB_main_origin_call", "body": ["LIB_main_origin_call"], "description": "123" },
+	"1070": { "prefix": "LIB_ISV_ini_get_env_dir_info", "body": ["LIB_ISV_ini_get_env_dir_info"], "description": "123" },
+	"1075": { "prefix": "LIB_output_local_zero_offset", "body": ["LIB_output_local_zero_offset"], "description": "123" },
+	"1080": { "prefix": "LIB_start_of_program_blk_form", "body": ["LIB_start_of_program_blk_form"], "description": "123" },
+	"1085": { "prefix": "LIB_CTRL_custom_cycle800_auto_set_kin", "body": ["LIB_CTRL_custom_cycle800_auto_set_kin"], "description": "123" },
+	
+	
+	"2000": { "prefix": "mom_kin_4th_axis_ang_offset", "body": ["mom_kin_4th_axis_ang_offset"], "description": "Defines an angular value that is added to the fourth axis rotary angle. This is used when a tool axis of (0,0,1) does not result in a position of zero position." },
+	"2005": { "prefix": "mom_kin_4th_axis_center_offset", "body": ["mom_kin_4th_axis_center_offset"], "description": "For four and five axis milling machines.\nDefines the distance from the center of the rotary table to machine tool zero position." },
+	"2010": { "prefix": "mom_kin_4th_axis_direction", "body": ["mom_kin_4th_axis_direction"], "description": "Defines how the fourth axis rotary positions will be output.\nThe mom variable mom_out_angle_pos(0) will contain the rotary value.\nFor example move table or head from 90 to 45 degrees.\nMAGNITUDE_DETERMINES_DIRECTION would output: Shortest 45, CLW 405, CCLW 45.;\nSIGN_DETERMINES_DIRECTION would output: Shortest -45, CLW 45, CCLW -45." },
+	"2015": { "prefix": "mom_kin_4th_axis_incr_switch", "body": ["mom_kin_4th_axis_incr_switch"], "description": "Determines whether the fourth axis rotary coordinates will be incremental or absolute.\nThis value is toggled ON, OFF in the machine tool dialog in Post Builder.\nON (incremental) or OFF (absolute)" },
+	"2020": { "prefix": "mom_kin_4th_axis_leader", "body": ["mom_kin_4th_axis_leader"], "description": "The leader for the fourth axis.\nThis is typically A, B or C." },
+	"2025": { "prefix": "mom_kin_4th_axis_limit_action", "body": ["mom_kin_4th_axis_limit_action"], "description": "Defines the action that takes place when there is a rotary axis violation for the fourth axis.\nThe options are to output a warning or to retract to a clearance plane, rotate the axis, and re-engage to the part." },
+	"2030": { "prefix": "mom_kin_4th_axis_max_limit", "body": ["mom_kin_4th_axis_max_limit"], "description": "The maximum rotary position of the fourth axis." },
+	"2035": { "prefix": "mom_kin_4th_axis_min_incr", "body": ["mom_kin_4th_axis_min_incr"], "description": "Defines the resolution of your table or head.\nEnter one if your table or head positions to one degree increments.\nFor full contouring axis, enter 0.001." },
+	"2040": { "prefix": "mom_kin_4th_axis_min_limit", "body": ["mom_kin_4th_axis_min_limit"], "description": "The minimum rotary position of the fourth axis." },
+	"2045": { "prefix": "mom_kin_4th_axis_plane", "body": ["mom_kin_4th_axis_plane"], "description": "123" },
+	"2050": { "prefix": "mom_kin_4th_axis_rotation", "body": ["mom_kin_4th_axis_rotation"], "description": "123" },
+	"2055": { "prefix": "mom_kin_4th_axis_type", "body": ["mom_kin_4th_axis_type"], "description": "123" },
+	"2060": { "prefix": "mom_kin_4th_axis_zero", "body": ["mom_kin_4th_axis_zero"], "description": "123" },
+	"2065": { "prefix": "mom_kin_5th_axis_ang_offset", "body": ["mom_kin_5th_axis_ang_offset"], "description": "123" },
+	"2070": { "prefix": "mom_kin_5th_axis_center_offset", "body": ["mom_kin_5th_axis_center_offset"], "description": "123" },
+	"2075": { "prefix": "mom_kin_5th_axis_direction", "body": ["mom_kin_5th_axis_direction"], "description": "123" },
+	"2080": { "prefix": "mom_kin_5th_axis_incr_switch", "body": ["mom_kin_5th_axis_incr_switch"], "description": "123" },
+	"2085": { "prefix": "mom_kin_5th_axis_leader", "body": ["mom_kin_5th_axis_leader"], "description": "123" },
+	"2090": { "prefix": "mom_kin_5th_axis_limit_action", "body": ["mom_kin_5th_axis_limit_action"], "description": "123" },
+	"2095": { "prefix": "mom_kin_5th_axis_max_limit", "body": ["mom_kin_5th_axis_max_limit"], "description": "123" },
+	"3000": { "prefix": "mom_kin_5th_axis_min_incr", "body": ["mom_kin_5th_axis_min_incr"], "description": "123" },
+	"3015": { "prefix": "mom_kin_5th_axis_min_limit", "body": ["mom_kin_5th_axis_min_limit"], "description": "123" },
+	"3020": { "prefix": "mom_kin_5th_axis_plane", "body": ["mom_kin_5th_axis_plane"], "description": "123" },
+	"3025": { "prefix": "mom_kin_5th_axis_rotation", "body": ["mom_kin_5th_axis_rotation"], "description": "123" },
+	"3030": { "prefix": "mom_kin_5th_axis_type", "body": ["mom_kin_5th_axis_type"], "description": "123" },
+	"3035": { "prefix": "mom_kin_5th_axis_zero", "body": ["mom_kin_5th_axis_zero"], "description": "123" },
+	"3040": { "prefix": "mom_kin_arc_output_mode", "body": ["mom_kin_arc_output_mode"], "description": "123" },
+	"3045": { "prefix": "mom_kin_arc_valid_planes", "body": ["mom_kin_arc_valid_planes"], "description": "123" },
+	"3050": { "prefix": "mom_kin_caxis_rotary_pos", "body": ["mom_kin_caxis_rotary_pos"], "description": "123" },
+	"3055": { "prefix": "mom_kin_clamp_time", "body": ["mom_kin_clamp_time"], "description": "123" },
+	"3060": { "prefix": "mom_kin_coordinate_system_type", "body": ["mom_kin_coordinate_system_type"], "description": "123" },
+	"3065": { "prefix": "mom_kin_dependent_head", "body": ["mom_kin_dependent_head"], "description": "123" },
+	"3070": { "prefix": "mom_kin_helical_arc_output_mode", "body": ["mom_kin_helical_arc_output_mode"], "description": "123" },
+	"3075": { "prefix": "mom_kin_holder1_offset_x", "body": ["mom_kin_holder1_offset_x"], "description": "123" },
+	"3080": { "prefix": "mom_kin_holder1_offset_y", "body": ["mom_kin_holder1_offset_y"], "description": "123" },
+	"3085": { "prefix": "mom_kin_holder1_offset_z", "body": ["mom_kin_holder1_offset_z"], "description": "123" },
+	"3090": { "prefix": "mom_kin_holder1_orientation", "body": ["mom_kin_holder1_orientation"], "description": "123" },
+	"3095": { "prefix": "mom_kin_holder2_offset_x", "body": ["mom_kin_holder2_offset_x"], "description": "123" },
+	"4000": { "prefix": "mom_kin_holder2_offset_y", "body": ["mom_kin_holder2_offset_y"], "description": "123" },
+	"4005": { "prefix": "mom_kin_holder2_offset_z", "body": ["mom_kin_holder2_offset_z"], "description": "123" },
+	"4010": { "prefix": "mom_kin_holder2_orientation", "body": ["mom_kin_holder2_orientation"], "description": "123" },
+	"4015": { "prefix": "mom_kin_holder3_offset_x", "body": ["mom_kin_holder3_offset_x"], "description": "123" },
+	"4020": { "prefix": "mom_kin_holder3_offset_y", "body": ["mom_kin_holder3_offset_y"], "description": "123" },
+	"4025": { "prefix": "mom_kin_holder3_offset_z", "body": ["mom_kin_holder3_offset_z"], "description": "123" },
+	"4030": { "prefix": "mom_kin_holder3_orientation", "body": ["mom_kin_holder3_orientation"], "description": "123" },
+	"4035": { "prefix": "mom_kin_holder4_offset_x", "body": ["mom_kin_holder4_offset_x"], "description": "123" },
+	"4040": { "prefix": "mom_kin_holder4_offset_y", "body": ["mom_kin_holder4_offset_y"], "description": "123" },
+	"4045": { "prefix": "mom_kin_holder4_offset_z", "body": ["mom_kin_holder4_offset_z"], "description": "123" },
+	"4050": { "prefix": "mom_kin_holder4_orientation", "body": ["mom_kin_holder4_orientation"], "description": "123" },
+	"4055": { "prefix": "mom_kin_holder5_offset_x", "body": ["mom_kin_holder5_offset_x"], "description": "123" },
+	"4060": { "prefix": "mom_kin_holder5_offset_y", "body": ["mom_kin_holder5_offset_y"], "description": "123" },
+	"4065": { "prefix": "mom_kin_holder5_offset_z", "body": ["mom_kin_holder5_offset_z"], "description": "123" },
+	"4070": { "prefix": "mom_kin_holder5_orientation", "body": ["mom_kin_holder5_orientation"], "description": "123" },
+	"4075": { "prefix": "mom_kin_holder6_offset_x", "body": ["mom_kin_holder6_offset_x"], "description": "123" },
+	"4080": { "prefix": "mom_kin_holder6_offset_y", "body": ["mom_kin_holder6_offset_y"], "description": "123" },
+	"4085": { "prefix": "mom_kin_holder6_offset_z", "body": ["mom_kin_holder6_offset_z"], "description": "123" },
+	"4090": { "prefix": "mom_kin_holder6_orientation", "body": ["mom_kin_holder6_orientation"], "description": "123" },
+	"4095": { "prefix": "mom_kin_iks_usage", "body": ["mom_kin_iks_usage"], "description": "123" },
+	"4100": { "prefix": "mom_kin_ind_to_dependent_head_x", "body": ["mom_kin_ind_to_dependent_head_x"], "description": "123" },
+	"4105": { "prefix": "mom_kin_ind_to_dependent_head_z", "body": ["mom_kin_ind_to_dependent_head_z"], "description": "123" },
+	"4110": { "prefix": "mom_kin_independent_head", "body": ["mom_kin_independent_head"], "description": "123" },
+	"4115": { "prefix": "mom_kin_is_turbo_output", "body": ["mom_kin_is_turbo_output"], "description": "123" },
+	"4120": { "prefix": "mom_kin_linearization_flag", "body": ["mom_kin_linearization_flag"], "description": "123" },
+	"4125": { "prefix": "mom_kin_linearization_tol", "body": ["mom_kin_linearization_tol"], "description": "123" },
+	"4130": { "prefix": "mom_kin_machine_resolution", "body": ["mom_kin_machine_resolution"], "description": "123" },
+	"4135": { "prefix": "mom_kin_machine_type", "body": ["mom_kin_machine_type"], "description": "123" },
+	"4140": { "prefix": "mom_kin_max_arc_radius", "body": ["mom_kin_max_arc_radius"], "description": "123" },
+	"4145": { "prefix": "mom_kin_max_fpm", "body": ["mom_kin_max_fpm"], "description": "123" },
+	"4150": { "prefix": "mom_kin_max_fpr", "body": ["mom_kin_max_fpr"], "description": "123" },
+	"4155": { "prefix": "mom_kin_min_arc_length", "body": ["mom_kin_min_arc_length"], "description": "123" },
+	"4160": { "prefix": "mom_kin_min_fpm", "body": ["mom_kin_min_fpm"], "description": "123" },
+	"4165": { "prefix": "mom_kin_min_fpr", "body": ["mom_kin_min_fpr"], "description": "123" },
+	"4170": { "prefix": "mom_kin_output_unit", "body": ["mom_kin_output_unit"], "description": "123" },
+	"4175": { "prefix": "mom_kin_pivot_gauge_offset", "body": ["mom_kin_pivot_gauge_offset"], "description": "123" },
+	"4180": { "prefix": "mom_kin_rapid_feed_rate", "body": ["mom_kin_rapid_feed_rate"], "description": "123" },
+	"4185": { "prefix": "mom_kin_read_ahead_next_motion", "body": ["mom_kin_read_ahead_next_motion"], "description": "123" },
+	"4190": { "prefix": "mom_kin_reengage_distance", "body": ["mom_kin_reengage_distance"], "description": "123" },
+	"4195": { "prefix": "mom_kin_retract_plane", "body": ["mom_kin_retract_plane"], "description": "123" },
+	"4200": { "prefix": "mom_kin_rotary_reengage_feedrate", "body": ["mom_kin_rotary_reengage_feedrate"], "description": "123" },
+	"4205": { "prefix": "mom_kin_spindle_axis", "body": ["mom_kin_spindle_axis"], "description": "123" },
+	"4210": { "prefix": "mom_kin_tool_change_time", "body": ["mom_kin_tool_change_time"], "description": "123" },
+	"4215": { "prefix": "mom_kin_tool_tracking_height", "body": ["mom_kin_tool_tracking_height"], "description": "123" },
+	"4220": { "prefix": "mom_kin_wire_tilt_output_type", "body": ["mom_kin_wire_tilt_output_type"], "description": "123" },
+	"4225": { "prefix": "mom_kin_x_axis_limit", "body": ["mom_kin_x_axis_limit"], "description": "123" },
+	"4230": { "prefix": "mom_kin_y_axis_limit", "body": ["mom_kin_y_axis_limit"], "description": "123" },
+	"4235": { "prefix": "mom_kin_z_axis_limit", "body": ["mom_kin_z_axis_limit"], "description": "123" },
+	"4240": { "prefix": "MOM_update_kinematics", "body": ["MOM_update_kinematics"], "description": "123" },
+	"4245": { "prefix": "mom_auxfun", "body": ["mom_auxfun"], "description": "123" },
+	"4250": { "prefix": "mom_auxfun_text", "body": ["mom_auxfun_text"], "description": "123" },
+	"4255": { "prefix": "mom_auxfun_text_defined", "body": ["mom_auxfun_text_defined"], "description": "123" },
+	"4260": { "prefix": "mom_axis_position", "body": ["mom_axis_position"], "description": "123" },
+	"4265": { "prefix": "mom_axis_position_value", "body": ["mom_axis_position_value"], "description": "123" },
+	"4270": { "prefix": "mom_axis_position_value_defined", "body": ["mom_axis_position_value_defined"], "description": "123" },
+	"4275": { "prefix": "mom_clamp_axis", "body": ["mom_clamp_axis"], "description": "123" },
+	"4280": { "prefix": "mom_clamp_status", "body": ["mom_clamp_status"], "description": "123" },
+	"4285": { "prefix": "mom_clamp_text", "body": ["mom_clamp_text"], "description": "123" },
+	"4290": { "prefix": "mom_clamp_text_defined", "body": ["mom_clamp_text_defined"], "description": "123" },
+	"4295": { "prefix": "mom_coolant_mode", "body": ["mom_coolant_mode"], "description": "123" },
+	"4300": { "prefix": "mom_coolant_text", "body": ["mom_coolant_text"], "description": "123" },
+	"4305": { "prefix": "mom_coolant_text_defined", "body": ["mom_coolant_text_defined"], "description": "123" },
+	"4310": { "prefix": "mom_coordinate_output_mode", "body": ["mom_coordinate_output_mode"], "description": "123" },
+	"4315": { "prefix": "mom_cut_wire_text", "body": ["mom_cut_wire_text"], "description": "123" },
+	"4320": { "prefix": "mom_cut_wire_text_defined", "body": ["mom_cut_wire_text_defined"], "description": "123" },
+	"4325": { "prefix": "mom_cutcom_adjust_register", "body": ["mom_cutcom_adjust_register"], "description": "123" },
+	"4330": { "prefix": "mom_cutcom_adjust_register_defined", "body": ["mom_cutcom_adjust_register_defined"], "description": "123" },
+	"4335": { "prefix": "mom_cutcom_angle", "body": ["mom_cutcom_angle"], "description": "123" },
+	"4340": { "prefix": "mom_cutcom_distance", "body": ["mom_cutcom_distance"], "description": "123" },
+	"4345": { "prefix": "mom_cutcom_mode", "body": ["mom_cutcom_mode"], "description": "123" },
+	"4350": { "prefix": "mom_cutcom_plane", "body": ["mom_cutcom_plane"], "description": "123" },
+	"4355": { "prefix": "mom_cutcom_plane_output_flag", "body": ["mom_cutcom_plane_output_flag"], "description": "123" },
+	"4360": { "prefix": "mom_cutcom_register", "body": ["mom_cutcom_register"], "description": "123" },
+	"4365": { "prefix": "mom_cutcom_register_output_flag", "body": ["mom_cutcom_register_output_flag"], "description": "123" },
+	"4370": { "prefix": "mom_cutcom_text", "body": ["mom_cutcom_text"], "description": "123" },
+	"4375": { "prefix": "mom_cutcom_text_defined", "body": ["mom_cutcom_text_defined"], "description": "123" },
+	"4380": { "prefix": "mom_cutcom_type", "body": ["mom_cutcom_type"], "description": "123" },
+	"4385": { "prefix": "mom_def_sequence_frequency", "body": ["mom_def_sequence_frequency"], "description": "123" },
+	"4390": { "prefix": "mom_def_sequence_increment", "body": ["mom_def_sequence_increment"], "description": "123" },
+	"4395": { "prefix": "mom_def_sequence_maximum", "body": ["mom_def_sequence_maximum"], "description": "123" },
+	"4400": { "prefix": "mom_def_sequence_start", "body": ["mom_def_sequence_start"], "description": "123" },
+	"4405": { "prefix": "mom_delay_mode", "body": ["mom_delay_mode"], "description": "123" },
+	"4410": { "prefix": "mom_delay_revs", "body": ["mom_delay_revs"], "description": "123" },
+	"4415": { "prefix": "mom_delay_text", "body": ["mom_delay_text"], "description": "123" },
+	"4420": { "prefix": "mom_delay_text_defined", "body": ["mom_delay_text_defined"], "description": "123" },
+	"4425": { "prefix": "mom_delay_value", "body": ["mom_delay_value"], "description": "123" },
+	"4430": { "prefix": "mom_flush_guides", "body": ["mom_flush_guides"], "description": "123" },
+	"4435": { "prefix": "mom_flush_pressure", "body": ["mom_flush_pressure"], "description": "123" },
+	"4440": { "prefix": "mom_flush_register", "body": ["mom_flush_register"], "description": "123" },
+	"4445": { "prefix": "mom_flush_tank", "body": ["mom_flush_tank"], "description": "123" },
+	"4450": { "prefix": "mom_flush_tank_text", "body": ["mom_flush_tank_text"], "description": "123" },
+	"4455": { "prefix": "mom_flush_tank_text_defined", "body": ["mom_flush_tank_text_defined"], "description": "123" },
+	"4460": { "prefix": "mom_head_name", "body": ["mom_head_name"], "description": "123" },
+	"4465": { "prefix": "mom_head_name_defined", "body": ["mom_head_name_defined"], "description": "123" },
+	"4470": { "prefix": "mom_head_text", "body": ["mom_head_text"], "description": "123" },
+	"4475": { "prefix": "mom_head_text_defined", "body": ["mom_head_text_defined"], "description": "123" },
+	"4480": { "prefix": "mom_head_type", "body": ["mom_head_type"], "description": "123" },
+	"4485": { "prefix": "mom_load_tool_number_defined", "body": ["mom_load_tool_number_defined"], "description": "123" },
+	"4490": { "prefix": "mom_lock_axis", "body": ["mom_lock_axis"], "description": "123" },
+	"4495": { "prefix": "mom_lock_axis_plane", "body": ["mom_lock_axis_plane"], "description": "123" },
+	"4500": { "prefix": "mom_lock_axis_value", "body": ["mom_lock_axis_value"], "description": "123" },
+	"4505": { "prefix": "mom_lock_axis_value_defined", "body": ["mom_lock_axis_value_defined"], "description": "123" },
+	"4510": { "prefix": "mom_modes_text", "body": ["mom_modes_text"], "description": "123" },
+	"4515": { "prefix": "mom_modes_text_defined", "body": ["mom_modes_text_defined"], "description": "123" },
+	"4520": { "prefix": "mom_number_of_ranges", "body": ["mom_number_of_ranges"], "description": "123" },
+	"4525": { "prefix": "mom_operator_message", "body": ["mom_operator_message"], "description": "123" },
+	"4530": { "prefix": "mom_operator_message_defined", "body": ["mom_operator_message_defined"], "description": "123" },
+	"4535": { "prefix": "mom_opskip_text", "body": ["mom_opskip_text"], "description": "123" },
+	"4540": { "prefix": "mom_opskip_text_defined", "body": ["mom_opskip_text_defined"], "description": "123" },
+	"4545": { "prefix": "mom_opstop_text", "body": ["mom_opstop_text"], "description": "123" },
+	"4550": { "prefix": "mom_opstop_text_defined", "body": ["mom_opstop_text_defined"], "description": "123" },
+	"4555": { "prefix": "mom_origin", "body": ["mom_origin"], "description": "123" },
+	"4560": { "prefix": "mom_origin_text", "body": ["mom_origin_text"], "description": "123" },
+	"4565": { "prefix": "mom_origin_text_defined", "body": ["mom_origin_text_defined"], "description": "123" },
+	"4570": { "prefix": "mom_overide_oper_param", "body": ["mom_overide_oper_param"], "description": "123" },
+	"4575": { "prefix": "mom_parallel_to_axis", "body": ["mom_parallel_to_axis"], "description": "123" },
+	"4580": { "prefix": "mom_power_text", "body": ["mom_power_text"], "description": "123" },
+	"4585": { "prefix": "mom_power_text_defined", "body": ["mom_power_text_defined"], "description": "123" },
+	"4590": { "prefix": "mom_power_value", "body": ["mom_power_value"], "description": "123" },
+	"4595": { "prefix": "mom_pprint", "body": ["mom_pprint"], "description": "123" },
+	"4600": { "prefix": "mom_pprint_defined", "body": ["mom_pprint_defined"], "description": "123" },
+	"4605": { "prefix": "mom_prefun", "body": ["mom_prefun"], "description": "123" },
+	"4610": { "prefix": "mom_prefun_text", "body": ["mom_prefun_text"], "description": "123" },
+	"4615": { "prefix": "mom_prefun_text_defined", "body": ["mom_prefun_text_defined"], "description": "123" },
+	"4620": { "prefix": "mom_rotate_axis_type", "body": ["mom_rotate_axis_type"], "description": "123" },
+	"4625": { "prefix": "mom_rotation_angle", "body": ["mom_rotation_angle"], "description": "123" },
+	"4630": { "prefix": "mom_rotation_angle_defined", "body": ["mom_rotation_angle_defined"], "description": "123" },
+	"4635": { "prefix": "mom_rotation_direction", "body": ["mom_rotation_direction"], "description": "123" },
+	"4640": { "prefix": "mom_rotation_mode", "body": ["mom_rotation_mode"], "description": "123" },
+	"4645": { "prefix": "mom_rotation_reference_mode", "body": ["mom_rotation_reference_mode"], "description": "123" },
+	"4650": { "prefix": "mom_rotation_text", "body": ["mom_rotation_text"], "description": "123" },
+	"4655": { "prefix": "mom_rotation_text_defined", "body": ["mom_rotation_text_defined"], "description": "123" },
+	"4660": { "prefix": "mom_seqnum", "body": ["mom_seqnum"], "description": "123" },
+	"4665": { "prefix": "mom_sequence_frequency", "body": ["mom_sequence_frequency"], "description": "123" },
+	"4670": { "prefix": "mom_sequence_increment", "body": ["mom_sequence_increment"], "description": "123" },
+	"4675": { "prefix": "mom_sequence_mode", "body": ["mom_sequence_mode"], "description": "123" },
+	"4680": { "prefix": "mom_sequence_number", "body": ["mom_sequence_number"], "description": "123" },
+	"4685": { "prefix": "mom_sequence_text", "body": ["mom_sequence_text"], "description": "123" },
+	"4690": { "prefix": "mom_sequence_text_defined", "body": ["mom_sequence_text_defined"], "description": "123" },
+	"4695": { "prefix": "mom_spindle_direction", "body": ["mom_spindle_direction"], "description": "123" },
+	"4700": { "prefix": "mom_spindle_maximum_rpm", "body": ["mom_spindle_maximum_rpm"], "description": "123" },
+	"4705": { "prefix": "mom_spindle_maximum_rpm_defined", "body": ["mom_spindle_maximum_rpm_defined"], "description": "123" },
+	"4710": { "prefix": "mom_spindle_mode", "body": ["mom_spindle_mode"], "description": "123" },
+	"4715": { "prefix": "mom_spindle_range", "body": ["mom_spindle_range"], "description": "123" },
+	"4720": { "prefix": "mom_spindle_range_defined", "body": ["mom_spindle_range_defined"], "description": "123" },
+	"4725": { "prefix": "mom_spindle_rpm", "body": ["mom_spindle_rpm"], "description": "123" },
+	"4730": { "prefix": "mom_spindle_speed", "body": ["mom_spindle_speed"], "description": "123" },
+	"4735": { "prefix": "mom_spindle_speed_defined", "body": ["mom_spindle_speed_defined"], "description": "123" },
+	"4740": { "prefix": "mom_spindle_text", "body": ["mom_spindle_text"], "description": "123" },
+	"4745": { "prefix": "mom_spindle_text_defined", "body": ["mom_spindle_text_defined"], "description": "123" },
+	"4750": { "prefix": "mom_stop_text", "body": ["mom_stop_text"], "description": "123" },
+	"4755": { "prefix": "mom_stop_text_defined", "body": ["mom_stop_text_defined"], "description": "123" },
+	"4760": { "prefix": "mom_tool_adj_reg_defined", "body": ["mom_tool_adj_reg_defined"], "description": "123" },
+	"4765": { "prefix": "mom_tool_adjust_register", "body": ["mom_tool_adjust_register"], "description": "123" },
+	"4770": { "prefix": "mom_tool_change_type", "body": ["mom_tool_change_type"], "description": "123" },
+	"4775": { "prefix": "mom_tool_head", "body": ["mom_tool_head"], "description": "123" },
+	"4780": { "prefix": "mom_tool_number", "body": ["mom_tool_number"], "description": "123" },
+	"4785": { "prefix": "mom_tool_use", "body": ["mom_tool_use"], "description": "123" },
+	"4790": { "prefix": "mom_translate", "body": ["mom_translate"], "description": "123" },
+	"4795": { "prefix": "mom_work_coordinate_number", "body": ["mom_work_coordinate_number"], "description": "123" }
+	
+}
