@@ -1,0 +1,2900 @@
+{
+    "MOM_abort": {
+        "prefix": "MOM_abort",
+        "body": [
+            "MOM_abort"
+        ],
+        "description": "This function causes MOM to terminate with an error  message. For example: MOM_abort \"Error occurred. Postprocessing has been aborted.\". MOM_abort <message>"
+    },
+    "MOM_abort_event": {
+        "prefix": "MOM_abort_event",
+        "body": [
+            "MOM_abort_event"
+        ],
+        "description": "This command immediately aborts the current event and returns processing control back to NX.  Use this command if you do not want to return to a calling procedure.. MOM_abort_event <message>"
+    },
+    "MOM_add_to_address_buffer": {
+        "prefix": "MOM_add_to_address_buffer",
+        "body": [
+            "MOM_add_to_address_buffer"
+        ],
+        "description": "Depending on the start/end attribute specified, this extension will add \"value(s)\" to either the address start buffer or the address end buffer. Each time that this extension is called, it adds to the specified buffer.  When the contents of the address are sent to the output buffer, the contents of the address start buffer will precede it and the contents of the end buffer will go after it.  The address start buffer and the address end buffer are cleared once the they have been sent to the output buffer.. MOM_add_to_address_buffer <address name> <start|end> <value>"
+    },
+    "MOM_add_to_block_buffer": {
+        "prefix": "MOM_add_to_block_buffer",
+        "body": [
+            "MOM_add_to_block_buffer"
+        ],
+        "description": "Depending on the start/end attribute specified, this extension will add \"value(s)\" to either the block start buffer or the block end buffer. Each time that this extension is called, it adds to the specified buffer.  When the block is sent to the output buffer, the contents of the block start buffer will precede it on the line and the contents of the block end buffer will go after it.  The block start buffer and the block end buffer are cleared once the they have been written to the output buffer.. MOM_add_to_block_buffer <block name> <start|end> <value>"
+    },
+    "MOM_add_to_line_buffer": {
+        "prefix": "MOM_add_to_line_buffer",
+        "body": [
+            "MOM_add_to_line_buffer"
+        ],
+        "description": "Depending on the start/end attribute specified, this extension will add \"value(s)\" to either the line\\'s start buffer or the line\\'s end buffer. Each time that this extension is called, it adds to the specified buffer.  When the contents of the output buffer are sent to the output file, the contents of the line\\'s start buffer will precede it on the line and the contents of the end buffer will go on the same line after it. The line start buffer, line end buffer, and output buffer are all cleared once the they have been written to the output file.. MOM_add_to_line_buffer <start|end> <value>"
+    },
+    "MOM_ask_address_value": {
+        "prefix": "MOM_ask_address_value",
+        "body": [
+            "MOM_ask_address_value"
+        ],
+        "description": "Always returns the absolute address value NOT the incremental value.. MOM_ask_address_value <address name>"
+    },
+    "MOM_ask_env_var": {
+        "prefix": "MOM_ask_env_var",
+        "body": [
+            "MOM_ask_env_var"
+        ],
+        "description": "This extension allows you to determine how environment variable \"variable name\" is set.. MOM_ask_env_var <variable name>"
+    },
+    "MOM_ask_event_type": {
+        "prefix": "MOM_ask_event_type",
+        "body": [
+            "MOM_ask_event_type"
+        ],
+        "description": "Description of MOM_ask_event_type"
+    },
+    "MOM_ask_ess_exp_value": {
+        "prefix": "MOM_ask_ess_exp_value",
+        "body": [
+            "MOM_ask_ess_exp_value"
+        ],
+        "description": "Provides access to the variables of the NX Expression module, i.e., it returns the value of the NX Expression variable.. MOM_ask_ess_exp_value <variable_name>"
+    },
+    "MOM_ask_init_junction_xform": {
+        "prefix": "MOM_ask_init_junction_xform",
+        "body": [
+            "MOM_ask_init_junction_xform"
+        ],
+        "description": "This command returns the transformation matrix of the given Junction (name) at its initial state w.r.t the absolute coordinate system (ACS).. mom_sim_result (matrix: list of 9) & mom_sim_result1 (origin: list of 3)"
+    },
+    "MOM_ask_machine_zero_junction_name": {
+        "prefix": "MOM_ask_machine_zero_junction_name",
+        "body": [
+            "MOM_ask_machine_zero_junction_name"
+        ],
+        "description": "This command returns the name of the MACHINE_ZERO Junction.. mom_sim_result"
+    },
+    "MOM_ask_oper_csys": {
+        "prefix": "MOM_ask_oper_csys",
+        "body": [
+            "MOM_ask_oper_csys"
+        ],
+        "description": "Fetches the CSYS information of the named operation. Passes the results in three mom variables. mom_result represents the mom_special_output of the CSYS. 0 = None, 1 = Use Main MCS, 2 = Fixture Offset, 3 = CSYS Rotation. mom_result1 is a list of 12 doubles containing the mom_csys_matix of the operation CSYS. mom_result2 is a list of 12 doubles containing the mom_machine_csys_matrix of the operation.. MOM_ask_oper_csys <operation-name>"
+    },
+    "MOM_ask_syslog_name": {
+        "prefix": "MOM_ask_syslog_name",
+        "body": [
+            "MOM_ask_syslog_name"
+        ],
+        "description": "This command returns the name of syslog file of current session.. String"
+    },
+    "MOM_close_output_file": {
+        "prefix": "MOM_close_output_file",
+        "body": [
+            "MOM_close_output_file"
+        ],
+        "description": "This extension allows you to suspend writing output to a particular file until it is opened again. MOM_close_output_file <filename>"
+    },
+    "MOM_check_out_license": {
+        "prefix": "MOM_check_out_license",
+        "body": [
+            "MOM_check_out_license"
+        ],
+        "description": "Obtains Flexlm license until the end of the posting job. <license> is the string name of a valid license. Returns 1 (true) for success or 0 (false) for failure.. MOM_check_out_license <license>"
+    },
+    "MOM_convert_point": {
+        "prefix": "MOM_convert_point",
+        "body": [
+            "MOM_convert_point"
+        ],
+        "description": "Converts a point from a tool path position to an MCS position in machine tool coordinates. <point> and <vector> are Tcl arrays of 3. Returns pimary and alternate solutions as Tcl lists of X, Y, Z, 4th, 5th in the variables mom_post_result for the primary and mom_post_result1 for the alternate. . MOM_convert_point <point> <vector>"
+    },
+    "MOM_disable_address": {
+        "prefix": "MOM_disable_address",
+        "body": [
+            "MOM_disable_address"
+        ],
+        "description": "Suppresses all output for an address.  MOM_force ONCE or MOM_force ALWAYS are ignored while MOM_disable_address is active. MOM_enable_address cancels MOM_disable_address.. MOM_disable_address <Address>"
+    },
+    "MOM_display_message": {
+        "prefix": "MOM_display_message",
+        "body": [
+            "MOM_display_message"
+        ],
+        "description": "Displays a message dialog box in NX. <type> is the style of the message box, I|E|W|Q, where I is info, E is error, W is warning, and Q is question. Button labels are optional. Returns the number of the button (1, 2, or 3) that the user clicks.. MOM_display_message <message> <title> <type> [<button1>][<button2>][<button3>]"
+    },
+    "MOM_do_template": {
+        "prefix": "MOM_do_template",
+        "body": [
+            "MOM_do_template"
+        ],
+        "description": "Generate output based upon the Block Template \"template_name\".  BUFFER has the usual meaning. BUFFER will generate the output value for Block Template \"template_name\" but does not add it to the output buffer, and hence, does not output it to the output file.  CREATE will generate the value for Block Template \"template_name\" but does not output to the output buffer.  This function returns the string created as the result of the template name.. MOM_do_template <template_name> {BUFFER | CREATE}"
+    },
+    "MOM_enable_address": {
+        "prefix": "MOM_enable_address",
+        "body": [
+            "MOM_enable_address"
+        ],
+        "description": "Restores output status for an address that MOM_disable_address suppressed.  Returns output status to the initial state.. MOM_enable_address <Address>"
+    },
+    "MOM_force": {
+        "prefix": "MOM_force",
+        "body": [
+            "MOM_force"
+        ],
+        "description": "The next time that a block template that contains a reference to any of the input address names is evaluated, the word that contains that address will be output regardless of its modality attribute.. MOM_force <Always | Once | Off > <Address_1 ... Address_n>"
+    },
+    "MOM_force_block": {
+        "prefix": "MOM_force_block",
+        "body": [
+            "MOM_force_block"
+        ],
+        "description": "Example: MOM_force_block Once linear. MOM_force_block <Always | Once | Off > <Block_1 ... Block_n>"
+    },
+    "MOM_incremental": {
+        "prefix": "MOM_incremental",
+        "body": [
+            "MOM_incremental"
+        ],
+        "description": "The next time that a block template that contains a reference to any of the input address names is evaluated, the deference (increment) from the previous value is output.  If ON, then for each Address_i, always output increment.  If OFF, then for each Address_i, always output absolute.. MOM_incremental <ON | OFF> <Address_1 ... Address_n>"
+    },
+    "MOM_load_definition_file": {
+        "prefix": "MOM_load_definition_file",
+        "body": [
+            "MOM_load_definition_file"
+        ],
+        "description": "This will load the definition file given by filename. If data in filename (or any of its included files) matches data already loaded by previous definition files, the duplicate data is overridden by the new version. Like any TCL extension, this command may be called from any place in the TCL script.. MOM_load_definition_file <filename>"
+    },
+    "MOM_load_lathe_thread_cycle_params": {
+        "prefix": "MOM_load_lathe_thread_cycle_params",
+        "body": [
+            "MOM_load_lathe_thread_cycle_params"
+        ],
+        "description": "This command will load the parameters of a lathe threading cycle of the current operation.  It returns 1 when loading is successful otherwise 0. This command should be called after the desired CSYS is set.. 0 or 1"
+    },
+    "MOM_log_message": {
+        "prefix": "MOM_log_message",
+        "body": [
+            "MOM_log_message"
+        ],
+        "description": "This function causes MOM to write a message to the syslog.. MOM_log_message <message>"
+    },
+    "MOM_on_event_error": {
+        "prefix": "MOM_on_event_error",
+        "body": [
+            "MOM_on_event_error"
+        ],
+        "description": "If the TCL interpreter reports an error this procedure is invoked prior to raising a system error. The {_debug} procedure is invoked only if DEBUG mode is true.  Example: This procedure is invoked by NX.. MOM_on_event_error {_debug}"
+    },
+    "MOM_on_parse_error": {
+        "prefix": "MOM_on_parse_error",
+        "body": [
+            "MOM_on_parse_error"
+        ],
+        "description": "If a syntax error is found in the Definition File these procedures are invoked prior to raising a system error. The {_debug} procedure is invoked only if DEBUG mode is true.. MOM_on_parse_error {_debug}"
+    },
+    "MOM_open_output_file": {
+        "prefix": "MOM_open_output_file",
+        "body": [
+            "MOM_open_output_file"
+        ],
+        "description": "This extension allows you to redirect output to other output files.  If a file \"filename\" does not exist, a new one will be created with that file name.. MOM_open_output_file <filename>"
+    },
+    "MOM_output_literal": {
+        "prefix": "MOM_output_literal",
+        "body": [
+            "MOM_output_literal"
+        ],
+        "description": "Output a list of literals and variables as a single line. If BUFFER is present then only place the string in the output buffer. Do not send it to the output yet.. MOM_output_literal \"string\" {BUFFER}"
+    },
+    "MOM_output_text": {
+        "prefix": "MOM_output_text",
+        "body": [
+            "MOM_output_text"
+        ],
+        "description": "This extension will output a list of literals and variables as a single line, just like MOM_output_literal except that no sequence number will be output. If BUFFER is present then only place the string in the output buffer. Do not send it to the output yet.. MOM_output_text <literal> {BUFFER}"
+    },
+    "MOM_output_to_listing_device": {
+        "prefix": "MOM_output_to_listing_device",
+        "body": [
+            "MOM_output_to_listing_device"
+        ],
+        "description": "If running in an interactive NX session then output string to the NX listing window, otherwise do nothing.. MOM_output_to_listing_device <\"string\">"
+    },
+    "MOM_post_oper_path": {
+        "prefix": "MOM_post_oper_path",
+        "body": [
+            "MOM_post_oper_path"
+        ],
+        "description": "Postprocesses the named operation. The output file argument can be specified without a post; the default post is used. When the file name is given without a preceding path, the primary output directory will be used. When a post is specified, the output file argument SAME outputs to the active output file. Returns 1 (True) when the execution is successful, 0 (False) if it is not successful, and -1 if the post is calling itself. During execution mom_post_oper_path exists and has value 1. The called process uses the same units specifed in the Postprocess dialog box. If a post is named, the review file option and warning output setting are governed by the post that is named.. MOM_post_oper_path <operation-name> [<output file>] [<postprocessor>] [ <event-handler Tcl file> <definition file>]"
+    },
+    "MOM_reload_kinematics": {
+        "prefix": "MOM_reload_kinematics",
+        "body": [
+            "MOM_reload_kinematics"
+        ],
+        "description": "Refresh the event generator with the current values of all the kinematics variables.. Integer"
+    },
+    "MOM_reload_variable": {
+        "prefix": "MOM_reload_variable",
+        "body": [
+            "MOM_reload_variable"
+        ],
+        "description": "Update the event generator with the current value of variable_name in the event handler.. MOM_reload_variable [-a] variable_name"
+    },
+    "MOM_reset_sequence": {
+        "prefix": "MOM_reset_sequence",
+        "body": [
+            "MOM_reset_sequence"
+        ],
+        "description": "A sequence is a block template that is output at the beginning of each line. It will typically be used to output sequence numbers but it may also be used to output any block template.. MOM_reset_sequence <start> <increment> {frequency}"
+    },
+    "MOM_run_postprocess": {
+        "prefix": "MOM_run_postprocess",
+        "body": [
+            "MOM_run_postprocess"
+        ],
+        "description": "Runs a separate post process from within a postprocessor on the same operations or programs that are being postprocessed. Returns 1 (true) when the process execution is successful, 2 (false) if there is an execution error, -1 if the post is calling itself. You can call the same post that is executing, but typically you would use a separate post, such as a turbo post.. MOM_run_postprocess <event-handler Tcl file> <definition file> <output file> current post is calling itself"
+    },
+    "MOM_run_user_function": {
+        "prefix": "MOM_run_user_function",
+        "body": [
+            "MOM_run_user_function"
+        ],
+        "description": "This function causes MOM to call the function named entry_point_name in the shared library named shared_library_name. That function can then extend the translator from which MOM_run_user_function was called. It will do this by calling a User Function function named UF_MOM_extend_translator( param, \"extension_name\", extension_entry_point ). The param will be passed into entry_point_name as the first argument. The signature of entry_point_name is the same as ufusr. The extension_name is the name of the function as it will appear in a TCL script. The extension_entry_point is the actual address of the function to be called by the interpreter when interpreting the extension_name call.. MOM_run_user_function <shared_library_name> <entry_point_name>"
+    },
+    "MOM_set_address_format": {
+        "prefix": "MOM_set_address_format",
+        "body": [
+            "MOM_set_address_format"
+        ],
+        "description": "This function redefines the format to be used for the <Address Name> as <Format Name> for outputting in a block. The <Format Name> must be defined in the Definition File.. MOM_set_address_format <Address Name> <Format Name>"
+    },
+    "MOM_set_debug_mode": {
+        "prefix": "MOM_set_debug_mode",
+        "body": [
+            "MOM_set_debug_mode"
+        ],
+        "description": "This will activate, deactivate, and resume the debugger. Like any TCL extension, this command may be called from any place in the TCL script.  If ON, the debugger will activate by initializing with data entered in the debugger dialog or stdout.  If OFF, the debugger will be deactivated.. MOM_set_debug_mode <ON | OFF>"
+    },
+    "MOM_set_env_var": {
+        "prefix": "MOM_set_env_var",
+        "body": [
+            "MOM_set_env_var"
+        ],
+        "description": "Defines NX environment variables. Both arguments are case sensitive. Only new variables can be set. If you attempt to override pre-existing variables, the command will fail. Variables are unset when post process ends. Returns 1 for success, new variable is created and set. Returns 0 for failure, variable cannot be created - it probably already existed.. MOM_set_env_var <variable name as string><variable value as string>"
+    },
+    "MOM_set_line_leader": {
+        "prefix": "MOM_set_line_leader",
+        "body": [
+            "MOM_set_line_leader"
+        ],
+        "description": "This function causes MOM to set the line leader to a string with the indicated status. A line leader is output as the leading character(s) of the output line (i.e., before the SEQUENCE).. MOM_set_line_leader <Always | Once | Off > <\"string\">"
+    },
+    "MOM_set_seq_off": {
+        "prefix": "MOM_set_seq_off",
+        "body": [
+            "MOM_set_seq_off"
+        ],
+        "description": "Does not output a sequence number. Returns the sequence setting at the time the command is executed.. set current_status [MOM_set_seq_off] ... if { $current_status == \"on\" } { MOM_set_seq_on }"
+    },
+    "MOM_set_seq_on": {
+        "prefix": "MOM_set_seq_on",
+        "body": [
+            "MOM_set_seq_on"
+        ],
+        "description": "Allows output of the sequence number if a SEQUENCE specifier was given in the definition file.  Return the sequence setting at the time the command is executed.. set current_status [MOM_set_seq_on]  ... if { $current_status == \"off\" } { MOM_set_seq_off }"
+    },
+    "MOM_skip_handler_to_event": {
+        "prefix": "MOM_skip_handler_to_event",
+        "body": [
+            "MOM_skip_handler_to_event"
+        ],
+        "description": "This command will skip the execution of the event handler until the given event is encountered. The condition is reset at the start-of-path and when the event is met. Motion types include Engage, Approach, Firstcut, Retract, Return, Rapid, Cut, Stepover, Departure, Traversal, Sidecut, From, Gohome, and Cycle.. MOM_skip_handler_to_event <event or motion-type>"
+    },
+    "MOM_suppress": {
+        "prefix": "MOM_suppress",
+        "body": [
+            "MOM_suppress"
+        ],
+        "description": "The next time that a block template that contains a reference to any of the input address names is evaluated, the word that contains the address will not be output regardless of its modality attribute.. MOM_suppress <Always | Once | Off > <Address_1 ... >"
+    },
+    "LIB_GE_ui": {
+        "prefix": "LIB_GE_ui",
+        "body": [
+            "LIB_GE_ui"
+        ],
+        "description": "Utility to create UI Nodes/Groups<br>UI structure elements are defined in a CONFIG object like any other property.<br>The CONFIG object is of special type \\'UI_TREE\\'<br>( LIB_GE_CREATE_obj My_UI_elements {UI_TREE} {....} )<br>To Create the individual UI structure elemets within that CONFIG object you can use this utility.<br>(like this you are able to define a UI element in a single, readable line.<br>the needed Property structure will be generated for you)<br>'+'LIB_GE_ui <name> <type> <id_name> <parent> <sequence> <groupstat> <access>"
+    },
+    "LIB_GE_cleanup_list": {
+        "prefix": "LIB_GE_cleanup_list",
+        "body": [
+            "LIB_GE_cleanup_list"
+        ],
+        "description": "This function filters all duplicates from a list and returns the adjusted list.<br>'+'LIB_GE_cleanup_list <list> <newlist> <remove>"
+    },
+    "LIB_GE_format_path_names": {
+        "prefix": "LIB_GE_format_path_names",
+        "body": [
+            "LIB_GE_format_path_names"
+        ],
+        "description": "This procedure may be used to format pathnames from unix format in windows<br>format and delete double backslash.<br>'+'LIB_GE_format_path_names <pathname> <exclusion> <forced> <escape>"
+    },
+    "LIB_GE_sort_value": {
+        "prefix": "LIB_GE_sort_value",
+        "body": [
+            "LIB_GE_sort_value"
+        ],
+        "description": "This function return the smallest or biggest value out of a list.<br>'+'LIB_GE_sort_value <valuelist> <sequence>"
+    },
+    "LIB_GE_is_path": {
+        "prefix": "LIB_GE_is_path",
+        "body": [
+            "LIB_GE_is_path"
+        ],
+        "description": "This function checks if a given pathname is a valid directoryname or not.<br>The existence of the directory will not be checked, it\\'s only a logical check.<br>'+'LIB_GE_is_path <path>"
+    },
+    "LIB_GE_is_unc_path": {
+        "prefix": "LIB_GE_is_unc_path",
+        "body": [
+            "LIB_GE_is_unc_path"
+        ],
+        "description": "This function checks if a given pathname is a valid UNC directoryname or not.<br>The existence of the directory will not be checked, it\\'s only a logical check.<br>'+'LIB_GE_is_unc_path <path>"
+    },
+    "LIB_GE_set": {
+        "prefix": "LIB_GE_set",
+        "body": [
+            "LIB_GE_set"
+        ],
+        "description": "This function sets a new global variable \\'para1\\' with the value \\'para2\\'.<br>Grace to this function it\\'s not necessary to define the variable with \\'global\\'.<br>'+'LIB_GE_set <para1> <para2>"
+    },
+    "LIB_GE_lappend": {
+        "prefix": "LIB_GE_lappend",
+        "body": [
+            "LIB_GE_lappend"
+        ],
+        "description": "This function appends the value \\'para2\\' to the global list \\'para1\\'.<br>Grace to this function it\\'s not necessary to define the list \\'para1\\' with \\'global\\'.<br>'+'LIB_GE_lappend <para1> <para2>"
+    },
+    "LIB_GE_ask_type_subtype": {
+        "prefix": "LIB_GE_ask_type_subtype",
+        "body": [
+            "LIB_GE_ask_type_subtype"
+        ],
+        "description": "This function returns the tag, type and subtype of a given path_name.<br>'+'LIB_GE_ask_type_subtype <path_name> <tag> <type> <subtype>"
+    },
+    "LIB_GE_read_expression_value": {
+        "prefix": "LIB_GE_read_expression_value",
+        "body": [
+            "LIB_GE_read_expression_value"
+        ],
+        "description": "This function reads expression values out of NX. You may specify the error<br>handling in case when the expression is missing.<br>'+'LIB_GE_read_expression_value <expression> <defaultValue> <errorHandling> <formatDef>"
+    },
+    "LIB_GE_message": {
+        "prefix": "LIB_GE_message",
+        "body": [
+            "LIB_GE_message"
+        ],
+        "description": "This is an enhanced string handling function which will be called internally to output text<br>messages to the NC code. It is used for outputting comments, nc inserts, user messages and more.<br>'+'LIB_GE_message <message> <option> <forcelinenumber> <replace_special_characters> <wordwrap>"
+    },
+    "LIB_GE_truncate_line": {
+        "prefix": "LIB_GE_truncate_line",
+        "body": [
+            "LIB_GE_truncate_line"
+        ],
+        "description": "This function splits a line into multiple lines if it overpasses a defined maximum length.<br>The output command (e.g. MOM_output_literal, MOM_output_text) has to be defined.<br>'+'LIB_GE_truncate_line <command> <leader> <text> <trailer> <length> <suppress>"
+    },
+    "LIB_GE_MSG": {
+        "prefix": "LIB_GE_MSG",
+        "body": [
+            "LIB_GE_MSG"
+        ],
+        "description": "This function translates postprocessor core messages into the desired language.<br>'+'LIB_GE_MSG <text> <possibilities> <replace_special_characters>"
+    },
+    "LIB_GE_string_toupper": {
+        "prefix": "LIB_GE_string_toupper",
+        "body": [
+            "LIB_GE_string_toupper"
+        ],
+        "description": "This function converts a string to upper case. Use this function when working with multibyte<br>strings as the standard tcl function &quot;string toupper&quot; causes problems when converting special<br>characters.<br>'+'LIB_GE_string_toupper <arg> <check>"
+    },
+    "LIB_GE_string_range_toupper": {
+        "prefix": "LIB_GE_string_range_toupper",
+        "body": [
+            "LIB_GE_string_range_toupper"
+        ],
+        "description": "This function converts a part of a string to upper case letters.<br>'+'LIB_GE_string_range_toupper <text> <from> <to>"
+    },
+    "LIB_GE_replace_special_characters": {
+        "prefix": "LIB_GE_replace_special_characters",
+        "body": [
+            "LIB_GE_replace_special_characters"
+        ],
+        "description": "This function converts multibyte text into an other character set.<br>'+'LIB_GE_replace_special_characters <text> <special> <interaction>"
+    },
+    "LIB_GE_comment_convert": {
+        "prefix": "LIB_GE_comment_convert",
+        "body": [
+            "LIB_GE_comment_convert"
+        ],
+        "description": "This function converts a text in the desired format for comment output to the NC-code.<br>The desired format is controlled with the properties [CONF_GE_msg comment_case] (convert<br>to upper or lower case) and<br>[CONF_GE_msg comment_replace_character] (replace special characters).<br>'+'LIB_GE_comment_convert <comment>"
+    },
+    "LIB_GE_error_message": {
+        "prefix": "LIB_GE_error_message",
+        "body": [
+            "LIB_GE_error_message"
+        ],
+        "description": "Issues an error message which will be displayed in a message box during post run.<br>Note: the message is formatted with PostConfigurator internal functions and may contain text<br>to be translated (see LIB_GE_MSG). The setting from [CONF_GE_msg comment_case] will also<br>be applied before showing the message dialog.<br>'+'LIB_GE_error_message <msg1> <msg2> <option> <translation> <force>"
+    },
+    "LIB_GE_abort_message": {
+        "prefix": "LIB_GE_abort_message",
+        "body": [
+            "LIB_GE_abort_message"
+        ],
+        "description": "Issues an abort message that causes the post processing to stop. A dialog box will be displayed.<br>Note: the message is formatted with PostConfigurator internal functions and may contain text<br>to be translated (see LIB_GE_MSG). The setting from [CONF_GE_msg comment_case] will also<br>be applied before showing the message dialog.<br>'+'LIB_GE_abort_message <msg1> <msg2> <option> <translation> <force>"
+    },
+    "LIB_GE_message_dialog": {
+        "prefix": "LIB_GE_message_dialog",
+        "body": [
+            "LIB_GE_message_dialog"
+        ],
+        "description": "Displays a dialog box and waits for user interaction.<br>This function currently only works on Windows platforms. For other plattforms please use LIB_GE_wish.<br>'+'LIB_GE_message_dialog <args>"
+    },
+    "LIB_GE_wish": {
+        "prefix": "LIB_GE_wish",
+        "body": [
+            "LIB_GE_wish"
+        ],
+        "description": "'+'LIB_GE_wish <msg> <submsg> <title> <type> <icon> <replace_special_characters>"
+    },
+    "LIB_GE_read_database": {
+        "prefix": "LIB_GE_read_database",
+        "body": [
+            "LIB_GE_read_database"
+        ],
+        "description": "This function reads an acii file based database in NX-library style. This function automatically<br>opens, reads and closes the file. The function provides error handling in case when the file is<br>not existing.<br>'+'LIB_GE_read_database <environment> <datafile> <variablelist> <formatdescription> <datedescription> <mode>"
+    },
+    "LIB_GE_copy_var_range": {
+        "prefix": "LIB_GE_copy_var_range",
+        "body": [
+            "LIB_GE_copy_var_range"
+        ],
+        "description": "This function copies a whole range of global variables (scalars and arrays), identified by a prefix,<br>to a new range of variables.<br>The new range of variable will be named based on a defined prefix.<br>'+'LIB_GE_copy_var_range <to_var_prefix> <from_var_prefix>"
+    },
+    "LIB_GE_time": {
+        "prefix": "LIB_GE_time",
+        "body": [
+            "LIB_GE_time"
+        ],
+        "description": "This function returns \\'time\\' as formated string, respecting the time format defined in<br>the property [CONF_GE_msg time_format].<br>'+'LIB_GE_time <time>"
+    },
+    "LIB_GE_date": {
+        "prefix": "LIB_GE_date",
+        "body": [
+            "LIB_GE_date"
+        ],
+        "description": "This function returns \\'date\\' as formated string, respecting the date format defined in<br>the property [CONF_GE_msg date_format].<br>'+'LIB_GE_date <date>"
+    },
+    "LIB_GE_command_buffer": {
+        "prefix": "LIB_GE_command_buffer",
+        "body": [
+            "LIB_GE_command_buffer"
+        ],
+        "description": "This function is a very powerful command for expert post developers, allowing programmers<br>to easyly modify output sequences.<br>'+'LIB_GE_command_buffer <args>"
+    },
+    "LIB_GE_command_buffer_output": {
+        "prefix": "LIB_GE_command_buffer_output",
+        "body": [
+            "LIB_GE_command_buffer_output"
+        ],
+        "description": "Ends the definition of sequences (set by LIB_GE_command_buffer)<br>and outputs them.<br>'+'LIB_GE_command_buffer_output <args>"
+    },
+    "LIB_GE_string_append": {
+        "prefix": "LIB_GE_string_append",
+        "body": [
+            "LIB_GE_string_append"
+        ],
+        "description": "This allows to set \\'datatype\\' attribute of a given property in a given CONF-object<br>'+'LIB_GE_string_append <string> <number> <subst>"
+    },
+    "LIB_GE_create_json_array": {
+        "prefix": "LIB_GE_create_json_array",
+        "body": [
+            "LIB_GE_create_json_array"
+        ],
+        "description": "This give you an array list for json back<br>'+'LIB_GE_create_json_array <arg>"
+    },
+    "LIB_GE_command_buffer_edit_insert": {
+        "prefix": "LIB_GE_command_buffer_edit_insert",
+        "body": [
+            "LIB_GE_command_buffer_edit_insert"
+        ],
+        "description": "This function allows to insert an element in a command buffer list.<br>It is used to add more output / actions to an existing command buffer at a specific position.<br>The new code to execute has to be referenced by a TagName.<br>'+'LIB_GE_command_buffer_edit_insert <proc_name> <buffer_name> <code> <tag> <pos> <ref_tag>"
+    },
+    "LIB_GE_command_buffer_edit_remove": {
+        "prefix": "LIB_GE_command_buffer_edit_remove",
+        "body": [
+            "LIB_GE_command_buffer_edit_remove"
+        ],
+        "description": "This function allows to remove an element from a command buffer.<br>'+'LIB_GE_command_buffer_edit_remove <proc_name> <buffer_name> <args>"
+    },
+    "LIB_GE_command_buffer_edit_move": {
+        "prefix": "LIB_GE_command_buffer_edit_move",
+        "body": [
+            "LIB_GE_command_buffer_edit_move"
+        ],
+        "description": "This function allows to resequence the output of a command buffer.<br>'+'LIB_GE_command_buffer_edit_move <proc_name> <buffer_name> <tag> <pos> <ref_tag>"
+    },
+    "LIB_GE_command_buffer_edit_replace": {
+        "prefix": "LIB_GE_command_buffer_edit_replace",
+        "body": [
+            "LIB_GE_command_buffer_edit_replace"
+        ],
+        "description": "This function allows to replace one of the tagged output lines of a command buffer<br>by an other tagged output<br>'+'LIB_GE_command_buffer_edit_replace <proc_name> <buffer_name> <ref_tag> <code> <tag>"
+    },
+    "LIB_GE_command_buffer_edit_append": {
+        "prefix": "LIB_GE_command_buffer_edit_append",
+        "body": [
+            "LIB_GE_command_buffer_edit_append"
+        ],
+        "description": "This function allows to append code / output to a existing command buffer<br>'+'LIB_GE_command_buffer_edit_append <proc_name> <buffer_name> <code> <tag>"
+    },
+    "LIB_GE_command_buffer_edit_prepend": {
+        "prefix": "LIB_GE_command_buffer_edit_prepend",
+        "body": [
+            "LIB_GE_command_buffer_edit_prepend"
+        ],
+        "description": "This function allows to prepend code / output to a existing command buffer<br>'+'LIB_GE_command_buffer_edit_prepend <proc_name> <buffer_name> <code> <tag>"
+    },
+    "LIB_GE_snapshot": {
+        "prefix": "LIB_GE_snapshot",
+        "body": [
+            "LIB_GE_snapshot"
+        ],
+        "description": "LIB_GE_snapshot allows to CREATE and REUSE a snapshot of a given set of global variables<br>at a given point of time.<br>'+'LIB_GE_snapshot <arg1> <arg2>"
+    },
+    "LIB_GE_CONF_set_property_access": {
+        "prefix": "LIB_GE_CONF_set_property_access",
+        "body": [
+            "LIB_GE_CONF_set_property_access"
+        ],
+        "description": "This function allows to set the \\'access\\' for a given property in a given CONF-object<br>for a given license level<br><br>(only \\'downgrading\\' the access level is permitted)<br>'+'LIB_GE_CONF_set_property_access <object> <properties> <licenses> <access_code> <forceSet>"
+    },
+    "LIB_GE_CONF_set_property_datatype": {
+        "prefix": "LIB_GE_CONF_set_property_datatype",
+        "body": [
+            "LIB_GE_CONF_set_property_datatype"
+        ],
+        "description": "This allows to set \\'datatype\\' attribute of a given property in a given CONF-object<br>'+'LIB_GE_CONF_set_property_datatype <object> <property> <datatype> <forceSet>"
+    },
+    "LIB_GE_CONF_set_property_ui": {
+        "prefix": "LIB_GE_CONF_set_property_ui",
+        "body": [
+            "LIB_GE_CONF_set_property_ui"
+        ],
+        "description": "This function allows to set \\'ui_parent\\' and \\'ui_sequence\\' attribute of a given property in a given CONF-object<br>This can be used to reorder common properties and UI_TREE properties as well.<br>'+'LIB_GE_CONF_set_property_ui <object> <property> <parent> <seq> <forceSet>"
+    },
+    "LIB_GE_CONF_add_chain": {
+        "prefix": "LIB_GE_CONF_add_chain",
+        "body": [
+            "LIB_GE_CONF_add_chain"
+        ],
+        "description": "This function allows you to define chains.<br>'+'LIB_GE_CONF_add_chain <chain_id> <ui_name> <ui_descr> <ui_sequence>"
+    },
+    "LIB_GE_CONF_set_property_options": {
+        "prefix": "LIB_GE_CONF_set_property_options",
+        "body": [
+            "LIB_GE_CONF_set_property_options"
+        ],
+        "description": "This function allows to manipulate the displayed options of a given options property in a given CONF-object<br>You can add/insert new options or remove existing ones.<br>(It is in postwriters responsibility that the action to a new option is implemented in the code).<br>'+'LIB_GE_CONF_set_property_options <object> <property> <operation> <opt_id> <opt_name> <pos> <forceSet>"
+    },
+    "LIB_CONF_prop_custom_proc_body": {
+        "prefix": "LIB_CONF_prop_custom_proc_body",
+        "body": [
+            "LIB_CONF_prop_custom_proc_body"
+        ],
+        "description": "This function allows to define a custom proc for a CONFIG-property directly in the tcl script.<br>If defining the custom proc with the use of this function, the contents of the custom proc will properly be showed in<br>the PostConfigurator UI<br>'+'LIB_CONF_prop_custom_proc_body <code>"
+    },
+    "LIB_CONF_do_prop_custom_proc": {
+        "prefix": "LIB_CONF_do_prop_custom_proc",
+        "body": [
+            "LIB_CONF_do_prop_custom_proc"
+        ],
+        "description": "This function is used to execute a proc body stored in a CONFIG objects property<br>(e.g. defined in a COMMANDBLOCK object in PostConfigurator UI)<br>'+'LIB_CONF_do_prop_custom_proc <obj> <prop> <special_syntax> <start_index>"
+    },
+    "LIB_GE_generate_chain_selection_condition_vars": {
+        "prefix": "LIB_GE_generate_chain_selection_condition_vars",
+        "body": [
+            "LIB_GE_generate_chain_selection_condition_vars"
+        ],
+        "description": "This function is used to initialize the condition variables used to display chain selection conditions<br>in the UI. By default for each chain a selection condition is added (without explicitly calling this function)<br>'+'LIB_GE_generate_chain_selection_condition_vars <number_of_conditions>"
+    },
+    "LIB_FH_format_database": {
+        "prefix": "LIB_FH_format_database",
+        "body": [
+            "LIB_FH_format_database"
+        ],
+        "description": "This function formats the lines in a given .dat file to be exactly aligned per each column.<br>The formatted lines are returned as string list. Optionally the dat file can be updated<br>directly with the formatted lines.<br>'+'LIB_FH_format_database <filename> <overwrite>"
+    },
+    "LIB_FH_create_directory": {
+        "prefix": "LIB_FH_create_directory",
+        "body": [
+            "LIB_FH_create_directory"
+        ],
+        "description": "Creates a new directory if it\\'s not yet existing.<br>Directory can be specified in unix format (directory separator with /) or in windows format (separator with \\\\ (=escaped backslash)).<br>'+'LIB_FH_create_directory <directory>"
+    },
+    "LIB_FH_search_path_recursively": {
+        "prefix": "LIB_FH_search_path_recursively",
+        "body": [
+            "LIB_FH_search_path_recursively"
+        ],
+        "description": "This function iterates through subdirectories, starting at a given path and gives back<br>a list of all found sub directories.<br>'+'LIB_FH_search_path_recursively <folders> <dirs>"
+    },
+    "LIB_FH_search_file_glob": {
+        "prefix": "LIB_FH_search_file_glob",
+        "body": [
+            "LIB_FH_search_file_glob"
+        ],
+        "description": "This function searches for a file in a given directory, using globstyle search.<br>This means that the filename can be specified with wildcards (*).<br>The first match is returned.<br>'+'LIB_FH_search_file_glob <pathname> <filename> <resultname>"
+    },
+    "LIB_FH_file_to_list": {
+        "prefix": "LIB_FH_file_to_list",
+        "body": [
+            "LIB_FH_file_to_list"
+        ],
+        "description": "This function reads a textfile into a string list.<br>The function can be used safely as it opens and closes the textfile automatically and provides<br>errorhandling.<br>'+'LIB_FH_file_to_list <filename> <filename_to_list> <apportion>"
+    },
+    "LIB_FH_file_writable": {
+        "prefix": "LIB_FH_file_writable",
+        "body": [
+            "LIB_FH_file_writable"
+        ],
+        "description": "This function checks if a given file is writable or not.<br>'+'LIB_FH_file_writable <file>"
+    },
+    "LIB_FH_list_to_file": {
+        "prefix": "LIB_FH_list_to_file",
+        "body": [
+            "LIB_FH_list_to_file"
+        ],
+        "description": "This function writes the entry of a given string list to a text file.<br>'+'LIB_FH_list_to_file <list> <filename> <fileoption>"
+    },
+    "LIB_FH_file_to_list_line_numbers": {
+        "prefix": "LIB_FH_file_to_list_line_numbers",
+        "body": [
+            "LIB_FH_file_to_list_line_numbers"
+        ],
+        "description": "This function reads a textfile into a string list with a maximum of \\'counter\\' lines.<br>This is the same function as LIB_FH_file_to_list, with the option to specify the number of lines to be read.<br>'+'LIB_FH_file_to_list_line_numbers <filename> <counter>"
+    },
+    "LIB_FH_create_file": {
+        "prefix": "LIB_FH_create_file",
+        "body": [
+            "LIB_FH_create_file"
+        ],
+        "description": "Creates a textfile with a given directory and filename. A given variable or list will be written in the textfile.<br>'+'LIB_FH_create_file <filename> <fileoption> <filebody>"
+    },
+    "LIB_FH_cleanup_directory": {
+        "prefix": "LIB_FH_cleanup_directory",
+        "body": [
+            "LIB_FH_cleanup_directory"
+        ],
+        "description": "Deletes all files in a given directory.<br>'+'LIB_FH_cleanup_directory <directory> <expression>"
+    },
+    "LIB_FH_open_file": {
+        "prefix": "LIB_FH_open_file",
+        "body": [
+            "LIB_FH_open_file"
+        ],
+        "description": "This function creates a new or opens an existing file, specified with the argument \\'name\\'<br>using the tcl command \\'open\\' and the specified file access type.<br>After this command, the function LIB_FH_output_literal writes directly to this file.<br>The file will automatically be closed at the end of the post processor run.<br>'+'LIB_FH_open_file <name> <access>"
+    },
+    "LIB_FH_output_literal": {
+        "prefix": "LIB_FH_output_literal",
+        "body": [
+            "LIB_FH_output_literal"
+        ],
+        "description": "This function writes text to the last file which was opened by LIB_FH_open_file.<br>See there for more information.<br>'+'LIB_FH_output_literal <output>"
+    },
+    "LIB_FH_escape_special_characters": {
+        "prefix": "LIB_FH_escape_special_characters",
+        "body": [
+            "LIB_FH_escape_special_characters"
+        ],
+        "description": "This function escapes special characters<br>'+'LIB_FH_escape_special_characters <output>"
+    },
+    "LIB_FH_reverse_escape_special_characters": {
+        "prefix": "LIB_FH_reverse_escape_special_characters",
+        "body": [
+            "LIB_FH_reverse_escape_special_characters"
+        ],
+        "description": "This function reverses escaped strings back to special characters.<br>It is the opposite function to LIB_FH_escape_special_characters.<br>'+'LIB_FH_reverse_escape_special_characters <output>"
+    },
+    "LIB_SPF_abort_postrun": {
+        "prefix": "LIB_SPF_abort_postrun",
+        "body": [
+            "LIB_SPF_abort_postrun"
+        ],
+        "description": "This function can be called to abort the postprocessing.<br>It has the same effect as MOM_abort but is faster, clears messages<br>and does a cleanup handling.<br>'+'LIB_SPF_abort_postrun <text> <once>"
+    },
+    "LIB_SPF_pretreatment_add_var": {
+        "prefix": "LIB_SPF_pretreatment_add_var",
+        "body": [
+            "LIB_SPF_pretreatment_add_var"
+        ],
+        "description": "Defines an additional variable which should be stored during pretreatment.<br>You should call this function inside a proc with the name \\'LIB_SPF_pt_additional_variables_xxx\\'<br>\\'xxx\\' can be any name, e.g. mycustompost -> LIB_SPF_pt_additional_variables_mycustompost.<br>'+'LIB_SPF_pretreatment_add_var <proc_name> <var_name> <eventnumber>"
+    },
+    "LIB_SPF_pt_exists": {
+        "prefix": "LIB_SPF_pt_exists",
+        "body": [
+            "LIB_SPF_pt_exists"
+        ],
+        "description": "Checks whether a pretreatment variable exists or not<br>'+'LIB_SPF_pt_exists <variable> <sequence> <path_name>"
+    },
+    "LIB_SPF_pt_exists_not_empty": {
+        "prefix": "LIB_SPF_pt_exists_not_empty",
+        "body": [
+            "LIB_SPF_pt_exists_not_empty"
+        ],
+        "description": "Checks whether a pretreatment variable exists and is not empty<br>'+'LIB_SPF_pt_exists_not_empty <variable> <sequence> <path_name>"
+    },
+    "LIB_SPF_get_pretreatment_eventbased": {
+        "prefix": "LIB_SPF_get_pretreatment_eventbased",
+        "body": [
+            "LIB_SPF_get_pretreatment_eventbased"
+        ],
+        "description": "This function accesses variables that have been collected in the pretreatment postprocessor.<br>If a desired variable does not exist, an empty string is returned.<br>It is mostly the same function as LIB_SPF_get_pretreatment, enhanced with the option to only<br>consider variables of an specified event<br>'+'LIB_SPF_get_pretreatment_eventbased <event> <variable> <sequence> <path_name>"
+    },
+    "LIB_SPF_get_pretreatment": {
+        "prefix": "LIB_SPF_get_pretreatment",
+        "body": [
+            "LIB_SPF_get_pretreatment"
+        ],
+        "description": "This function accesses variables that have been collected in the pretreatment postprocessor.<br>If a desired variable does not exist, an empty string is returned.<br>'+'LIB_SPF_get_pretreatment <variable> <sequence> <path_name>"
+    },
+    "LIB_SPF_store_mom_vars": {
+        "prefix": "LIB_SPF_store_mom_vars",
+        "body": [
+            "LIB_SPF_store_mom_vars"
+        ],
+        "description": "This function creates a backup of all current mom_* variables in memory in order to be able<br>to restore them later on with LIB_SPF_restore_mom_vars.<br>The reason fot this functions is that some actions, like e.g. the function \\'MOM_cycle_objects\\'<br>loses some mom_variables due to the parallel postrun.<br>'+'LIB_SPF_store_mom_vars <variable> <sequence> <path_name>"
+    },
+    "LIB_SPF_restore_mom_vars": {
+        "prefix": "LIB_SPF_restore_mom_vars",
+        "body": [
+            "LIB_SPF_restore_mom_vars"
+        ],
+        "description": "This function is the correspondance to LIB_SPF_store_mom_vars. It restores the backup state<br>created with LIB_SPF_store_mom_vars.<br>For more information see there.<br>The previous execution of LIB_SPF_store_mom_vars is necessary in order to restore the variables.<br>'+'LIB_SPF_restore_mom_vars <variable> <sequence> <path_name>"
+    },
+    "LIB_SPF_is_vector": {
+        "prefix": "LIB_SPF_is_vector",
+        "body": [
+            "LIB_SPF_is_vector"
+        ],
+        "description": "This function checks whether a value is a vector or point or another value.<br>'+'LIB_SPF_is_vector <value>"
+    },
+    "LIB_SPF_is_matrix_equal": {
+        "prefix": "LIB_SPF_is_matrix_equal",
+        "body": [
+            "LIB_SPF_is_matrix_equal"
+        ],
+        "description": "This function compares two matrixes and examines if they are equal within a specified tolerance.<br>'+'LIB_SPF_is_matrix_equal <Value1> <Value2> <Tolerance> <Elements>"
+    },
+    "LIB_SPF_is_floating": {
+        "prefix": "LIB_SPF_is_floating",
+        "body": [
+            "LIB_SPF_is_floating"
+        ],
+        "description": "This function checks whether a value is a floating number or not.<br>This function also indicates if a value is noted with decimals but holds an integer value.<br>'+'LIB_SPF_is_floating <value>"
+    },
+    "LIB_SPF_is_integer": {
+        "prefix": "LIB_SPF_is_integer",
+        "body": [
+            "LIB_SPF_is_integer"
+        ],
+        "description": "This function detects if a given string represents an integer value or not.<br>By default the check considers the valid data type format. Optionally it is<br>possible to only consider the value no matter of the data type.<br>'+'LIB_SPF_is_integer <value> <mode>"
+    },
+    "LIB_SPF_is_number": {
+        "prefix": "LIB_SPF_is_number",
+        "body": [
+            "LIB_SPF_is_number"
+        ],
+        "description": "This function checks if a given string represents a number in a valid TCL format.<br>Note: exponential notation is also considered as a valid number if checked mathematically (default).<br>Optionally you may check with the argument &quot;character&quot; wich only validates numbers in normal decimal notation.<br>'+'LIB_SPF_is_number <value> <compared>"
+    },
+    "LIB_SPF_is_no_decimal": {
+        "prefix": "LIB_SPF_is_no_decimal",
+        "body": [
+            "LIB_SPF_is_no_decimal"
+        ],
+        "description": "This function verifies that a given string contains no numbers.<br>'+'LIB_SPF_is_no_decimal <value>"
+    },
+    "LIB_SPF_is_empty": {
+        "prefix": "LIB_SPF_is_empty",
+        "body": [
+            "LIB_SPF_is_empty"
+        ],
+        "description": "This function checks if a given string is empty (blanks are trimmed out before the check).<br>'+'LIB_SPF_is_empty <value>"
+    },
+    "LIB_SPF_is_part_of_string": {
+        "prefix": "LIB_SPF_is_part_of_string",
+        "body": [
+            "LIB_SPF_is_part_of_string"
+        ],
+        "description": "This function checks if one string is a part of another string.<br>The check is case insensitive, but can optionally be set to be case sensitive.<br>'+'LIB_SPF_is_part_of_string <string> <part> <case>"
+    },
+    "LIB_SPF_is_divisible": {
+        "prefix": "LIB_SPF_is_divisible",
+        "body": [
+            "LIB_SPF_is_divisible"
+        ],
+        "description": "This function checks if a given input value can be divided by 2 (this is the default divider).<br>The check is true if the divided resulting value is an integer value.<br>Optionally it is possible to check with another divisor than 2.<br>'+'LIB_SPF_is_divisible <value> <divider>"
+    },
+    "LIB_SPF_array_to_vector": {
+        "prefix": "LIB_SPF_array_to_vector",
+        "body": [
+            "LIB_SPF_array_to_vector"
+        ],
+        "description": "This function converts an 3 dimensional array into a list. It is the corresponding<br>function to LIB_SPF_vector_to_array<br>'+'LIB_SPF_array_to_vector <variable> <elements>"
+    },
+    "LIB_SPF_vector_to_array": {
+        "prefix": "LIB_SPF_vector_to_array",
+        "body": [
+            "LIB_SPF_vector_to_array"
+        ],
+        "description": "This function converts a string list into an 3 dimensional array. It is the corresponding<br>function to LIB_SPF_array_to_vector.<br>'+'LIB_SPF_vector_to_array <delist> <variable> <elements>"
+    },
+    "LIB_SPF_matrix_to_list": {
+        "prefix": "LIB_SPF_matrix_to_list",
+        "body": [
+            "LIB_SPF_matrix_to_list"
+        ],
+        "description": "This function converts an 9 dimensional matrix into a list.<br>'+'LIB_SPF_matrix_to_list <variable> <elements>"
+    },
+    "LIB_SPF_list_reverse": {
+        "prefix": "LIB_SPF_list_reverse",
+        "body": [
+            "LIB_SPF_list_reverse"
+        ],
+        "description": "This function reverses the order of a list.<br>'+'LIB_SPF_list_reverse <list>"
+    },
+    "LIB_SPF_list_trim_left": {
+        "prefix": "LIB_SPF_list_trim_left",
+        "body": [
+            "LIB_SPF_list_trim_left"
+        ],
+        "description": "This function trims empty elements at the beginning of a list.<br>'+'LIB_SPF_list_trim_left <list>"
+    },
+    "LIB_SPF_list_trim_right": {
+        "prefix": "LIB_SPF_list_trim_right",
+        "body": [
+            "LIB_SPF_list_trim_right"
+        ],
+        "description": "This function trims empty elements at the end of a list.<br>'+'LIB_SPF_list_trim_right <list>"
+    },
+    "LIB_SPF_list_trim": {
+        "prefix": "LIB_SPF_list_trim",
+        "body": [
+            "LIB_SPF_list_trim"
+        ],
+        "description": "This function trims empty elements at the beginning and the end of a list.<br>'+'LIB_SPF_list_trim <list>"
+    },
+    "LIB_SPF_list_trim_elements": {
+        "prefix": "LIB_SPF_list_trim_elements",
+        "body": [
+            "LIB_SPF_list_trim_elements"
+        ],
+        "description": "This function trims each element within a list.<br>'+'LIB_SPF_list_trim_elements <list>"
+    },
+    "LIB_SPF_list_non_common_elements": {
+        "prefix": "LIB_SPF_list_non_common_elements",
+        "body": [
+            "LIB_SPF_list_non_common_elements"
+        ],
+        "description": "This function returns a list of elements that are not commen in 2 given lists<br>'+'LIB_SPF_list_non_common_elements <list1> <list2>"
+    },
+    "LIB_SPF_list_to_table": {
+        "prefix": "LIB_SPF_list_to_table",
+        "body": [
+            "LIB_SPF_list_to_table"
+        ],
+        "description": "Formats a string list into a table form. Every column is aligned to the longest element of<br>the respective column.<br>'+'LIB_SPF_list_to_table <in> <padding> <firstelement> <leader> <as_list>"
+    },
+    "LIB_SPF_eliminate_zero": {
+        "prefix": "LIB_SPF_eliminate_zero",
+        "body": [
+            "LIB_SPF_eliminate_zero"
+        ],
+        "description": "This function formats a decimal number into a specified string format and rounds it to the desired number of decimals.<br>'+'LIB_SPF_eliminate_zero <value> <decimal_places> <splitter>"
+    },
+    "LIB_SPF_eliminate_zero_inline": {
+        "prefix": "LIB_SPF_eliminate_zero_inline",
+        "body": [
+            "LIB_SPF_eliminate_zero_inline"
+        ],
+        "description": "This function does the same task as LIB_SPF_eliminate_zero but applies on every decimal<br>expression within a line/string list.<br>'+'LIB_SPF_eliminate_zero_inline <line> <word_seperator> <max_decimal_place> <iterationen>"
+    },
+    "LIB_SPF_add_warning": {
+        "prefix": "LIB_SPF_add_warning",
+        "body": [
+            "LIB_SPF_add_warning"
+        ],
+        "description": "This function adds a warning message to the post process info window.<br>The configuration object \\'CONF_SPF_warning\\' allows to set how warnings are being handled.<br>'+'LIB_SPF_add_warning <text> <mode> <function>"
+    },
+    "LIB_SPF_read_tool_attribute": {
+        "prefix": "LIB_SPF_read_tool_attribute",
+        "body": [
+            "LIB_SPF_read_tool_attribute"
+        ],
+        "description": "This function reads tool attribute data from the active tool library.<br>Internally the standard MOM-command MOM_ask_library_attributes is used, but enriched with<br>error handling.<br>'+'LIB_SPF_read_tool_attribute <attribute> <default> <ind> <cutter_libref>"
+    },
+    "LIB_SPF_read_part_attribute": {
+        "prefix": "LIB_SPF_read_part_attribute",
+        "body": [
+            "LIB_SPF_read_part_attribute"
+        ],
+        "description": "This function reads part attribute data from the active part.<br>The function has error handling.<br>'+'LIB_SPF_read_part_attribute <attribute> <default> <ind> <clear>"
+    },
+    "LIB_SPF_read_oper_attribute": {
+        "prefix": "LIB_SPF_read_oper_attribute",
+        "body": [
+            "LIB_SPF_read_oper_attribute"
+        ],
+        "description": "This function reads operation attribute data from the current operation.<br>The function has error handling.<br>'+'LIB_SPF_read_oper_attribute <attribute> <default> <ind> <clear>"
+    },
+    "LIB_SPF_read_programview_attribute": {
+        "prefix": "LIB_SPF_read_programview_attribute",
+        "body": [
+            "LIB_SPF_read_programview_attribute"
+        ],
+        "description": "This function reads programview attribute data.<br>The function has error handling.<br>'+'LIB_SPF_read_programview_attribute <attribute> <default> <ind> <clear>"
+    },
+    "LIB_SPF_extract_udecode": {
+        "prefix": "LIB_SPF_extract_udecode",
+        "body": [
+            "LIB_SPF_extract_udecode"
+        ],
+        "description": "This function returns the option number of an ude, provided that the options start with<br>a number (an id) and are followed by - or _<br>This helps you creating language independant UDE\\'s as we only consider the id and not the<br>name after the - or _<br>'+'LIB_SPF_extract_udecode <ude> <name>"
+    },
+    "LIB_SPF_round": {
+        "prefix": "LIB_SPF_round",
+        "body": [
+            "LIB_SPF_round"
+        ],
+        "description": "This function returns the rounded value of a given value.<br>The rounding precision is based on the given precision.<br>'+'LIB_SPF_round <value> <precision>"
+    },
+    "EQ_is_equal": {
+        "prefix": "EQ_is_equal",
+        "body": [
+            "EQ_is_equal"
+        ],
+        "description": "This function checks if two given values are equal within a given tolerance.<br>'+'EQ_is_equal <s> <t> <tol>"
+    },
+    "EQ_is_ge": {
+        "prefix": "EQ_is_ge",
+        "body": [
+            "EQ_is_ge"
+        ],
+        "description": "This function checks if value1 is greater or equal (_ge) than value 2 within a given tolerance.<br>'+'EQ_is_ge <s> <t> <tol>"
+    },
+    "EQ_is_gt": {
+        "prefix": "EQ_is_gt",
+        "body": [
+            "EQ_is_gt"
+        ],
+        "description": "This function checks if value1 is greater than (_gt) value 2 within a given tolerance.<br>'+'EQ_is_gt <s> <t> <tol>"
+    },
+    "EQ_is_le": {
+        "prefix": "EQ_is_le",
+        "body": [
+            "EQ_is_le"
+        ],
+        "description": "This function checks if value1 is less or equal (_le) than value 2 within a given tolerance.<br>'+'EQ_is_le <s> <t> <tol>"
+    },
+    "EQ_is_lt": {
+        "prefix": "EQ_is_lt",
+        "body": [
+            "EQ_is_lt"
+        ],
+        "description": "This function checks if value1 is less than (_lt) value 2 within a given tolerance.<br>'+'EQ_is_lt <s> <t> <tol>"
+    },
+    "EQ_is_zero": {
+        "prefix": "EQ_is_zero",
+        "body": [
+            "EQ_is_zero"
+        ],
+        "description": "This function checks if a given value is zero within a given tolerance.<br>'+'EQ_is_zero <s> <tol>"
+    },
+    "VEC3_add": {
+        "prefix": "VEC3_add",
+        "body": [
+            "VEC3_add"
+        ],
+        "description": "This function performs a vector addition.<br>VEC3_add(u,v,w)   w = u + v   Vector addition<br>'+'VEC3_add <u> <v> <w>"
+    },
+    "VEC3_cross": {
+        "prefix": "VEC3_cross",
+        "body": [
+            "VEC3_cross"
+        ],
+        "description": "This function calculates the vector cross product.<br>VEC3_cross(u,v,w)   w = ( u X v )   Vector cross product<br>'+'VEC3_cross <u> <v> <w>"
+    },
+    "VEC3_dot": {
+        "prefix": "VEC3_dot",
+        "body": [
+            "VEC3_dot"
+        ],
+        "description": "This function calculates the vector dot product of normalized input vectors.<br>VEC3_dot(u,v)   (u dot v)   Vector dot product (u &amp; v normalized)<br>'+'VEC3_dot <u> <v>"
+    },
+    "VEC3_dot_A": {
+        "prefix": "VEC3_dot_A",
+        "body": [
+            "VEC3_dot_A"
+        ],
+        "description": "This function calculates the vector dot product. Input vectors don\\'t need to be normalized.<br>VEC3_dot_A(u,v)   (u dot v)   Vector dot product (u &amp; v not necessarily normalized)<br>'+'VEC3_dot_A <u> <v>"
+    },
+    "VEC3_init": {
+        "prefix": "VEC3_init",
+        "body": [
+            "VEC3_init"
+        ],
+        "description": "This function initialize a vector from a coordinate value. This is useful to create a vector<br>from given variables.<br>VEC3_init(x,y,z,w)   w = (x, y, z)   Initialize a vector from<br>coordinates (passed as variables)<br>'+'VEC3_init <x> <y> <z> <w>"
+    },
+    "VEC3_init_s": {
+        "prefix": "VEC3_init_s",
+        "body": [
+            "VEC3_init_s"
+        ],
+        "description": "This function initialize a vector from scalar values. This is useful to create a vector<br>directly from given values.<br>VEC3_init_s(x,y,z,w)   w = (x, y, z)   Initialize a vector from<br>coordinates (passed as scalars)<br>'+'VEC3_init_s <x> <y> <z> <w>"
+    },
+    "VEC3_is_equal": {
+        "prefix": "VEC3_is_equal",
+        "body": [
+            "VEC3_is_equal"
+        ],
+        "description": "This function checks if two given vectors are equal within a given tolerance.<br>VEC3_is_equal(u,v,tol)   (||(u-v)|| < tol)   Are vectors equal?<br>'+'VEC3_is_equal <u> <v> <tol>"
+    },
+    "VEC3_is_zero": {
+        "prefix": "VEC3_is_zero",
+        "body": [
+            "VEC3_is_zero"
+        ],
+        "description": "This function checks if a given vector is zero.<br>VEC3_is_zero(u,tol)   (|| u || < tol)   Is vector zero?<br>'+'VEC3_is_zero <u>"
+    },
+    "VEC3_mag": {
+        "prefix": "VEC3_mag",
+        "body": [
+            "VEC3_mag"
+        ],
+        "description": "VEC3_mag(u)   ( || u || )   Vector magnitude<br>'+'VEC3_mag <u>"
+    },
+    "VEC3_negate": {
+        "prefix": "VEC3_negate",
+        "body": [
+            "VEC3_negate"
+        ],
+        "description": "This function negates a given vector.<br>VEC3_negate(u,w)   w = (-u)   Vector negate<br>'+'VEC3_negate <u> <w>"
+    },
+    "VEC3_scale": {
+        "prefix": "VEC3_scale",
+        "body": [
+            "VEC3_scale"
+        ],
+        "description": "This function scales a vector by a given scale.<br>VEC3_scale(s,u,w)   w = (s*u)   Vector scale<br>'+'VEC3_scale <s> <u> <w>"
+    },
+    "VEC3_sub": {
+        "prefix": "VEC3_sub",
+        "body": [
+            "VEC3_sub"
+        ],
+        "description": "This function substracts one vector from another vector.<br>VEC3_sub(u,v,w)   w = u - v   Vector subtraction<br>'+'VEC3_sub <u> <v> <w>"
+    },
+    "VEC3_unitize": {
+        "prefix": "VEC3_unitize",
+        "body": [
+            "VEC3_unitize"
+        ],
+        "description": "This function results the unit vector (or normalized vector) of an given vector in space.<br>VEC3_unitize(u,w)   *len = || u ||   Vector unitization<br>'+'VEC3_unitize <u> <w>"
+    },
+    "VEC3_rotate_arbitary_axis": {
+        "prefix": "VEC3_rotate_arbitary_axis",
+        "body": [
+            "VEC3_rotate_arbitary_axis"
+        ],
+        "description": "This function rotates a vector around an arbitary axis.<br>'+'VEC3_rotate_arbitary_axis <axis> <angle> <input_vector> <output_vector>"
+    },
+    "VEC3_dist_point_line": {
+        "prefix": "VEC3_dist_point_line",
+        "body": [
+            "VEC3_dist_point_line"
+        ],
+        "description": "This function calculates the shortest distance between a given point and a line.<br>It is the distance from the point perpendicular to the line.<br>'+'VEC3_dist_point_line <_u> <_v> <_w>"
+    },
+    "VEC3_angle_3points": {
+        "prefix": "VEC3_angle_3points",
+        "body": [
+            "VEC3_angle_3points"
+        ],
+        "description": "This function calculates the angle between three points.<br>'+'VEC3_angle_3points <_u> <_v> <_w>"
+    },
+    "VEC3_angle_between": {
+        "prefix": "VEC3_angle_between",
+        "body": [
+            "VEC3_angle_between"
+        ],
+        "description": "This function calculates the angle between two vectors. The input vectors do not need<br>to be unitized.<br>'+'VEC3_angle_between <vec1> <vec2> <return_unit>"
+    },
+    "VEC3_is_parallel": {
+        "prefix": "VEC3_is_parallel",
+        "body": [
+            "VEC3_is_parallel"
+        ],
+        "description": "This function checks if two vectors are parallel or not.<br>'+'VEC3_is_parallel <u> <v>"
+    },
+    "LIB_SPF_mcs_vector": {
+        "prefix": "LIB_SPF_mcs_vector",
+        "body": [
+            "LIB_SPF_mcs_vector"
+        ],
+        "description": "This function transforms a vector from machine coordinate to work coordinate system.<br>'+'LIB_SPF_mcs_vector <input_vector> <output_vector>"
+    },
+    "MTX3_init_x_y_z": {
+        "prefix": "MTX3_init_x_y_z",
+        "body": [
+            "MTX3_init_x_y_z"
+        ],
+        "description": "This function initializes a matrix from given x, y and z vectors.<br>MTX3_init_x_y_z (u, v, w, r) r = (u, v, w)   Initialize a matrix from<br>given x, y and z vectors<br>'+'MTX3_init_x_y_z <u> <v> <w> <r>"
+    },
+    "MTX3_is_equal": {
+        "prefix": "MTX3_is_equal",
+        "body": [
+            "MTX3_is_equal"
+        ],
+        "description": "This function determines if two matrices are equal within mom_system_tolerance.<br>MTX3_is_equal(m,n,a)   (m == n)   Determine if two matrices<br>are equal.<br>'+'MTX3_is_equal <m> <n> <count>"
+    },
+    "MTX3_multiply": {
+        "prefix": "MTX3_multiply",
+        "body": [
+            "MTX3_multiply"
+        ],
+        "description": "This function multiplies two matrices.<br>MTX3_multiply(m, n, r)   r = ( m X n )   Matrix multiplication<br>'+'MTX3_multiply <m> <n> <r>"
+    },
+    "MTX3_transpose": {
+        "prefix": "MTX3_transpose",
+        "body": [
+            "MTX3_transpose"
+        ],
+        "description": "This function transposes a matrix.<br>MTX3_transpose(m, r)   r = trns(m)   Transpose of matrix<br>'+'MTX3_transpose <m> <r>"
+    },
+    "MTX3_scale": {
+        "prefix": "MTX3_scale",
+        "body": [
+            "MTX3_scale"
+        ],
+        "description": "This function scales a matrix with factor s.<br>MTX3_scale(s,r)   r = (s*(u))   Scale a matrix by s<br>'+'MTX3_scale <s> <r>"
+    },
+    "MTX3_sub": {
+        "prefix": "MTX3_sub",
+        "body": [
+            "MTX3_sub"
+        ],
+        "description": "This function substracts one matrix from another matrix.<br>MTX3_sub(m,n,r)   r = (m - n)   Matrix subtraction<br>'+'MTX3_sub <m> <n> <r>"
+    },
+    "MTX3_add": {
+        "prefix": "MTX3_add",
+        "body": [
+            "MTX3_add"
+        ],
+        "description": "This function performs a matrix addition.<br>MTX3_add(m,n,r)   r = (m + n)   Matrix addition<br>'+'MTX3_add <m> <n> <r>"
+    },
+    "MTX3_vec_multiply": {
+        "prefix": "MTX3_vec_multiply",
+        "body": [
+            "MTX3_vec_multiply"
+        ],
+        "description": "This function performs a vector / matrix multiplication.<br>MTX3_vec_multiply(u, m, w)   w = (u X m)   Vector/matrix multiplication<br>'+'MTX3_vec_multiply <u> <m> <w>"
+    },
+    "MTX3_x": {
+        "prefix": "MTX3_x",
+        "body": [
+            "MTX3_x"
+        ],
+        "description": "This function returns the first column vector (X-vector) of a matrix.<br>MTX3_x(m, w)   w = (1st column)   First column vector of matrix<br>'+'MTX3_x <m> <w>"
+    },
+    "MTX3_y": {
+        "prefix": "MTX3_y",
+        "body": [
+            "MTX3_y"
+        ],
+        "description": "This function returns the second column vector (Y-vector) of a matrix.<br>MTX3_y(m, w)   w = (2nd column)   Second column vector of matrix<br>'+'MTX3_y <m> <w>"
+    },
+    "MTX3_z": {
+        "prefix": "MTX3_z",
+        "body": [
+            "MTX3_z"
+        ],
+        "description": "This function returns the third column vector (Z-vector) of a matrix.<br>MTX3_z(m, w)   w = (3rd column)   Third column vector of matrix<br>'+'MTX3_z <m> <w>"
+    },
+    "VMOV": {
+        "prefix": "VMOV",
+        "body": [
+            "VMOV"
+        ],
+        "description": "This function copies a vector or matrix to an other one.<br>'+'VMOV <n> <p1> <p2>"
+    },
+    "hiset": {
+        "prefix": "hiset",
+        "body": [
+            "hiset"
+        ],
+        "description": "This function checks if a variable is set or not.<br>'+'hiset <v1>"
+    },
+    "isset": {
+        "prefix": "isset",
+        "body": [
+            "isset"
+        ],
+        "description": "'+'isset <v1>"
+    },
+    "OUTPUT_adr": {
+        "prefix": "OUTPUT_adr",
+        "body": [
+            "OUTPUT_adr"
+        ],
+        "description": "This function provides a way to check nc code addresses before writing the to the nc code.<br>'+'OUTPUT_adr <args>"
+    },
+    "LIB_SPF_rad_to_deg": {
+        "prefix": "LIB_SPF_rad_to_deg",
+        "body": [
+            "LIB_SPF_rad_to_deg"
+        ],
+        "description": "This function converts an angular value in radians to an angular value in degrees.<br>'+'LIB_SPF_rad_to_deg <angrad>"
+    },
+    "LIB_SPF_deg_to_rad": {
+        "prefix": "LIB_SPF_deg_to_rad",
+        "body": [
+            "LIB_SPF_deg_to_rad"
+        ],
+        "description": "This function converts an angular value in degrees to an angular value in radians.<br>'+'LIB_SPF_deg_to_rad <angdeg>"
+    },
+    "LIB_SPF_convert_decimal_to_binary": {
+        "prefix": "LIB_SPF_convert_decimal_to_binary",
+        "body": [
+            "LIB_SPF_convert_decimal_to_binary"
+        ],
+        "description": "This function converts decimal values to binary values.<br>'+'LIB_SPF_convert_decimal_to_binary <decimal>"
+    },
+    "LIB_SPF_convert_hex_to_string": {
+        "prefix": "LIB_SPF_convert_hex_to_string",
+        "body": [
+            "LIB_SPF_convert_hex_to_string"
+        ],
+        "description": "This function converts a string to a hexadecimal value.<br><br>This function converts an hexadecimal value to a string.<br>'+'LIB_SPF_convert_hex_to_string <hex>"
+    },
+    "LIB_SPF_convert_to_md5": {
+        "prefix": "LIB_SPF_convert_to_md5",
+        "body": [
+            "LIB_SPF_convert_to_md5"
+        ],
+        "description": "This function converts a string to a md5 value.<br>'+'LIB_SPF_convert_to_md5 <msg>"
+    },
+    "LIB_SPF_convert_point": {
+        "prefix": "LIB_SPF_convert_point",
+        "body": [
+            "LIB_SPF_convert_point"
+        ],
+        "description": "This function converts the current position (mom_pos and mom_alt_pos) into the desired kinematic system.<br>The mom_out_angle_pos is calculated with the limits in the defined configuration, taking into account the<br>limit and mom_kin_(4)5th_axis_direction variables.<br>'+'LIB_SPF_convert_point <option>"
+    },
+    "LIB_SPF_convert_binary_to_decimal": {
+        "prefix": "LIB_SPF_convert_binary_to_decimal",
+        "body": [
+            "LIB_SPF_convert_binary_to_decimal"
+        ],
+        "description": "This function converts numbers in binary format to their corresponcance in decimal format.<br>'+'LIB_SPF_convert_binary_to_decimal <binary>"
+    },
+    "LIB_SPF_exists_address": {
+        "prefix": "LIB_SPF_exists_address",
+        "body": [
+            "LIB_SPF_exists_address"
+        ],
+        "description": "This function checks whether the given address is defined in one of the currently sourced definition files.<br>In order to use this function you have to activate the property [CONF_SPF_advanced_settings parse_def_file].<br>'+'LIB_SPF_exists_address <address> <supress_error>"
+    },
+    "LIB_SPF_ask_address": {
+        "prefix": "LIB_SPF_ask_address",
+        "body": [
+            "LIB_SPF_ask_address"
+        ],
+        "description": "This function gives you detailled access to the definition elements of an address.<br>In order to use this function you have to activate the property [CONF_SPF_advanced_settings parse_def_file].<br>'+'LIB_SPF_ask_address <address> <parameter> <supress_error>"
+    },
+    "LIB_SPF_exists_format": {
+        "prefix": "LIB_SPF_exists_format",
+        "body": [
+            "LIB_SPF_exists_format"
+        ],
+        "description": "This function checks if the given format name is defined in one of the currently sourced definition files.<br>In order to use this function you have to activate the property [CONF_SPF_advanced_settings parse_def_file].<br>'+'LIB_SPF_exists_format <format> <supress_error>"
+    },
+    "LIB_SPF_ask_format": {
+        "prefix": "LIB_SPF_ask_format",
+        "body": [
+            "LIB_SPF_ask_format"
+        ],
+        "description": "This function reads the format definition of the given format name out of of the currently sourced definition files.<br>In order to use this function you have to activate the property [CONF_SPF_advanced_settings parse_def_file].<br>'+'LIB_SPF_ask_format <format> <supress_error>"
+    },
+    "LIB_SPF_exists_block_template": {
+        "prefix": "LIB_SPF_exists_block_template",
+        "body": [
+            "LIB_SPF_exists_block_template"
+        ],
+        "description": "This function checks if the given block template name is defined in one of the currently sourced definition files.<br>In order to use this function you have to activate the property [CONF_SPF_advanced_settings parse_def_file].<br>'+'LIB_SPF_exists_block_template <block_template> <supress_error>"
+    },
+    "LIB_SPF_ask_block_template": {
+        "prefix": "LIB_SPF_ask_block_template",
+        "body": [
+            "LIB_SPF_ask_block_template"
+        ],
+        "description": "This function gives you detailled access to the definition elements of a block template.<br>In order to use this function you have to activate the property [CONF_SPF_advanced_settings parse_def_file].<br>'+'LIB_SPF_ask_block_template <block_template> <parameter> <supress_error>"
+    },
+    "LIB_SPF_call_cycle": {
+        "prefix": "LIB_SPF_call_cycle",
+        "body": [
+            "LIB_SPF_call_cycle"
+        ],
+        "description": "This function writes a machining cycle call in the NC code by considering the respective<br>format settings in the PostConfigurator user interface. It is mainly used for Heidenhain<br>multiline cycle output and for Sinumerik cycle output.<br>'+'LIB_SPF_call_cycle <cycle> <prefix> <exclusion> <seperator> <trailer>"
+    },
+    "LIB_SPF_modulo_sign": {
+        "prefix": "LIB_SPF_modulo_sign",
+        "body": [
+            "LIB_SPF_modulo_sign"
+        ],
+        "description": "Used to detect sign rotary motion with modulo axis<br>'+'LIB_SPF_modulo_sign <first> <second> <max_value>"
+    },
+    "LIB_SPF_atan_polar": {
+        "prefix": "LIB_SPF_atan_polar",
+        "body": [
+            "LIB_SPF_atan_polar"
+        ],
+        "description": "Utility to convert cartesian coordinate to polar<br>'+'LIB_SPF_atan_polar <v1> <v2>"
+    },
+    "LIB_SPF_ask_delta_4th_or_5th": {
+        "prefix": "LIB_SPF_ask_delta_4th_or_5th",
+        "body": [
+            "LIB_SPF_ask_delta_4th_or_5th"
+        ],
+        "description": "This function returns the delta degrees rotation of the axis_no(4 or 5)<br>'+'LIB_SPF_ask_delta_4th_or_5th <axis_no>"
+    },
+    "LIB_SPF_ask_smaller_of_4th_5th": {
+        "prefix": "LIB_SPF_ask_smaller_of_4th_5th",
+        "body": [
+            "LIB_SPF_ask_smaller_of_4th_5th"
+        ],
+        "description": "This function returns the shortest delta degrees rotation out of 4th and 5th axis.<br>'+'LIB_SPF_ask_smaller_of_4th_5th <axis_no>"
+    },
+    "LIB_SPF_set_op_tool_param_condition": {
+        "prefix": "LIB_SPF_set_op_tool_param_condition",
+        "body": [
+            "LIB_SPF_set_op_tool_param_condition"
+        ],
+        "description": "Utility to check the state of global variables at specific position in the postrun<br>'+'LIB_SPF_set_op_tool_param_condition <param> <args>"
+    },
+    "LIB_SPF_execute_op_tool_param_condition": {
+        "prefix": "LIB_SPF_execute_op_tool_param_condition",
+        "body": [
+            "LIB_SPF_execute_op_tool_param_condition"
+        ],
+        "description": "This function executes the predefined condition checks, set in LIB_SPF_op_tool_param_condition and LIB_SPF_custom_op_tool_param_condition.<br>The function can be called in any proc. The argument has to be the name of the calling proc.<br>'+'LIB_SPF_execute_op_tool_param_condition <calling_proc> <position>"
+    },
+    "LIB_SPF_get_partnname": {
+        "prefix": "LIB_SPF_get_partnname",
+        "body": [
+            "LIB_SPF_get_partnname"
+        ],
+        "description": "This function returns the partname.<br>'+'LIB_SPF_get_partnname <calling_proc> <position>"
+    },
+    "LIB_SPF_reset_motions_to_zero": {
+        "prefix": "LIB_SPF_reset_motions_to_zero",
+        "body": [
+            "LIB_SPF_reset_motions_to_zero"
+        ],
+        "description": "This command reset the values of the axis to zero. This is useful to calculate the kinematic<br>values of the next operation based from zero.<br>'+'LIB_SPF_reset_motions_to_zero <option>"
+    },
+    "LIB_DC_complete_formatline": {
+        "prefix": "LIB_DC_complete_formatline",
+        "body": [
+            "LIB_DC_complete_formatline"
+        ],
+        "description": "Formats a string with repeated characters at a given number.<br>'+'LIB_DC_complete_formatline <string> <character>"
+    },
+    "LIB_DC_format_string": {
+        "prefix": "LIB_DC_format_string",
+        "body": [
+            "LIB_DC_format_string"
+        ],
+        "description": "Formats a string according to a given pattern witch describes columns. It defines the length of an<br>string element per column, the alignment and also separators between columns.<br>'+'LIB_DC_format_string <string> <character> <ellipsis>"
+    },
+    "LIB_DC_check_variable": {
+        "prefix": "LIB_DC_check_variable",
+        "body": [
+            "LIB_DC_check_variable"
+        ],
+        "description": "Checks if a given expression is an existing variable and gives back its current value.<br>If it is not an existing variable it gives back the defaulttext<br>'+'LIB_DC_check_variable <variable> <defaulttext>"
+    },
+    "LIB_DC_time_format": {
+        "prefix": "LIB_DC_time_format",
+        "body": [
+            "LIB_DC_time_format"
+        ],
+        "description": "Formats minute values into time format hh:min:sec<br>'+'LIB_DC_time_format <arg1>"
+    },
+    "LIB_DC_escape_string": {
+        "prefix": "LIB_DC_escape_string",
+        "body": [
+            "LIB_DC_escape_string"
+        ],
+        "description": "This function escapes an input string in order to be further used in tcl language<br>'+'LIB_DC_escape_string <arg1>"
+    },
+    "LIB_DC_ellipsis_character": {
+        "prefix": "LIB_DC_ellipsis_character",
+        "body": [
+            "LIB_DC_ellipsis_character"
+        ],
+        "description": "This function generates a shortened representation of a given string. It is mostly used for<br>displaying long filenames and paths.<br>'+'LIB_DC_ellipsis_character <string> <length> <postion> <placeholder>"
+    },
+    "LIB_RETURN_move": {
+        "prefix": "LIB_RETURN_move",
+        "body": [
+            "LIB_RETURN_move"
+        ],
+        "description": "Writes return motions to the NC-code. Settings for home motions (CONF_CTRL_moves return_mode)<br>are taken into consideration for the output format of the return motions.<br>'+'LIB_RETURN_move <Addresses> <property>"
+    },
+    "LIB_main_origin_call": {
+        "prefix": "LIB_main_origin_call",
+        "body": [
+            "LIB_main_origin_call"
+        ],
+        "description": "Writes the active main origin to the NC-code, provided that the property<br>[CONF_CTRL_origin use_main] is set to \\'On\\'.<br>'+'LIB_main_origin_call <offset_nbr> <create>"
+    },
+    "LIB_ISV_ini_get_env_dir_info": {
+        "prefix": "LIB_ISV_ini_get_env_dir_info",
+        "body": [
+            "LIB_ISV_ini_get_env_dir_info"
+        ],
+        "description": "This function returns the path, defined with the environment variable UGII_CAM_CSE_USER_DIR.<br>If the variable is not set it returns an empty string and displays an information in the listing window.<br>'+'LIB_ISV_ini_get_env_dir_info <mode>"
+    },
+    "LIB_output_local_zero_offset": {
+        "prefix": "LIB_output_local_zero_offset",
+        "body": [
+            "LIB_output_local_zero_offset"
+        ],
+        "description": "Output the local origin reset and definition only when needed (CYCL DEF 7)<br>'+'LIB_output_local_zero_offset <Addresses> <property>"
+    },
+    "LIB_start_of_program_blk_form": {
+        "prefix": "LIB_start_of_program_blk_form",
+        "body": [
+            "LIB_start_of_program_blk_form"
+        ],
+        "description": "This function outputs the BLK FORM definition for simulation purposes on the heidenhain controller.<br>Default values are -20 inches in XYZ up to +20 inches respectively -500mm up to +500mm.<br>Block form may be defined by an UDE with two points. mom_blk_point_1 defines the lower left point while<br>mom_blk_point_2 defines the upper right point.<br>The whole procedure may be copied to the service layer for customization purposes.<br>'+'LIB_start_of_program_blk_form <Addresses> <property>"
+    },
+    "LIB_CTRL_custom_cycle800_auto_set_kin": {
+        "prefix": "LIB_CTRL_custom_cycle800_auto_set_kin",
+        "body": [
+            "LIB_CTRL_custom_cycle800_auto_set_kin"
+        ],
+        "description": "Allows to define the kinematics used for cycle800 machine/customer specific<br>The kinematics for a specific CYCLE800 _MODE (39,54...) can be implemented<br><br>The proc is called from LIB_SPF_KINEMATICS_set_plane_output_kin_ENTRY and gets<br>[CONF_S840D_cycle800 _MODE] as argument<br><br>The proc returns 0 if the specific mode is not treaten in the proc, otherwise 1<br>'+'LIB_CTRL_custom_cycle800_auto_set_kin <mode>"
+    },
+    "LIB_CTRL_custom_cycle800_plane_output_kin": {
+        "prefix": "LIB_CTRL_custom_cycle800_plane_output_kin",
+        "body": [
+            "LIB_CTRL_custom_cycle800_plane_output_kin"
+        ],
+        "description": "Allows to define the kinematics used for cycle800 machine/customer specific<br>The kinematics for a specific CYCLE800 _MODE (39,54...) can be implemented<br><br>The proc is called from LIB_CSYS_plane_output_init and gets<br>[CONF_S840D_cycle800 _MODE] as argument<br><br>The proc returns 0 if the specific mode is not treaten in the proc, otherwise 1<br>'+'LIB_CTRL_custom_cycle800_plane_output_kin <mode>"
+    },
+    "mom_kin_4th_axis_ang_offset": {
+        "prefix": "mom_kin_4th_axis_ang_offset",
+        "body": [
+            "mom_kin_4th_axis_ang_offset"
+        ],
+        "description": "Defines an angular value that is added to the fourth axis rotary angle.&nbsp; This is used when a tool axis of (0,0,1) does not result in a position of zero position.. Numeric Value"
+    },
+    "mom_kin_4th_axis_center_offset": {
+        "prefix": "mom_kin_4th_axis_center_offset",
+        "body": [
+            "mom_kin_4th_axis_center_offset"
+        ],
+        "description": "For four and five axis milling machines.&nbsp; Defines the distance from the center of the rotary table to machine tool zero position.. Numeric Array(3)"
+    },
+    "mom_kin_4th_axis_direction": {
+        "prefix": "mom_kin_4th_axis_direction",
+        "body": [
+            "mom_kin_4th_axis_direction"
+        ],
+        "description": "Defines how the fourth axis rotary positions will be output.&nbsp; The mom variable mom_out_angle_pos(0) will contain the rotary value.&nbsp; For example move table or head from 90 to 45 degrees. MAGNITUDE_DETERMINES_DIRECTION would output: Shortest 45, CLW 405, CCLW 45.&nbsp; SIGN_DETERMINES_DIRECTION would output: Shortest -45, CLW 45, CCLW -45.&nbsp;. MAGNITUDE_DETERMINES_DIRECTION, SIGN_DETERMINES_DIRECTION"
+    },
+    "mom_kin_4th_axis_incr_switch": {
+        "prefix": "mom_kin_4th_axis_incr_switch",
+        "body": [
+            "mom_kin_4th_axis_incr_switch"
+        ],
+        "description": "Determines whether the fourth axis rotary coordinates will be incremental or absolute.&nbsp; This value is toggled ON, OFF in the machine tool dialog in Post Builder.. ON (incremental) or OFF (absolute)"
+    },
+    "mom_kin_4th_axis_leader": {
+        "prefix": "mom_kin_4th_axis_leader",
+        "body": [
+            "mom_kin_4th_axis_leader"
+        ],
+        "description": "Description of mom_kin_4th_axis_leader"
+    },
+    "mom_kin_4th_axis_limit_action": {
+        "prefix": "mom_kin_4th_axis_limit_action",
+        "body": [
+            "mom_kin_4th_axis_limit_action"
+        ],
+        "description": "Defines the action that takes place when there is a rotary axis violation for the fourth axis.&nbsp; The options are to output a warning or to retract to a clearance plane, rotate the axis, and re-engage to the part.. Warning or Retract / Reengage"
+    },
+    "mom_kin_4th_axis_max_limit": {
+        "prefix": "mom_kin_4th_axis_max_limit",
+        "body": [
+            "mom_kin_4th_axis_max_limit"
+        ],
+        "description": "Description of mom_kin_4th_axis_max_limit"
+    },
+    "mom_kin_4th_axis_min_incr": {
+        "prefix": "mom_kin_4th_axis_min_incr",
+        "body": [
+            "mom_kin_4th_axis_min_incr"
+        ],
+        "description": "Defines the resolution of your table or head.&nbsp; Enter one if your table or head positions to one degree increments.&nbsp; For full contouring axis, enter 0.001.. Any number greater than zero."
+    },
+    "mom_kin_4th_axis_min_limit": {
+        "prefix": "mom_kin_4th_axis_min_limit",
+        "body": [
+            "mom_kin_4th_axis_min_limit"
+        ],
+        "description": "Description of mom_kin_4th_axis_min_limit"
+    },
+    "mom_kin_4th_axis_plane": {
+        "prefix": "mom_kin_4th_axis_plane",
+        "body": [
+            "mom_kin_4th_axis_plane"
+        ],
+        "description": "Defines the plane of rotation of the rotary axis.. XY, ZX, YZ"
+    },
+    "mom_kin_4th_axis_rotation": {
+        "prefix": "mom_kin_4th_axis_rotation",
+        "body": [
+            "mom_kin_4th_axis_rotation"
+        ],
+        "description": "Defines the direction of rotation of the rotary axis.&nbsp; Occasionally, tables are installed incorrectly.&nbsp; The setting allows you to compensate for tables that rotate in a non-standard manner.&nbsp; In the XY plane, looking down the Z axis from positive to negative, rotation to a larger angle is standard.&nbsp; In the ZX plane, looking down the Y axis from positive to negative, rotation to a larger angle is standard.  In the YZ plane, looking down the X axis from positive to negative, rotation to a larger angle is standard.. STANDARD, REVERSE"
+    },
+    "mom_kin_4th_axis_type": {
+        "prefix": "mom_kin_4th_axis_type",
+        "body": [
+            "mom_kin_4th_axis_type"
+        ],
+        "description": "Defines how the rotary axis rotates.&nbsp; If Head, then tool itself tilts about a pivot point.&nbsp; If Table, then the part rotates.. Head or Table"
+    },
+    "mom_kin_4th_axis_zero": {
+        "prefix": "mom_kin_4th_axis_zero",
+        "body": [
+            "mom_kin_4th_axis_zero"
+        ],
+        "description": "Defines an offset that will be added to the rotary position. This offset is used when a (0,0,1) tool axis results in an angle other than zero.. Numeric Value"
+    },
+    "mom_kin_5th_axis_ang_offset": {
+        "prefix": "mom_kin_5th_axis_ang_offset",
+        "body": [
+            "mom_kin_5th_axis_ang_offset"
+        ],
+        "description": "Defines an angular value that is added to the fifth axis rotary angle. This is used when a tool axis of (0,0,1) does not result in a position of zero axis rotation.. Numeric Value"
+    },
+    "mom_kin_5th_axis_center_offset": {
+        "prefix": "mom_kin_5th_axis_center_offset",
+        "body": [
+            "mom_kin_5th_axis_center_offset"
+        ],
+        "description": "Defines the distance from the center of rotation of the fourth axis to the center of rotation of the fifth axis.&nbsp; If the axis vector of the fourth axis passes through the center of the fifth axis, then this distance is zero.. Numeric Array(3)"
+    },
+    "mom_kin_5th_axis_direction": {
+        "prefix": "mom_kin_5th_axis_direction",
+        "body": [
+            "mom_kin_5th_axis_direction"
+        ],
+        "description": "Defines how the fifth axis rotary positions will be output.&nbsp; The mom variable mom_out_angle_pos(1) will contain the rotary value.&nbsp; For example move table or head from 90 to 45 degrees. MAGNITUDE_DETERMINES_DIRECTION would output: Shortest 45, CLW 405, CCLW 45.&nbsp; SIGN_DETERMINES_DIRECTION would output: Shortest -45, CLW 45, CCLW -45.&nbsp;. MAGNITUDE_DETERMINES_DIRECTION, SIGN_DETERMINES_DIRECTION"
+    },
+    "mom_kin_5th_axis_incr_switch": {
+        "prefix": "mom_kin_5th_axis_incr_switch",
+        "body": [
+            "mom_kin_5th_axis_incr_switch"
+        ],
+        "description": "Determines whether the fifth axis rotary coordinates will be incremental or absolute.&nbsp; This value is toggled ON, OFF in the machine tool dialog in Post Builder.. ON (incremental) or OFF (absolute)"
+    },
+    "mom_kin_5th_axis_leader": {
+        "prefix": "mom_kin_5th_axis_leader",
+        "body": [
+            "mom_kin_5th_axis_leader"
+        ],
+        "description": "Description of mom_kin_5th_axis_leader"
+    },
+    "mom_kin_5th_axis_limit_action": {
+        "prefix": "mom_kin_5th_axis_limit_action",
+        "body": [
+            "mom_kin_5th_axis_limit_action"
+        ],
+        "description": "Defines the action that takes place when there is a rotary axis violation for the fifth axis.&nbsp; The options are to output a warning or to retract to a clearance plane, rotate the axis, and re-engage to the part.. Warning or Retract / Reengage"
+    },
+    "mom_kin_5th_axis_max_limit": {
+        "prefix": "mom_kin_5th_axis_max_limit",
+        "body": [
+            "mom_kin_5th_axis_max_limit"
+        ],
+        "description": "The maximum rotary position of the fifth axis.. Any number greater than zero."
+    },
+    "mom_kin_5th_axis_min_incr": {
+        "prefix": "mom_kin_5th_axis_min_incr",
+        "body": [
+            "mom_kin_5th_axis_min_incr"
+        ],
+        "description": "Defines the resolution of your table or head.&nbsp; Enter one if your table or head positions to one degree increments.&nbsp; For full contouring axis, enter 0.001.. Any number greater than zero."
+    },
+    "mom_kin_5th_axis_min_limit": {
+        "prefix": "mom_kin_5th_axis_min_limit",
+        "body": [
+            "mom_kin_5th_axis_min_limit"
+        ],
+        "description": "Description of mom_kin_5th_axis_min_limit"
+    },
+    "mom_kin_5th_axis_plane": {
+        "prefix": "mom_kin_5th_axis_plane",
+        "body": [
+            "mom_kin_5th_axis_plane"
+        ],
+        "description": "Defines the plane of rotation of the rotary axis.. XY, ZX, YZ"
+    },
+    "mom_kin_5th_axis_rotation": {
+        "prefix": "mom_kin_5th_axis_rotation",
+        "body": [
+            "mom_kin_5th_axis_rotation"
+        ],
+        "description": "Defines the direction of rotation of the rotary axis.&nbsp; Occasionally, tables are installed incorrectly.&nbsp; The setting allows you to compensate for tables that rotate in a non-standard manner.&nbsp; In the XY plane, looking down the Z axis from positive to negative, rotation to a larger angle is standard.&nbsp; In the ZX plane, looking down the Y axis from positive to negative, rotation to a larger angle is standard.  In the YZ plane, looking down the X axis from positive to negative, rotation to a larger angle is standard.. STANDARD, REVERSE"
+    },
+    "mom_kin_5th_axis_type": {
+        "prefix": "mom_kin_5th_axis_type",
+        "body": [
+            "mom_kin_5th_axis_type"
+        ],
+        "description": "Defines how the rotary axis rotates.&nbsp; If Head, then tool itself tilts about a pivot point.&nbsp; If Table, then the part rotates.. Head or Table"
+    },
+    "mom_kin_5th_axis_zero": {
+        "prefix": "mom_kin_5th_axis_zero",
+        "body": [
+            "mom_kin_5th_axis_zero"
+        ],
+        "description": "Defines an offset that will be added the rotary position. This offset is used when a (0,0,1) tool axis results in an angle other than zero.. Numeric Value"
+    },
+    "mom_kin_arc_output_mode": {
+        "prefix": "mom_kin_arc_output_mode",
+        "body": [
+            "mom_kin_arc_output_mode"
+        ],
+        "description": "Defines how circles will be output by the post.&nbsp; Only circles generated in the operation can be output as circles.&nbsp; LINEAR will output linear moves based on the tolerances defined on the arc in the operation.&nbsp; QUADRANT will output circles only on quadrant boundaries.&nbsp; FULL_CIRCLE will output arcs up to 360 degrees. . FULL_CIRCLE, QUADRANT, LINEAR"
+    },
+    "mom_kin_arc_valid_planes": {
+        "prefix": "mom_kin_arc_valid_planes",
+        "body": [
+            "mom_kin_arc_valid_planes"
+        ],
+        "description": "Defines the planes in which arcs can be output.&nbsp; XYZ means XY, YZ or ZX.&nbsp; Lathe posts can only output in the XZ plane.&nbsp; ANY is not currently available.. XYZ, XY, YZ, ZX, ANY"
+    },
+    "mom_kin_caxis_rotary_pos": {
+        "prefix": "mom_kin_caxis_rotary_pos",
+        "body": [
+            "mom_kin_caxis_rotary_pos"
+        ],
+        "description": "Used for mill turns to establish a base C axis position.. 0-360"
+    },
+    "mom_kin_clamp_time": {
+        "prefix": "mom_kin_clamp_time",
+        "body": [
+            "mom_kin_clamp_time"
+        ],
+        "description": "Defines the time to be used in time calculations for clamping operations.. Any number greater than or equal to zero."
+    },
+    "mom_kin_coordinate_system_type": {
+        "prefix": "mom_kin_coordinate_system_type",
+        "body": [
+            "mom_kin_coordinate_system_type"
+        ],
+        "description": "Defines the type of coordinate system defined in the operation.&nbsp; LOCAL is the default.&nbsp; This coordinate system type can be used to define a G54 type work coordinate system.&nbsp; MAIN can be used to output coordinates that are relative to the main or master coordinate system.&nbsp; The main coordinate system is defined as the one that defines the machine tool zero. CSYS defines a coordinate system that is local, but uses a postprocessor that outputs G68 or G7 (cycle 19) to define a working coordinate system.. LOCAL, MAIN, or CSYS"
+    },
+    "mom_kin_dependent_head": {
+        "prefix": "mom_kin_dependent_head",
+        "body": [
+            "mom_kin_dependent_head"
+        ],
+        "description": "For lathe only.&nbsp; Defines the name of the dependent head.&nbsp; This name is specified on the TURRET UDE or the machine dialog in the operation.&nbsp; When the dependent head is specified in the operation, the distance from the dependent head to the independent head is applied. The distance is defined with the mom variables mom_kin_ind_to_dependent_head_x and mom_kin_ind_to_dependent_head_z. FRONT, REAR, RIGHT, LEFT, SIDE, SADDLE, NONE"
+    },
+    "mom_kin_helical_arc_output_mode": {
+        "prefix": "mom_kin_helical_arc_output_mode",
+        "body": [
+            "mom_kin_helical_arc_output_mode"
+        ],
+        "description": "Defines how helix motion is output by NX Post.&nbsp; Only helical motion in the operation can be output as helix blocks by the post.&nbsp; NX Post will output the helix as a series of linear GOTOs, a helix for every quadrant, a helix for each 360 degrees or one helix for the entire circle. LINEAR will output the entire helix with linear moves based on the tolerances defined for the arc in the operation.&nbsp; QUADRANT will output a helix record for each 90 degrees of helix.&nbsp; FULL_CIRCLE will output helix record for each 360 degrees of helix.&nbsp; END_POINT will ouput entire helix&nbsp; into a single block.&nbsp; Each postprocessor will then format the helix data.. FULL_CIRCLE, QUADRANT, LINEAR,END_POINT"
+    },
+    "mom_kin_holder1_offset_x": {
+        "prefix": "mom_kin_holder1_offset_x",
+        "body": [
+            "mom_kin_holder1_offset_x"
+        ],
+        "description": "Description of mom_kin_holder1_offset_x"
+    },
+    "mom_kin_holder1_offset_y": {
+        "prefix": "mom_kin_holder1_offset_y",
+        "body": [
+            "mom_kin_holder1_offset_y"
+        ],
+        "description": "Description of mom_kin_holder1_offset_y"
+    },
+    "mom_kin_holder1_offset_z": {
+        "prefix": "mom_kin_holder1_offset_z",
+        "body": [
+            "mom_kin_holder1_offset_z"
+        ],
+        "description": "Description of mom_kin_holder1_offset_z"
+    },
+    "mom_kin_holder1_orientation": {
+        "prefix": "mom_kin_holder1_orientation",
+        "body": [
+            "mom_kin_holder1_orientation"
+        ],
+        "description": "Defines the orientation of the right angle head.&nbsp; The right angle head may be defined along any of the principal axes. Up to six holders may be defined.&nbsp; Use the mom variables mom_kin_holder1_offset_x, mom_kin_holder1_offset_y and mom_kin_holder1_offset_z to define the distance from the gage point.&nbsp; The UDE LOAD/HOLDER,n may be used to activate the right angle head in an operation.. POSX, POSY, POSZ, NEGX, NEGY, NEGZ"
+    },
+    "mom_kin_holder2_offset_x": {
+        "prefix": "mom_kin_holder2_offset_x",
+        "body": [
+            "mom_kin_holder2_offset_x"
+        ],
+        "description": "Description of mom_kin_holder2_offset_x"
+    },
+    "mom_kin_holder2_offset_y": {
+        "prefix": "mom_kin_holder2_offset_y",
+        "body": [
+            "mom_kin_holder2_offset_y"
+        ],
+        "description": "Description of mom_kin_holder2_offset_y"
+    },
+    "mom_kin_holder2_offset_z": {
+        "prefix": "mom_kin_holder2_offset_z",
+        "body": [
+            "mom_kin_holder2_offset_z"
+        ],
+        "description": "Description of mom_kin_holder2_offset_z"
+    },
+    "mom_kin_holder2_orientation": {
+        "prefix": "mom_kin_holder2_orientation",
+        "body": [
+            "mom_kin_holder2_orientation"
+        ],
+        "description": "Defines the orientation of the right angle head.&nbsp; The right angle head may be defined along any of the principal axes. Up to six holders may be defined.&nbsp; Use the mom variables mom_kin_holder1_offset_x, mom_kin_holder1_offset_y and mom_kin_holder1_offset_z to define the distance from the gage point.&nbsp; The UDE LOAD/HOLDER,n may be used to activate the right angle head in an operation.. POSX, POSY, POSZ, NEGX, NEGY, NEGZ"
+    },
+    "mom_kin_holder3_offset_x": {
+        "prefix": "mom_kin_holder3_offset_x",
+        "body": [
+            "mom_kin_holder3_offset_x"
+        ],
+        "description": "Description of mom_kin_holder3_offset_x"
+    },
+    "mom_kin_holder3_offset_y": {
+        "prefix": "mom_kin_holder3_offset_y",
+        "body": [
+            "mom_kin_holder3_offset_y"
+        ],
+        "description": "Description of mom_kin_holder3_offset_y"
+    },
+    "mom_kin_holder3_offset_z": {
+        "prefix": "mom_kin_holder3_offset_z",
+        "body": [
+            "mom_kin_holder3_offset_z"
+        ],
+        "description": "Description of mom_kin_holder3_offset_z"
+    },
+    "mom_kin_holder3_orientation": {
+        "prefix": "mom_kin_holder3_orientation",
+        "body": [
+            "mom_kin_holder3_orientation"
+        ],
+        "description": "Defines the orientation of the right angle head.&nbsp; The right angle head may be defined along any of the principal axes. Up to six holders may be defined.&nbsp; Use the mom variables mom_kin_holder1_offset_x, mom_kin_holder1_offset_y and mom_kin_holder1_offset_z to define the distance from the gage point.&nbsp; The UDE LOAD/HOLDER,n may be used to activate the right angle head in an operation.. POSX, POSY, POSZ, NEGX, NEGY, NEGZ"
+    },
+    "mom_kin_holder4_offset_x": {
+        "prefix": "mom_kin_holder4_offset_x",
+        "body": [
+            "mom_kin_holder4_offset_x"
+        ],
+        "description": "Description of mom_kin_holder4_offset_x"
+    },
+    "mom_kin_holder4_offset_y": {
+        "prefix": "mom_kin_holder4_offset_y",
+        "body": [
+            "mom_kin_holder4_offset_y"
+        ],
+        "description": "Description of mom_kin_holder4_offset_y"
+    },
+    "mom_kin_holder4_offset_z": {
+        "prefix": "mom_kin_holder4_offset_z",
+        "body": [
+            "mom_kin_holder4_offset_z"
+        ],
+        "description": "Description of mom_kin_holder4_offset_z"
+    },
+    "mom_kin_holder4_orientation": {
+        "prefix": "mom_kin_holder4_orientation",
+        "body": [
+            "mom_kin_holder4_orientation"
+        ],
+        "description": "Defines the orientation of the right angle head.&nbsp; The right angle head may be defined along any of the principal axes. Up to six holders may be defined.&nbsp; Use the mom variables mom_kin_holder1_offset_x, mom_kin_holder1_offset_y and mom_kin_holder1_offset_z to define the distance from the gage point.&nbsp; The UDE LOAD/HOLDER,n may be used to activate the right angle head in an operation.. POSX, POSY, POSZ, NEGX, NEGY, NEGZ"
+    },
+    "mom_kin_holder5_offset_x": {
+        "prefix": "mom_kin_holder5_offset_x",
+        "body": [
+            "mom_kin_holder5_offset_x"
+        ],
+        "description": "Description of mom_kin_holder5_offset_x"
+    },
+    "mom_kin_holder5_offset_y": {
+        "prefix": "mom_kin_holder5_offset_y",
+        "body": [
+            "mom_kin_holder5_offset_y"
+        ],
+        "description": "Description of mom_kin_holder5_offset_y"
+    },
+    "mom_kin_holder5_offset_z": {
+        "prefix": "mom_kin_holder5_offset_z",
+        "body": [
+            "mom_kin_holder5_offset_z"
+        ],
+        "description": "Description of mom_kin_holder5_offset_z"
+    },
+    "mom_kin_holder5_orientation": {
+        "prefix": "mom_kin_holder5_orientation",
+        "body": [
+            "mom_kin_holder5_orientation"
+        ],
+        "description": "Defines the orientation of the right angle head.&nbsp; The right angle head may be defined along any of the principal axes. Up to six holders may be defined.&nbsp; Use the mom variables mom_kin_holder1_offset_x, mom_kin_holder1_offset_y and mom_kin_holder1_offset_z to define the distance from the gage point.&nbsp; The UDE LOAD/HOLDER,n may be used to activate the right angle head in an operation.. POSX, POSY, POSZ, NEGX, NEGY, NEGZ"
+    },
+    "mom_kin_holder6_offset_x": {
+        "prefix": "mom_kin_holder6_offset_x",
+        "body": [
+            "mom_kin_holder6_offset_x"
+        ],
+        "description": "Description of mom_kin_holder6_offset_x"
+    },
+    "mom_kin_holder6_offset_y": {
+        "prefix": "mom_kin_holder6_offset_y",
+        "body": [
+            "mom_kin_holder6_offset_y"
+        ],
+        "description": "Description of mom_kin_holder6_offset_y"
+    },
+    "mom_kin_holder6_offset_z": {
+        "prefix": "mom_kin_holder6_offset_z",
+        "body": [
+            "mom_kin_holder6_offset_z"
+        ],
+        "description": "Description of mom_kin_holder6_offset_z"
+    },
+    "mom_kin_holder6_orientation": {
+        "prefix": "mom_kin_holder6_orientation",
+        "body": [
+            "mom_kin_holder6_orientation"
+        ],
+        "description": "Defines the orientation of the right angle head.&nbsp; The right angle head may be defined along any of the principal axes. Up to six holders may be defined.&nbsp; Use the mom variables mom_kin_holder1_offset_x, mom_kin_holder1_offset_y and mom_kin_holder1_offset_z to define the distance from the gage point.&nbsp; The UDE LOAD/HOLDER,n may be used to activate the right angle head in an operation.. POSX, POSY, POSZ, NEGX, NEGY, NEGZ"
+    },
+    "mom_kin_iks_usage": {
+        "prefix": "mom_kin_iks_usage",
+        "body": [
+            "mom_kin_iks_usage"
+        ],
+        "description": "Defines the version of inverse kinematics processing that is desired.&nbsp; This defines how the X,Y,Z,I,J,K is converted to X,Y,Z,A,B for four and five axis machine tools.&nbsp; A value of 0 means that the legacy IKS (inverse kinematics solver) in NX2 will be used.&nbsp; A value of 1 means that the new IKS available only in NX3 and later will be used. In Post Builder v3.4 and later mom_kin_iks_usage is set to 1 and the new IKS will be used  Note that non-ortogonal axes and the head object are only available with the new IKS.. 0 or 1"
+    },
+    "mom_kin_ind_to_dependent_head_x": {
+        "prefix": "mom_kin_ind_to_dependent_head_x",
+        "body": [
+            "mom_kin_ind_to_dependent_head_x"
+        ],
+        "description": "For Lathe only, the distance from the independent head to the dependent head along the X axis.. Numeric Value"
+    },
+    "mom_kin_ind_to_dependent_head_z": {
+        "prefix": "mom_kin_ind_to_dependent_head_z",
+        "body": [
+            "mom_kin_ind_to_dependent_head_z"
+        ],
+        "description": "For Lathe only, the distance from the independent head to the dependent head along the X axis.. Numeric Value"
+    },
+    "mom_kin_independent_head": {
+        "prefix": "mom_kin_independent_head",
+        "body": [
+            "mom_kin_independent_head"
+        ],
+        "description": "For lathe only.&nbsp; Defines the name of the independent head.&nbsp; This name is specified on the TURRET UDE or the machine dialog in the operation.&nbsp; When the independent head is specified in the operation the distance from the dependent head to the independent head is not applied . . FRONT, REAR, RIGHT, LEFT, SIDE, SADDLE, NONE"
+    },
+    "mom_kin_is_turbo_output": {
+        "prefix": "mom_kin_is_turbo_output",
+        "body": [
+            "mom_kin_is_turbo_output"
+        ],
+        "description": "Defines whether the post will use the special turbo block templates and ignore all custom commands for Linear, Circular and Rapid moves.&nbsp; A special custom command needs to be imported from POSTBUILD/pblib/custom_command/ directory. Turbo mode will optimize post-process performance by a factor of 5.. TRUE or FALSE"
+    },
+    "mom_kin_linearization_flag": {
+        "prefix": "mom_kin_linearization_flag",
+        "body": [
+            "mom_kin_linearization_flag"
+        ],
+        "description": "Defines whether linearization will be on by default. This can be changed during post runtime with the LINTOL UDE.. String"
+    },
+    "mom_kin_linearization_tol": {
+        "prefix": "mom_kin_linearization_tol",
+        "body": [
+            "mom_kin_linearization_tol"
+        ],
+        "description": "The default linearization tolerance used when LINTOL/ON is specified or linearization is turned on by default.. Any number greater than zero."
+    },
+    "mom_kin_machine_resolution": {
+        "prefix": "mom_kin_machine_resolution",
+        "body": [
+            "mom_kin_machine_resolution"
+        ],
+        "description": "Defines the resolution used for rounding all coordinate data.&nbsp; By default this value is synchronized with the number of digits, if you change the number of digits, you must also change this value.. Any number greater than zero."
+    },
+    "mom_kin_machine_type": {
+        "prefix": "mom_kin_machine_type",
+        "body": [
+            "mom_kin_machine_type"
+        ],
+        "description": "Defines the basic machine type.&nbsp; The type of machine determines how motion and post commands will be processed and output.. 3_axis_mill, 3_axis_mill_turn, 4_axis_head, 4_axis_table,   5_axis_dual_table, 5_axis_dual_head,   5_axis_head_table, 2_axis_wedm, 4_axis_wedm, 2_axis_lathe."
+    },
+    "mom_kin_max_arc_radius": {
+        "prefix": "mom_kin_max_arc_radius",
+        "body": [
+            "mom_kin_max_arc_radius"
+        ],
+        "description": "Defines largest arc radius that can be programmed.&nbsp; Any arc with a radius larger than the maximum will output as linear gotos.. Any number greater than zero."
+    },
+    "mom_kin_max_fpm": {
+        "prefix": "mom_kin_max_fpm",
+        "body": [
+            "mom_kin_max_fpm"
+        ],
+        "description": "Defines the maximum IPM or MMPM allowed.. Any number greater than zero."
+    },
+    "mom_kin_max_fpr": {
+        "prefix": "mom_kin_max_fpr",
+        "body": [
+            "mom_kin_max_fpr"
+        ],
+        "description": "Defines the maximum IPR or MMPR allowed.. Any number greater than zero."
+    },
+    "mom_kin_min_arc_length": {
+        "prefix": "mom_kin_min_arc_length",
+        "body": [
+            "mom_kin_min_arc_length"
+        ],
+        "description": "Defines the smallest arc that can be output before the post defaults to linear interpolation.. Any number greater than zero."
+    },
+    "mom_kin_min_fpm": {
+        "prefix": "mom_kin_min_fpm",
+        "body": [
+            "mom_kin_min_fpm"
+        ],
+        "description": "Defines the minimum IPM or MMPM that can be output.. Any number greater than zero."
+    },
+    "mom_kin_min_fpr": {
+        "prefix": "mom_kin_min_fpr",
+        "body": [
+            "mom_kin_min_fpr"
+        ],
+        "description": "Defines the minimum IPR or MMPR that can be output.. Any number greater than zero."
+    },
+    "mom_kin_output_unit": {
+        "prefix": "mom_kin_output_unit",
+        "body": [
+            "mom_kin_output_unit"
+        ],
+        "description": "Defines the units for all coordinate and feedrate output.&nbsp; NX Post will convert the input coordinates and feedrates units into the mom_kin_output_unit if they are different.&nbsp;. IN or MM"
+    },
+    "mom_kin_pivot_dist_vec": {
+        "prefix": "mom_kin_pivot_dist_vec",
+        "body": [
+            "mom_kin_pivot_dist_vec"
+        ],
+        "description": "For four and five axis tilting head machine tools only. Defines the vector from the pivot point of the tilting rotary axis to gage point.&nbsp; This vector is added to the tool length to determine the effective length of the tool.&nbsp; If the mom variable mom_kin_pivot_gauge_offset is also set, the mom variable mom_kin_pivot_dist_vec will be used. If mom_kin_pivot_gauge_offset is set and mom_kin_pivot_dist_vec is not set, then the post will use the vector (0,0,mom_kin_pivot_gauge_offset) as the pivot offset vector.. Numeric Array(3)"
+    },
+    "mom_kin_pivot_gauge_offset": {
+        "prefix": "mom_kin_pivot_gauge_offset",
+        "body": [
+            "mom_kin_pivot_gauge_offset"
+        ],
+        "description": "For four and five axis tilting head machine tools only. Defines the distance from the pivot point of the tilting rotary axis to gage point.&nbsp; This value can be negative.&nbsp; This value is added to the tool length to determine the effective length of the tool.. Numeric Value"
+    },
+    "mom_kin_rapid_feed_rate": {
+        "prefix": "mom_kin_rapid_feed_rate",
+        "body": [
+            "mom_kin_rapid_feed_rate"
+        ],
+        "description": "Defines the rapid traverse for the machine tool.&nbsp; This value is used for time calculations for all rapid and positioning moves.. Any number greater than or equal to zero."
+    },
+    "mom_kin_read_ahead_next_motion": {
+        "prefix": "mom_kin_read_ahead_next_motion",
+        "body": [
+            "mom_kin_read_ahead_next_motion"
+        ],
+        "description": "Defines whether the post will read ahead for the next motion. If this variable is defined to any value, the read ahead will take place.&nbsp; The read ahead will also keep track of all post commands encountered while reading ahead.&nbsp; See the variables in the class Read_Ahead for details.. String"
+    },
+    "mom_kin_reengage_distance": {
+        "prefix": "mom_kin_reengage_distance",
+        "body": [
+            "mom_kin_reengage_distance"
+        ],
+        "description": "Used by the function that automatically retracts and re-engages when a rotary limit is violated.&nbsp; Establishes the distance above the part along the spindle axis to re-engage.. Any number greater than or equal to zero."
+    },
+    "mom_kin_retract_plane": {
+        "prefix": "mom_kin_retract_plane",
+        "body": [
+            "mom_kin_retract_plane"
+        ],
+        "description": "Used by the function that automatically retracts and re-engages when a rotary limit is violated.&nbsp; Establishes either a cylindrical clearance for four axis or a spherical clearance for five axis distance above the part for the tool to retract.&nbsp; The distance is measured from the center.. Any number greater than or equal to zero."
+    },
+    "mom_kin_rotary_reengage_feedrate": {
+        "prefix": "mom_kin_rotary_reengage_feedrate",
+        "body": [
+            "mom_kin_rotary_reengage_feedrate"
+        ],
+        "description": "Used by the function that automatically retracts and re-engages when a rotary limit is violated.&nbsp; Establishes the Feedrate used to re-engage the part after the retraction has taken place.. Any number greater than zero."
+    },
+    "mom_kin_spindle_axis": {
+        "prefix": "mom_kin_spindle_axis",
+        "body": [
+            "mom_kin_spindle_axis"
+        ],
+        "description": "Defines a vector that establishes the spindle axis of the machine tool.&nbsp; For three axis posts it is always (0,0,1). May be set to (1,0,0) or (-1,0,0) for mill turns.&nbsp; Otherwise it is set to (0,0,1).&nbsp; Is used for simulated cycles, rotary axis re-engage and mill turns.. Unit vector."
+    },
+    "mom_kin_tool_change_time": {
+        "prefix": "mom_kin_tool_change_time",
+        "body": [
+            "mom_kin_tool_change_time"
+        ],
+        "description": "Defines the time to be added to total machine time for tool changes.. Any number greater than or equal to zero."
+    },
+    "mom_kin_tool_tracking_height": {
+        "prefix": "mom_kin_tool_tracking_height",
+        "body": [
+            "mom_kin_tool_tracking_height"
+        ],
+        "description": "For four or five axis milling machines only.&nbsp; Defines the height on the tool where distance calculations will be made.&nbsp; This is very useful when swarfing.&nbsp; The default value is zero, which represents the tool tip.. Any number greater than or equal to zero."
+    },
+    "mom_kin_wire_tilt_output_type": {
+        "prefix": "mom_kin_wire_tilt_output_type",
+        "body": [
+            "mom_kin_wire_tilt_output_type"
+        ],
+        "description": "Defines how the post will output four axis wire EDM.&nbsp; If ANGLES, then mom_pos(3) and mom_pos(4) will represent the Q and R words for the Agie type machines.&nbsp; If COORDINATES, then&nbsp; mom_pos(3) and mom_pos(4) will represent the U and V values for the Mitsubishi type machines or AGIE Vision type machines. These values are incremental from mom_pos(1) and mom_pos(2) respectively.. ANGLES, COORDINATES"
+    },
+    "mom_kin_x_axis_limit": {
+        "prefix": "mom_kin_x_axis_limit",
+        "body": [
+            "mom_kin_x_axis_limit"
+        ],
+        "description": "Maximum travel for the X axis. Use the custom command pb_cmd_check_travel_limits.tcl to generate warnings.. Any number greater than or equal to zero."
+    },
+    "mom_kin_y_axis_limit": {
+        "prefix": "mom_kin_y_axis_limit",
+        "body": [
+            "mom_kin_y_axis_limit"
+        ],
+        "description": "Maximum travel for the Y axis. Use the custom command pb_cmd_check_travel_limits.tcl to generate warnings.. Any number greater than or equal to zero."
+    },
+    "mom_kin_z_axis_limit": {
+        "prefix": "mom_kin_z_axis_limit",
+        "body": [
+            "mom_kin_z_axis_limit"
+        ],
+        "description": "Maximum travel for the Z axis. Use the custom command pb_cmd_check_travel_limits.tcl to generate warnings.. Any number greater than or equal to zero."
+    },
+    "MOM_update_kinematics": {
+        "prefix": "MOM_update_kinematics",
+        "body": [
+            "MOM_update_kinematics"
+        ],
+        "description": "Maps the following legacy kinematics variables to the current kinematics variables, and is required after specifying them: mom_kin_4th_axis_center_offset, mom_kin_5th_axis_center_offset, mom_kin_pivot_gauge_offset. 1 or 0"
+    },
+    "mom_auxfun": {
+        "prefix": "mom_auxfun",
+        "body": [
+            "mom_auxfun"
+        ],
+        "description": "The value entered in AUXFUN UDE.. Any number greater than or equal to zero."
+    },
+    "mom_auxfun_text": {
+        "prefix": "mom_auxfun_text",
+        "body": [
+            "mom_auxfun_text"
+        ],
+        "description": "The appended text entered in the AUXFUN UDE.. Any string 66 characters or less."
+    },
+    "mom_auxfun_text_defined": {
+        "prefix": "mom_auxfun_text_defined",
+        "body": [
+            "mom_auxfun_text_defined"
+        ],
+        "description": "Flag defining whether AUXFUN appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_axis_position": {
+        "prefix": "mom_axis_position",
+        "body": [
+            "mom_axis_position"
+        ],
+        "description": "The axis value for set_axis UDE.. ZAXIS or WAXIS"
+    },
+    "mom_axis_position_value": {
+        "prefix": "mom_axis_position_value",
+        "body": [
+            "mom_axis_position_value"
+        ],
+        "description": "Description of mom_axis_position_value"
+    },
+    "mom_axis_position_value_defined": {
+        "prefix": "mom_axis_position_value_defined",
+        "body": [
+            "mom_axis_position_value_defined"
+        ],
+        "description": "Flag defining if the set_axis position has been defined.. 0 (no text), 1 (text defined)"
+    },
+    "mom_clamp_axis": {
+        "prefix": "mom_clamp_axis",
+        "body": [
+            "mom_clamp_axis"
+        ],
+        "description": "The axis option selected from CLAMP UDE.  The AUTO option will initiate auto-clamping in Post Builder created four axis posts.. XAXIS, YAXIS, ZAXIS, AAXIS, BAXIS, CAXIS, AUTO"
+    },
+    "mom_clamp_status": {
+        "prefix": "mom_clamp_status",
+        "body": [
+            "mom_clamp_status"
+        ],
+        "description": "Clamping status of the selected axis.. ON, OFF, AXISON, AXISOFF"
+    },
+    "mom_clamp_text": {
+        "prefix": "mom_clamp_text",
+        "body": [
+            "mom_clamp_text"
+        ],
+        "description": "The appended text entered in the CLAMP UDE.. Any string 66 characters or less."
+    },
+    "mom_clamp_text_defined": {
+        "prefix": "mom_clamp_text_defined",
+        "body": [
+            "mom_clamp_text_defined"
+        ],
+        "description": "Flag defining whether CLAMP appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_coolant_mode": {
+        "prefix": "mom_coolant_mode",
+        "body": [
+            "mom_coolant_mode"
+        ],
+        "description": "Defines the type of coolant desired.. ON, FLOOD, MIST, TAP, THRU"
+    },
+    "mom_coolant_text": {
+        "prefix": "mom_coolant_text",
+        "body": [
+            "mom_coolant_text"
+        ],
+        "description": "The appended text entered in the COOLNT UDE.. Any string 66 characters or less."
+    },
+    "mom_coolant_text_defined": {
+        "prefix": "mom_coolant_text_defined",
+        "body": [
+            "mom_coolant_text_defined"
+        ],
+        "description": "Flag defining whether COOLNT appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_coordinate_output_mode": {
+        "prefix": "mom_coordinate_output_mode",
+        "body": [
+            "mom_coordinate_output_mode"
+        ],
+        "description": "For mill turn only. Defines the status of the UDE SET/POLAR.  ON means that the output will be in polar coordinates. OFF means the output will be in normal Cartesian coordinates.. ON, OFF "
+    },
+    "mom_cut_wire_text": {
+        "prefix": "mom_cut_wire_text",
+        "body": [
+            "mom_cut_wire_text"
+        ],
+        "description": "The appended text entered in the CUT/WIRE UDE.. Any string 66 characters or less."
+    },
+    "mom_cut_wire_text_defined": {
+        "prefix": "mom_cut_wire_text_defined",
+        "body": [
+            "mom_cut_wire_text_defined"
+        ],
+        "description": "Flag defining whether CUT/WIRE appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_cutcom_adjust_register": {
+        "prefix": "mom_cutcom_adjust_register",
+        "body": [
+            "mom_cutcom_adjust_register"
+        ],
+        "description": "The value of the cutcom adjust register in CUTCOM UDE.. Any number greater than or equal to zero."
+    },
+    "mom_cutcom_adjust_register_defined": {
+        "prefix": "mom_cutcom_adjust_register_defined",
+        "body": [
+            "mom_cutcom_adjust_register_defined"
+        ],
+        "description": "Flag defining if the cutcom adjust register has been specified in CUTCOM UDE.. 0 (no), 1 (yes)"
+    },
+    "mom_cutcom_angle": {
+        "prefix": "mom_cutcom_angle",
+        "body": [
+            "mom_cutcom_angle"
+        ],
+        "description": "Angle specified for Engage/Retract cutcom method in the machine control dialog in the operation.. Numeric Value"
+    },
+    "mom_cutcom_distance": {
+        "prefix": "mom_cutcom_distance",
+        "body": [
+            "mom_cutcom_distance"
+        ],
+        "description": "Cutcom distance specified for Engage/Retract cutcom method in the machine control dialog in the operation.. Any number greater than or equal to zero."
+    },
+    "mom_cutcom_mode": {
+        "prefix": "mom_cutcom_mode",
+        "body": [
+            "mom_cutcom_mode"
+        ],
+        "description": "Defines the cutcom direction in the CUTCOM UDE.. LEFT, RIGHT, ON "
+    },
+    "mom_cutcom_plane": {
+        "prefix": "mom_cutcom_plane",
+        "body": [
+            "mom_cutcom_plane"
+        ],
+        "description": "Defines the cutcom plane in the CUTCOM UDE.. NONE, XYPLAN, YZPLAN, ZXPLAN"
+    },
+    "mom_cutcom_plane_output_flag": {
+        "prefix": "mom_cutcom_plane_output_flag",
+        "body": [
+            "mom_cutcom_plane_output_flag"
+        ],
+        "description": "Flag defining if the cutcom plane has been specified in CUTCOM UDE.. 0 (no text), 1 (text defined)"
+    },
+    "mom_cutcom_register": {
+        "prefix": "mom_cutcom_register",
+        "body": [
+            "mom_cutcom_register"
+        ],
+        "description": "The cutcom register defined in the machine control dialog in the operation.  May be overridden by the cutcom register on the tool.. Any number greater than or equal to zero."
+    },
+    "mom_cutcom_register_output_flag": {
+        "prefix": "mom_cutcom_register_output_flag",
+        "body": [
+            "mom_cutcom_register_output_flag"
+        ],
+        "description": "Flag defining whether the cutcom register has been specified in the machine control dialog in the operation.. 0 (no text), 1 (text defined)"
+    },
+    "mom_cutcom_text": {
+        "prefix": "mom_cutcom_text",
+        "body": [
+            "mom_cutcom_text"
+        ],
+        "description": "The appended text entered in CUTCOM UDE.. Any string 66 characters or less."
+    },
+    "mom_cutcom_text_defined": {
+        "prefix": "mom_cutcom_text_defined",
+        "body": [
+            "mom_cutcom_text_defined"
+        ],
+        "description": "Flag defining whether CUTCOM appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_cutcom_type": {
+        "prefix": "mom_cutcom_type",
+        "body": [
+            "mom_cutcom_type"
+        ],
+        "description": "The type of cutter compensation requested in the machine control dialog.. 1 (Retract/Engage), 2 (Wall)"
+    },
+    "mom_def_sequence_frequency": {
+        "prefix": "mom_def_sequence_frequency",
+        "body": [
+            "mom_def_sequence_frequency"
+        ],
+        "description": "The initial value of the frequency parameter for the SEQUENCE command in the definition file.. Any number greater than zero."
+    },
+    "mom_def_sequence_increment": {
+        "prefix": "mom_def_sequence_increment",
+        "body": [
+            "mom_def_sequence_increment"
+        ],
+        "description": "The initial value of the increment parameter for the SEQUENCE command in the definition file.. Any number greater than zero."
+    },
+    "mom_def_sequence_maximum": {
+        "prefix": "mom_def_sequence_maximum",
+        "body": [
+            "mom_def_sequence_maximum"
+        ],
+        "description": "The initial value of the maximum sequence number parameter for the SEQUENCE command in the definition file.. Any number greater than zero."
+    },
+    "mom_def_sequence_start": {
+        "prefix": "mom_def_sequence_start",
+        "body": [
+            "mom_def_sequence_start"
+        ],
+        "description": "The initial value of the start sequence number for the SEQUENCE command in the definition file.. Any number greater than zero."
+    },
+    "mom_delay_mode": {
+        "prefix": "mom_delay_mode",
+        "body": [
+            "mom_delay_mode"
+        ],
+        "description": "Defines the mom variable that will be used for the delay UDE.  Seconds will use mom_delay_value, revolutions will use the mom_delay_revs . SECONDS or REVOLUTIONS"
+    },
+    "mom_delay_revs": {
+        "prefix": "mom_delay_revs",
+        "body": [
+            "mom_delay_revs"
+        ],
+        "description": "The delay value in revolutions for revolutions mode in the DELAY UDE.. Any number greater than zero."
+    },
+    "mom_delay_text": {
+        "prefix": "mom_delay_text",
+        "body": [
+            "mom_delay_text"
+        ],
+        "description": "The appended text entered in DELAY UDE.. Any string 66 characters or less."
+    },
+    "mom_delay_text_defined": {
+        "prefix": "mom_delay_text_defined",
+        "body": [
+            "mom_delay_text_defined"
+        ],
+        "description": "Flag defining whether DELAY appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_delay_value": {
+        "prefix": "mom_delay_value",
+        "body": [
+            "mom_delay_value"
+        ],
+        "description": "The delay value in seconds for seconds mode in the DELAY UDE.. Any number greater than zero."
+    },
+    "mom_flush_guides": {
+        "prefix": "mom_flush_guides",
+        "body": [
+            "mom_flush_guides"
+        ],
+        "description": "For Wire EDM only, setting of the FLUSH guide parameter.. NONE, UPPER, LOWER, ALL"
+    },
+    "mom_flush_pressure": {
+        "prefix": "mom_flush_pressure",
+        "body": [
+            "mom_flush_pressure"
+        ],
+        "description": "For Wire EDM only, setting of the FLUSH pressure parameter.. NONE, LOW, MEDIUM, HIGH, REGISTER"
+    },
+    "mom_flush_register": {
+        "prefix": "mom_flush_register",
+        "body": [
+            "mom_flush_register"
+        ],
+        "description": "For Wire EDM only, setting of the FLUSH register parameter.. Any number greater than or equal to zero."
+    },
+    "mom_flush_tank": {
+        "prefix": "mom_flush_tank",
+        "body": [
+            "mom_flush_tank"
+        ],
+        "description": "For Wire EDM only, setting of the FLUSH/TANK parameter.. IN, OUT"
+    },
+    "mom_flush_tank_text": {
+        "prefix": "mom_flush_tank_text",
+        "body": [
+            "mom_flush_tank_text"
+        ],
+        "description": "The appended text entered in FLUSH/TANK UDE.. Any string 66 characters or less."
+    },
+    "mom_flush_tank_text_defined": {
+        "prefix": "mom_flush_tank_text_defined",
+        "body": [
+            "mom_flush_tank_text_defined"
+        ],
+        "description": "Flag defining whether FLUSH/TANK appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_head_name": {
+        "prefix": "mom_head_name",
+        "body": [
+            "mom_head_name"
+        ],
+        "description": "This value is used to switch between posts for linked posts.. Any string 66 characters or less."
+    },
+    "mom_head_name_defined": {
+        "prefix": "mom_head_name_defined",
+        "body": [
+            "mom_head_name_defined"
+        ],
+        "description": "Flag defining whether HEAD has been programmed.. 0 (no ), 1 (yes)"
+    },
+    "mom_head_text": {
+        "prefix": "mom_head_text",
+        "body": [
+            "mom_head_text"
+        ],
+        "description": "The appended text entered in SELECT/HEAD UDE.. Any string 66 characters or less."
+    },
+    "mom_head_text_defined": {
+        "prefix": "mom_head_text_defined",
+        "body": [
+            "mom_head_text_defined"
+        ],
+        "description": "Flag defining whether SELECT/HEAD appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_head_type": {
+        "prefix": "mom_head_type",
+        "body": [
+            "mom_head_type"
+        ],
+        "description": "Value of the head for the SELECT/HEAD UDE.. FRONT,REAR,RIGHT,LEFT,SIDE,SADDLE"
+    },
+    "mom_load_tool_number_defined": {
+        "prefix": "mom_load_tool_number_defined",
+        "body": [
+            "mom_load_tool_number_defined"
+        ],
+        "description": "Flag defining if the tool number has been specified in the LOAD or TURRET UDE.. 0 (no text), 1 (text defined)"
+    },
+    "mom_lock_axis": {
+        "prefix": "mom_lock_axis",
+        "body": [
+            "mom_lock_axis"
+        ],
+        "description": "The axis to be locked for the SET/LOCK UDE.  The post will convert the FOURTH and FIFTH parameters into the applicable rotary axis (A,B or C). For five axis machine tools with the fifth axis rotation method set to reverse, set mom_kin_rotary_axis_method to zero. To do this, uncomment the following line in the post builder custom PB_CMD_revise_new_iks file: set mom_kin_rotary_axis_method \"ZERO\". XAXIS, YAXIS, ZAXIS, AAXIS, BAXIS, CAXIS, FOURTH, FIFTH"
+    },
+    "mom_lock_axis_plane": {
+        "prefix": "mom_lock_axis_plane",
+        "body": [
+            "mom_lock_axis_plane"
+        ],
+        "description": "The plane to be locked for the SET/LOCK UDE.  You must enter a valid plane for five axis machines. You do not need to enter an axis for four axis machines.. XYPLAN, YZPLAN, ZXPLAN, NONE."
+    },
+    "mom_lock_axis_value": {
+        "prefix": "mom_lock_axis_value",
+        "body": [
+            "mom_lock_axis_value"
+        ],
+        "description": "Description of mom_lock_axis_value"
+    },
+    "mom_lock_axis_value_defined": {
+        "prefix": "mom_lock_axis_value_defined",
+        "body": [
+            "mom_lock_axis_value_defined"
+        ],
+        "description": "Flag defining wheter the lock axis value has been entered.. 0 (no ), 1 (yes)"
+    },
+    "mom_modes_text": {
+        "prefix": "mom_modes_text",
+        "body": [
+            "mom_modes_text"
+        ],
+        "description": "The appended text entered in the SET/MODE UDE.. Any string 66 characters or less."
+    },
+    "mom_modes_text_defined": {
+        "prefix": "mom_modes_text_defined",
+        "body": [
+            "mom_modes_text_defined"
+        ],
+        "description": "Flag defining whether SET/MODE appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_number_of_ranges": {
+        "prefix": "mom_number_of_ranges",
+        "body": [
+            "mom_number_of_ranges"
+        ],
+        "description": "You can use this variable to define the maximum number of ranges for the custom commands PB_CMD_spindle_sfm_range_select  or PB_CMD_spindle_rpm_range_select.. 0-9"
+    },
+    "mom_operator_message": {
+        "prefix": "mom_operator_message",
+        "body": [
+            "mom_operator_message"
+        ],
+        "description": "The text of the operator message.  The post will add a control out string to the beginning and a control out string to the end.  You can specify these in Post Builder. . Any string 66 characters or less."
+    },
+    "mom_operator_message_defined": {
+        "prefix": "mom_operator_message_defined",
+        "body": [
+            "mom_operator_message_defined"
+        ],
+        "description": "Flag defining whether the operator message text has been entered.. 0 (no ), 1 (yes)"
+    },
+    "mom_opskip_text": {
+        "prefix": "mom_opskip_text",
+        "body": [
+            "mom_opskip_text"
+        ],
+        "description": "The appended text entered in the OPSKIP UDE.. Any string 66 characters or less."
+    },
+    "mom_opskip_text_defined": {
+        "prefix": "mom_opskip_text_defined",
+        "body": [
+            "mom_opskip_text_defined"
+        ],
+        "description": "Flag defining whether OPSKIP appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_opstop_text": {
+        "prefix": "mom_opstop_text",
+        "body": [
+            "mom_opstop_text"
+        ],
+        "description": "The appended text entered in the OPSTOP UDE.. Any string 66 characters or less."
+    },
+    "mom_opstop_text_defined": {
+        "prefix": "mom_opstop_text_defined",
+        "body": [
+            "mom_opstop_text_defined"
+        ],
+        "description": "Flag defining whether OPSTOP appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_origin": {
+        "prefix": "mom_origin",
+        "body": [
+            "mom_origin"
+        ],
+        "description": "For four and five axis posts, defines the distance from the origin of the MCS to the center of the rotary table. For other posts, an offset from the MCS origin to the machine tool coordinate center.. Numeric Array(3)"
+    },
+    "mom_origin_text": {
+        "prefix": "mom_origin_text",
+        "body": [
+            "mom_origin_text"
+        ],
+        "description": "The appended text entered in the ORIGIN UDE.. Any string 66 characters or less."
+    },
+    "mom_origin_text_defined": {
+        "prefix": "mom_origin_text_defined",
+        "body": [
+            "mom_origin_text_defined"
+        ],
+        "description": "Flag defining whether ORIGIN appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_overide_oper_param": {
+        "prefix": "mom_overide_oper_param",
+        "body": [
+            "mom_overide_oper_param"
+        ],
+        "description": "From the Cutter Compensation UDE and Tool Length Compensation UDE.. 0 = no, 1 = yes"
+    },
+    "mom_parallel_to_axis": {
+        "prefix": "mom_parallel_to_axis",
+        "body": [
+            "mom_parallel_to_axis"
+        ],
+        "description": "The value of the SET/MODE UDE to control how parallel axes will be output in the post.. ZAXIS, WAXIS or VAXIS."
+    },
+    "mom_power_text": {
+        "prefix": "mom_power_text",
+        "body": [
+            "mom_power_text"
+        ],
+        "description": "The appended text entered in the POWER UDE.. Any string 66 characters or less."
+    },
+    "mom_power_text_defined": {
+        "prefix": "mom_power_text_defined",
+        "body": [
+            "mom_power_text_defined"
+        ],
+        "description": "Flag defining whether POWER appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_power_value": {
+        "prefix": "mom_power_value",
+        "body": [
+            "mom_power_value"
+        ],
+        "description": "For Wire EDM only, the power setting for wire EDM operations.. Any number greater than or equal to zero."
+    },
+    "mom_pprint": {
+        "prefix": "mom_pprint",
+        "body": [
+            "mom_pprint"
+        ],
+        "description": "The text of the PPRINT UDE. The post will replace the first \"(\" with a control out string to the beginning and the next \")\" with a control out string.  You can specify the control out and control in strings in Post Builder. . Any string 66 characters or less."
+    },
+    "mom_pprint_defined": {
+        "prefix": "mom_pprint_defined",
+        "body": [
+            "mom_pprint_defined"
+        ],
+        "description": "Flag defining whether the PPRINT UDE text has been entered.. 0 (no ), 1 (yes)"
+    },
+    "mom_prefun": {
+        "prefix": "mom_prefun",
+        "body": [
+            "mom_prefun"
+        ],
+        "description": "The value of the PREFUN UDE.. Any number greater than or equal to zero."
+    },
+    "mom_prefun_text": {
+        "prefix": "mom_prefun_text",
+        "body": [
+            "mom_prefun_text"
+        ],
+        "description": "The appended text entered in the PREFUN UDE.. Any string 66 characters or less."
+    },
+    "mom_prefun_text_defined": {
+        "prefix": "mom_prefun_text_defined",
+        "body": [
+            "mom_prefun_text_defined"
+        ],
+        "description": "Flag defining whether PREFUN appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_rotate_axis_type": {
+        "prefix": "mom_rotate_axis_type",
+        "body": [
+            "mom_rotate_axis_type"
+        ],
+        "description": "Defines the axis to be rotated for ROTATE UDE.. TABLE, HEAD, AAXIS, BAXIS, CAXIS"
+    },
+    "mom_rotation_angle": {
+        "prefix": "mom_rotation_angle",
+        "body": [
+            "mom_rotation_angle"
+        ],
+        "description": "Defines the angle to rotate to for the ROTATE UDE.  The value may be incremental, absolute or to a modulo 360 angle.. Numeric Value"
+    },
+    "mom_rotation_angle_defined": {
+        "prefix": "mom_rotation_angle_defined",
+        "body": [
+            "mom_rotation_angle_defined"
+        ],
+        "description": "Flag defining if the ROTATE angle has been entered.. 0 (no ), 1 (yes)"
+    },
+    "mom_rotation_direction": {
+        "prefix": "mom_rotation_direction",
+        "body": [
+            "mom_rotation_direction"
+        ],
+        "description": "Defines the direction to rotate the table for the ROTATE UDE.. CLW, CCLW, NONE"
+    },
+    "mom_rotation_mode": {
+        "prefix": "mom_rotation_mode",
+        "body": [
+            "mom_rotation_mode"
+        ],
+        "description": "Defines how the mom_rotation_angle will be applied.. NONE, ABSOLUTE, INCREMENTAL, ATANGLE."
+    },
+    "mom_rotation_reference_mode": {
+        "prefix": "mom_rotation_reference_mode",
+        "body": [
+            "mom_rotation_reference_mode"
+        ],
+        "description": "Defines the status of ROTREF. Currently not used.. ON, OFF"
+    },
+    "mom_rotation_text": {
+        "prefix": "mom_rotation_text",
+        "body": [
+            "mom_rotation_text"
+        ],
+        "description": "The appended text entered in the ROTATE UDE.. Any string 66 characters or less."
+    },
+    "mom_rotation_text_defined": {
+        "prefix": "mom_rotation_text_defined",
+        "body": [
+            "mom_rotation_text_defined"
+        ],
+        "description": "Flag defining whether ROTATE appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_seqnum": {
+        "prefix": "mom_seqnum",
+        "body": [
+            "mom_seqnum"
+        ],
+        "description": "The current sequence number.. Any number greater than zero."
+    },
+    "mom_sequence_frequency": {
+        "prefix": "mom_sequence_frequency",
+        "body": [
+            "mom_sequence_frequency"
+        ],
+        "description": "The value of the frequency parameter for the SEQNO UDE.. Any number greater than zero."
+    },
+    "mom_sequence_increment": {
+        "prefix": "mom_sequence_increment",
+        "body": [
+            "mom_sequence_increment"
+        ],
+        "description": "The value of the increment parameter for the SEQNO UDE.. Any number greater than zero."
+    },
+    "mom_sequence_mode": {
+        "prefix": "mom_sequence_mode",
+        "body": [
+            "mom_sequence_mode"
+        ],
+        "description": "Defines how the sequence number will be output. ON will reinstate the output of the sequence number.  OFF will suppress sequence numbers.  N will turn on sequence numbers starting with N. AUTO is currently not used.. ON, OFF, N, AUTO."
+    },
+    "mom_sequence_number": {
+        "prefix": "mom_sequence_number",
+        "body": [
+            "mom_sequence_number"
+        ],
+        "description": "The value for the next sequence number for the SEQNO UDE.. Any number greater than zero."
+    },
+    "mom_sequence_text": {
+        "prefix": "mom_sequence_text",
+        "body": [
+            "mom_sequence_text"
+        ],
+        "description": "The appended text entered in the SEQNO UDE.. Any string 66 characters or less."
+    },
+    "mom_sequence_text_defined": {
+        "prefix": "mom_sequence_text_defined",
+        "body": [
+            "mom_sequence_text_defined"
+        ],
+        "description": "Flag defining whether SEQNO appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_spindle_direction": {
+        "prefix": "mom_spindle_direction",
+        "body": [
+            "mom_spindle_direction"
+        ],
+        "description": "Defines the direction of the spindle.  With the preference update post from tool turned on, this value comes from the tool.  Otherwise the direction comes from the SPINDL UDE.. CLW, CCLW or NONE"
+    },
+    "mom_spindle_maximum_rpm": {
+        "prefix": "mom_spindle_maximum_rpm",
+        "body": [
+            "mom_spindle_maximum_rpm"
+        ],
+        "description": "Defines the maximum spindle rpm allowed in an operation.  This value can only be output with the SPINDL UDE. It is not available on the feeds and speeds dialog.. Any number greater than zero."
+    },
+    "mom_spindle_maximum_rpm_defined": {
+        "prefix": "mom_spindle_maximum_rpm_defined",
+        "body": [
+            "mom_spindle_maximum_rpm_defined"
+        ],
+        "description": "Flag defining whether the SPINDL MAXRPM parameter has been entered.. 0 (no ), 1 (yes)"
+    },
+    "mom_spindle_mode": {
+        "prefix": "mom_spindle_mode",
+        "body": [
+            "mom_spindle_mode"
+        ],
+        "description": "Defines the output mode of the spindle.  With the preference update post from tool turned on, this value comes from the tool.  Otherwise the direction comes from the SPINDL UDE. . RPM or SFM"
+    },
+    "mom_spindle_range": {
+        "prefix": "mom_spindle_range",
+        "body": [
+            "mom_spindle_range"
+        ],
+        "description": "Defines a spindle range. This value can be output with the SPINDL UDE.  You can use a custom command in Post Builder to automatically derive the spindle range from the rpm.. 1 through 9"
+    },
+    "mom_spindle_range_defined": {
+        "prefix": "mom_spindle_range_defined",
+        "body": [
+            "mom_spindle_range_defined"
+        ],
+        "description": "Flag defining whether the SPINDL RANGE parameter has been entered.. 0 (no ), 1 (yes)"
+    },
+    "mom_spindle_rpm": {
+        "prefix": "mom_spindle_rpm",
+        "body": [
+            "mom_spindle_rpm"
+        ],
+        "description": "Defines the rpm of the spindle when in RPM mode.  In SFM mode, represents the equivalent rpm at the first cut radius.. Any number greater than or equal to zero."
+    },
+    "mom_spindle_speed": {
+        "prefix": "mom_spindle_speed",
+        "body": [
+            "mom_spindle_speed"
+        ],
+        "description": "The value of either SFM or RPM. . Any number greater than or equal to zero."
+    },
+    "mom_spindle_speed_defined": {
+        "prefix": "mom_spindle_speed_defined",
+        "body": [
+            "mom_spindle_speed_defined"
+        ],
+        "description": "Flag defining whether the SPINDL speed parameter has been entered.. 0 (no ), 1 (yes)"
+    },
+    "mom_spindle_text": {
+        "prefix": "mom_spindle_text",
+        "body": [
+            "mom_spindle_text"
+        ],
+        "description": "The appended text entered in the SPINDL UDE.. Any string 66 characters or less."
+    },
+    "mom_spindle_text_defined": {
+        "prefix": "mom_spindle_text_defined",
+        "body": [
+            "mom_spindle_text_defined"
+        ],
+        "description": "Flag defining whether SPINDL appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_stop_text": {
+        "prefix": "mom_stop_text",
+        "body": [
+            "mom_stop_text"
+        ],
+        "description": "The appended text entered in the STOP UDE.. Any string 66 characters or less."
+    },
+    "mom_stop_text_defined": {
+        "prefix": "mom_stop_text_defined",
+        "body": [
+            "mom_stop_text_defined"
+        ],
+        "description": "Flag defining whether STOP appended text has been entered.. 0 (no text), 1 (text defined)"
+    },
+    "mom_tool_adj_reg_defined": {
+        "prefix": "mom_tool_adj_reg_defined",
+        "body": [
+            "mom_tool_adj_reg_defined"
+        ],
+        "description": "Flag defining if the adjust register parameter has been entered in the tool dialog.. 0 (no ), 1 (yes)"
+    },
+    "mom_tool_adjust_register": {
+        "prefix": "mom_tool_adjust_register",
+        "body": [
+            "mom_tool_adjust_register"
+        ],
+        "description": "Value of the tool length adjust register.  Used only if update post from tool preference is set to on.. Any number greater than or equal to zero."
+    },
+    "mom_tool_change_type": {
+        "prefix": "mom_tool_change_type",
+        "body": [
+            "mom_tool_change_type"
+        ],
+        "description": "Defines the type of tool change.  If type is AUTO, then the auto tool change event marker will be executed.  If type is MANUAL, then the manual tool change event marker will be executed.. AUTO or MANUAL. "
+    },
+    "mom_tool_head": {
+        "prefix": "mom_tool_head",
+        "body": [
+            "mom_tool_head"
+        ],
+        "description": "Defines the name of the current head used by a two turret lathe.. FRONT,REAR,RIGHT,LEFT,SIDE,SADDLE"
+    },
+    "mom_tool_number": {
+        "prefix": "mom_tool_number",
+        "body": [
+            "mom_tool_number"
+        ],
+        "description": "Defines the tool to be loaded. With the preference update post from tool turned on, this value comes from the tool. Otherwise the direction comes from the LOAD or TURRET UDE.. Any number greater than or equal to zero."
+    },
+    "mom_tool_use": {
+        "prefix": "mom_tool_use",
+        "body": [
+            "mom_tool_use"
+        ],
+        "description": "Defines an array that contains the tool number and machine time for each tool, where tool_use(0,0) represent the tool number and tool_use(0,1) represents the machining time for the first tool.. Any number greater than or equal to zero."
+    },
+    "mom_translate": {
+        "prefix": "mom_translate",
+        "body": [
+            "mom_translate"
+        ],
+        "description": "Description of mom_translate"
+    },
+    "mom_work_coordinate_number": {
+        "prefix": "mom_work_coordinate_number",
+        "body": [
+            "mom_work_coordinate_number"
+        ],
+        "description": "Value output by the ZERO/N UDE.  This value can be added to 53 to generate the Fanuc coordinate system codes.. 0-6"
+    }
+}
