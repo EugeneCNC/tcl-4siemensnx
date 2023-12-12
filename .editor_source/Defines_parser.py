@@ -16,10 +16,27 @@ def process_line(line, id_prefix):
         return name_match.group(1), id_match.group(1)
     return None, None
 
+def process_macro_line(line, id_prefix):
+    name_match = re.search(rf"{id_prefix}(.*?) ", line)
+    id_match = line.split(" =")[0].strip()
+    if name_match and id_match:
+        return name_match.group(1), id_match
+    return None, None
+
 def find_doc_string(js_lines, id_of_item):
     for doc_line in js_lines:
         if doc_line.strip().startswith("this." + id_of_item + "Doc"):
-            doc_match = re.search(r"= '(.*?)'.pvalues()", doc_line)
+            doc_match = re.search(r"= '(.*?)'", doc_line)
+            if doc_match:
+                doc_string = doc_match.group(1)
+                doc_string = doc_string.replace("&gt;", ">").replace("&gt", ">").replace("&lt;", "<").replace("&lt", "<").replace("' + '", ". ")
+                return doc_string
+    return None
+
+def find_macro_doc_string(js_lines, id_of_item):
+    for doc_line in js_lines:
+        if doc_line.strip().startswith(id_of_item + "Doc"):
+            doc_match = re.search(r"= '(.*?)'", doc_line)
             if doc_match:
                 doc_string = doc_match.group(1)
                 doc_string = doc_string.replace("&gt;", ">").replace("&gt", ">").replace("&lt;", "<").replace("&lt", "<").replace("' + '", ". ")
@@ -74,8 +91,18 @@ for line in js_lines:
         # Increment the line counter for section
         line_counts[section] += 1
         if section == "NGMK Macros":
+            continue
             # process the line
-            print("test NGMK Macros")
+            print(line.strip())
+            name_of_item, id_of_item = process_macro_line(line, "this.")
+            print(name_of_item, id_of_item)
+            doc_string = find_macro_doc_string(js_lines, id_of_item)
+
+            snippets[name_of_item] = {
+                "prefix": name_of_item,
+                "body": [name_of_item],
+                "description": doc_string if doc_string else "Description of " + name_of_item
+            }
 
         elif section == "MOM Commands":
             # process the line
