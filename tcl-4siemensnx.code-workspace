@@ -5,9 +5,6 @@
 		},
 		{
 			"path": "../.vscode-insiders/extensions/TclNxCam-1.0"
-		},
-		{
-			"path": "../../../Program Files/Siemens/NX2312/MACH/resource/postprocessor"
 		}
 	],
 	"settings": {}

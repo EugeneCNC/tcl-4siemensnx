@@ -94,19 +94,23 @@
 # This is the path to the wish script
 #
   set wish_script "[MOM_ask_env_var UGII_CAM_DEBUG_DIR]mom_review_wish.tcl"
-  if { ![file exists $wish_script] } {
+  if { ![file exists $wish_script] } \
+  {
      MOM_output_to_listing_device "+++ NX/Post review tool cannot find script file $wish_script. +++"
      return
   }
 
  #<07-25-12 gsl> Differentiate platform
-  if { [string match "*windows*" $tcl_platform(platform)] } {
+  if { [string match "*windows*" $tcl_platform(platform)] } \
+  {
      set my_wish "[MOM_ask_env_var UGII_CAM_AUXILIARY_DIR]ugwish.exe"
-  } else {
+  } else \
+  {
      set my_wish "[MOM_ask_env_var UGII_CAM_AUXILIARY_DIR]ugwish"
   }
 
-  if { ![file exists "$my_wish"] } {
+  if { ![file exists "$my_wish"] } \
+  {
      MOM_output_to_listing_device "+++ NX/Post review tool cannot find \"$my_wish\". +++"
      return
   }
@@ -119,22 +123,16 @@
 #               This procedure outputs the header to a file
 #
 ################################################################################
-proc MOM__debug_do_heading {} {
-
-   global mom_part_name
-   global mom_logname
-   global mom_date
-   global mom_debug_file_all
-   global mom_debug_done_heading
-
-   puts $mom_debug_file_all "Debug Output for TASK: $mom_part_name"
-   puts $mom_debug_file_all "Created By:    $mom_logname"
-   puts $mom_debug_file_all "Creation Date: $mom_date"
+proc MOM__debug_do_heading {} \
+{
+   puts $mom_debug_file_all "Debug Output for TASK: $::mom_part_name"
+   puts $mom_debug_file_all "Created By:    $::mom_logname"
+   puts $mom_debug_file_all "Creation Date: $::mom_date"
    set aa [info tclversion]
    puts $mom_debug_file_all "tcl version: $aa"
    puts $mom_debug_file_all "==============================================="
 
-   set mom_debug_done_heading 1
+   set ::mom_debug_done_heading 1
 }
 
 ################################################################################
@@ -144,7 +142,8 @@ proc MOM__debug_do_heading {} {
 #   First proc called ... opens the output file
 #
 ################################################################################
-proc MOM_init_debug {} {
+proc MOM_init_debug {} \
+{
 
    global debug_data   ;# This controls where the output is written.
    global fileId       ;# This is the tag to write to.
@@ -162,27 +161,28 @@ proc MOM_init_debug {} {
    global mom_output_file_directory
 
 
- #<11-14-2011 gsl> Correct error in detecting write permission...
+  #<11-14-2011 gsl> Correct error in detecting write permission...
   # Try to open the debug data file in the part's directory first;
   # if that fails, open file in the TMP directory, otherwise display error.
 
-   set debug_err_file "mom_debug_err.out"
+   set ::debug_err_file "mom_debug_err.out"
 
- #<12-12-12 gsl> Directing outputs to "${mom_output_file_directory}"
+  #<12-12-12 gsl> Directing outputs to "$::{mom_output_file_directory}"
   # cd "[file dirname $mom_part_name]"
-   if [catch { cd ${mom_output_file_directory} }] {
+   if [catch { cd $::{mom_output_file_directory} }] \
+   {
       cd "[MOM_ask_env_var UGII_TMP_DIR]"
    }
 
 
-   if [catch { open "$debug_err_file" w } mom_debug_err_file] {
-
+   if [catch { open "$::debug_err_file" w } ::mom_debug_err_file] \
+   {
       cd "[MOM_ask_env_var UGII_TMP_DIR]"
-      if [catch { open "$debug_err_file" w } mom_debug_err_file] {
+      if [catch { open "$::debug_err_file" w } ::mom_debug_err_file] {
 
-        # This should be an unforeseen case that temp dir can not be acdcessed!!!
-         MOM_output_to_listing_device "+++ NX/Post review tool cannot open $debug_err_file in either\
-                                          \"${mom_output_file_directory}\" or UGII_TMP_DIR. +++"
+        # This should be an unforeseen case that temp dir can not be accessed!!!
+         MOM_output_to_listing_device "+++ NX/Post review tool cannot open $::debug_err_file in either\
+                                          \"$::{mom_output_file_directory}\" or UGII_TMP_DIR. +++"
 
         # It's all over!!!
          return
@@ -190,56 +190,61 @@ proc MOM_init_debug {} {
    }
 
    # Save away working directory
-   set mom_debug_output_directory [pwd]
+   set ::mom_debug_output_directory [pwd]
 
 
    #<07-16-12 gsl> Cleanup error file (opened @ start) if not needed.
-   if { !$DEBUG } { close $mom_debug_err_file; MOM_remove_file "$debug_err_file" }
+   if { !$::DEBUG } \
+   { close $::mom_debug_err_file; MOM_remove_file "$::debug_err_file" }
 
 
-   if { $DEBUG } {
-      puts $mom_debug_err_file "Debug output to directory: \"${mom_debug_output_directory}\""
+   if { $::DEBUG } \
+   {
+      puts $::mom_debug_err_file "Debug output to directory: \"$::{mom_debug_output_directory}\""
+      puts $::mom_debug_err_file "Entering MOM_init_debug" 
    }
 
-   if { $DEBUG } { puts $mom_debug_err_file "Entering MOM_init_debug" }
 
-   set review_num 0
-   set debug_num 0
+   set ::review_num 0
+   set ::debug_num 0
 
    #<Aug-09-2018 gsl> Find the correct time stamp field.
-   foreach s [split $mom_date] {
+   foreach s [split $::mom_date] \
+   {
       if { [string match "*:*" $s] } {
          set time_list [split [string trim $s] :]
          break
       }
    }
-   foreach t $time_list {
+   foreach t $time_list \
+   {
       append cur_time $t
    }
 
    # Prevent file name from getting duplicated
-   if { [string length $review_data] == 0 } {
-      append review_data $mom_logname $cur_time _review .out
+   if { [string length $::review_data] == 0 } \
+   {
+      append ::review_data $::mom_logname $cur_time _review .out
    }
 
-   if [catch { open $review_data w } fileId] \
+   if [catch { open $::review_data w } ::fileId] \
    {
-      if { $DEBUG } { puts $mom_debug_err_file "error opening the file $review_data" }
+      if { $::DEBUG } { puts $::mom_debug_err_file "error opening the file $::review_data" }
    } else \
    {
-      if { $DEBUG } { puts $mom_debug_err_file "mom_review.tcl: write $review_data" }
+      if { $::DEBUG } { puts $::mom_debug_err_file "mom_review.tcl: write $::review_data" }
    }
 
-   if { [string length $debug_data] == 0 } {
-      append debug_data  $mom_logname $cur_time _debug  .out
+   if { [string length $::debug_data] == 0 } {
+      append ::debug_data  $::mom_logname $cur_time _debug  .out
    }
-   set mom_debug_file_all [open $debug_data w]
+   set ::mom_debug_file_all [open $::debug_data w]
 
-   if { [string length $proc_data] == 0 } {
-      append proc_data   $mom_logname $cur_time _proc   .out
+   if { [string length $::proc_data] == 0 } {
+      append ::proc_data   $::mom_logname $cur_time _proc   .out
    }
 
-   set mom_debug_done_heading 0
+   set ::mom_debug_done_heading 0
 }
 
 ################################################################################
@@ -250,8 +255,9 @@ proc MOM_init_debug {} {
 #  Output to the debug file the Event name
 #
 ################################################################################
-proc MOM_before_each_event {} {
-
+proc MOM_before_each_event {} \
+{
+   
    global fileId
    global mom_debug_event_name
    global review_num
@@ -321,8 +327,9 @@ proc MOM_before_each_event {} {
 #  Gets called each time a variable is loaded
 #
 ################################################################################
-proc MOM_before_each_add_var {} {
-
+proc MOM_before_each_add_var {} \
+{
+   
    global fileId
    global mom_debug_assign_var
    global mom_debug_done_heading
@@ -369,8 +376,9 @@ proc MOM_before_each_add_var {} {
 #  Output to the debug file Address values before events are generated
 #
 ################################################################################
-proc MOM_before_load_address {} {
-
+proc MOM_before_load_address {} \
+{
+   
    global fileId
    global mom_debug_load_address
    global mom_debug_file_all
@@ -411,11 +419,11 @@ proc MOM_before_load_address {} {
 #  Close the output file
 #
 ################################################################################
-proc MOM_end_debug {} {
+proc MOM_end_debug {} \
+{
 
    global fileId
    global wish_script
-   global debug_data
    global proc_data
    global mom_debug_file_all
    global review_data

@@ -201,14 +201,14 @@ proc show_box2 {}\
 
   if {$box3_flag == 1} \
   {
-      set event_index $index
-      $::box1 yview $index
+      set event_index $::index
+      $::box1 yview $::index
   } else \
   {
-      set event_index  [ $::box1 curselection ]
+      set event_index  [ $box1 curselection ]
   }
 
-  set event_string [ $::box1 get $event_index ]
+  set event_string [ $box1 get $event_index ]
   # evt.variable aus event_string weglesen
   # --------------------------------------
   set TEST [ expr [ string first "=" $event_string  ] -1 ]
