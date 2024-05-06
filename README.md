@@ -1,4 +1,4 @@
-# tcl-4siemensnx README
+# tcl-4PostConfigurator README
 
 This is the README for your extension "tcl-4siemensnx". After writing up a brief description, we recommend including the following sections.
 
@@ -6,7 +6,7 @@ This is the README for your extension "tcl-4siemensnx". After writing up a brief
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-For example if there is an image subfolder under your extension project workspace:
+For example, if there is an image subfolder under your extension project workspace:
 
 \!\[feature X\]\(images/feature-x.png\)
 
@@ -18,7 +18,7 @@ If you have any requirements or dependencies, add a section describing those and
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Include if your extension adds VS Code settings through the `contributes.configuration` extension point.
 
 For example:
 
